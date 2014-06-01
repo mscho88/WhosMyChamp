@@ -9,23 +9,51 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.os.Build;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity{
 
+	public static boolean isEnglish = true;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-
+		//setContentView(R.layout.activity_main);
+		
 		//Start the Splash Event
 		startActivity(new Intent(this, Logo_Acitivity.class));
 
+		setContentView(R.layout.fragment_main);
+
+		// English version button event handler
+		Button button_eng = (Button)findViewById(R.id.button_eng);
+		button_eng.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v){
+				isEnglish = true;
+				startActivity(new Intent(MainActivity.this, Question1.class));
+			}
+		});
+		
+		// Korean version button event handler
+		Button button_kor = (Button)findViewById(R.id.button_kor);
+		button_kor.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v){
+				isEnglish = false;
+				startActivity(new Intent(MainActivity.this, Question1.class));
+			}
+		});
+		
+		/*//Deleted the given code
 		if (savedInstanceState == null) {
 			getFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
-		}
+		}*/
+		
 	}
 
 	@Override
@@ -64,5 +92,5 @@ public class MainActivity extends Activity {
 			return rootView;
 		}
 	}
-
 }
+
