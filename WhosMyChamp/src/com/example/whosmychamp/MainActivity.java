@@ -34,7 +34,7 @@ public class MainActivity extends Activity{
 			@Override
 			public void onClick(View v){
 				isEnglish = true;
-				startActivity(new Intent(MainActivity.this, Question1.class));
+				startActivity(new Intent(MainActivity.this, Question.class));
 			}
 		});
 		
@@ -44,7 +44,7 @@ public class MainActivity extends Activity{
 			@Override
 			public void onClick(View v){
 				isEnglish = false;
-				startActivity(new Intent(MainActivity.this, Question1.class));
+				startActivity(new Intent(MainActivity.this, Question.class));
 			}
 		});
 		
@@ -54,6 +54,10 @@ public class MainActivity extends Activity{
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}*/
 		
+	}
+	
+	public boolean getisEnglish(){
+		return isEnglish;
 	}
 
 	@Override
