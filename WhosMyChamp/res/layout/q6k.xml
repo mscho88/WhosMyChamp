@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="6. 어떤 타입의 챔피언을 선호하시나요?"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <RadioButton
+        android:id="@+id/radioButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AP (Ability Power) - 스킬 데미지 위주" />
+
+    <RadioButton
+        android:id="@+id/radioButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AD (Attack Damage) - 평타 위주" />
+
+    <RadioButton
+        android:id="@+id/radioButton6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="상관없음" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="다 음" />
+
+</LinearLayout>
+
+

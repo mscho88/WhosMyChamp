@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="7. What kinds of Active Skills do you think the most important?"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <RadioButton
+        android:id="@+id/radioButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stunning / Terror / Slowdown" />
+
+    <RadioButton
+        android:id="@+id/radioButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Healing / Barrier / Silence" />
+
+    <RadioButton
+        android:id="@+id/radioButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hide / Escape" />
+
+    <RadioButton
+        android:id="@+id/radioButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pull / Push / Daze" />
+
+    <RadioButton
+        android:id="@+id/radioButton6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="don't care" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next" />
+
+</LinearLayout>
+
+
