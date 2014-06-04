@@ -9,7 +9,7 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="9. How level of difficulty of Champion do you prefer?"
+        android:text="9. Which level of champion difficulty do you prefer?"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <RadioButton
@@ -35,7 +35,7 @@
         android:id="@+id/radioButton6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="don't care" />
+        android:text="Does not matter" />
 
     <Button
         android:id="@+id/button1"

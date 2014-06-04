@@ -9,26 +9,26 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="5. Do you care about the Price (IP) of Champion?"
+        android:text="5. When purchasing champions, I ..."
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <RadioButton
         android:id="@+id/radioButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Prefer Expensive champs" />
+        android:text="Prefer Expensive Champs" />
 
     <RadioButton
         android:id="@+id/radioButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Prefer Cheap champs" />
+        android:text="Prefer Cheap Champs" />
 
     <RadioButton
         android:id="@+id/radioButton6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="don't care" />
+        android:text="Do not care" />
 
     <Button
         android:id="@+id/button1"

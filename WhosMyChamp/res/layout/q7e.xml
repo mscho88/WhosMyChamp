@@ -9,7 +9,7 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="7. What kinds of Active Skills do you think the most important?"
+        android:text="7. What kind of Active Skills do you think is the most important?"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <RadioButton
@@ -40,7 +40,7 @@
         android:id="@+id/radioButton6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="don't care" />
+        android:text="Does not matter" />
 
     <Button
         android:id="@+id/button1"

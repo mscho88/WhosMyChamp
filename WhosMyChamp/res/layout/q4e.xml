@@ -9,38 +9,38 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="4. Appearance of Champion should be.."
+        android:text="4. Would you like the appearance of your champion to be..."
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <RadioButton
         android:id="@+id/radioButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Human-look" />
+        android:text="Human-like" />
 
     <RadioButton
         android:id="@+id/radioButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Animal-look" />
+        android:text="Animal-like" />
 
     <RadioButton
         android:id="@+id/radioButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Demon-look" />
+        android:text="Demon-like" />
 
     <RadioButton
         android:id="@+id/radioButton4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Robot-look" />
+        android:text="Robot-like" />
 
     <RadioButton
         android:id="@+id/radioButton6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="don't care" />
+        android:text="Does not matter" />
 
     <Button
         android:id="@+id/button1"

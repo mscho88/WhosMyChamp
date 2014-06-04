@@ -9,7 +9,7 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="2.  Which one do you prefer? (Champ’s popularity)"
+        android:text="2.  Popular Champs VS Rare Champs?"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <RadioButton
@@ -28,7 +28,7 @@
         android:id="@+id/radioButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="don't care" />
+        android:text="Does not matter" />
 
     <Button
         android:id="@+id/button1"
