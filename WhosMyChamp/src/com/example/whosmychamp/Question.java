@@ -19,8 +19,8 @@ public class Question extends Activity {
 	// The number of questions that will be asked
 	public final int numQuestions = 10;
 	public ArrayList<String> questions = new ArrayList<String>(); // Question list completed
-	public ArrayList<Heros> heroList = new ArrayList<Heros>(); // In progress
-	public static ArrayList<Heros> answers = new ArrayList<Heros>(); // In progress
+	public ArrayList<Champion> heroList = new ArrayList<Champion>(); // In progress
+	public static ArrayList<Champion> answers = new ArrayList<Champion>(); // In progress
 	public int currentQuestionNumber = 0;
 	
 	/** Called when the activity is first created. */
@@ -47,6 +47,19 @@ public class Question extends Activity {
     			}
     			customList.next();
     		}
+    		
+    		// read hero xml data file
+    		/*heroData = getResources().getXml(R.xml.hero_list);
+    		while(heroData.getEventType() != XmlPullParser.END_DOCUMENT){
+    			if(heroData.getEventType() == XmlPullParser.START_TAG){
+    				if(heroList.getName().equals("oaeijfgoaeif")){
+    					// make hero object and add it in heroList
+    					Champion aChampion = new Champion();
+    					heroList.add(aChampion);
+    				}
+    			}
+    		}
+    		*/
     	}catch(XmlPullParserException e){
     		e.printStackTrace();
     	}catch(IOException e){

@@ -2,7 +2,7 @@ package com.example.whosmychamp;
 
 import java.util.ArrayList;
 
-public class Heros {
+public class Champion {
 
 	private char name;
 	private ArrayList<String> lane;
@@ -15,7 +15,7 @@ public class Heros {
 	private ArrayList<String> passiveSkill;
 	private int difficulty;
 	
-	public Heros() {
+	public Champion() {
 		// TODO Auto-generated constructor stub
 	}
 
