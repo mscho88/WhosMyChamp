@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <questions>
-	<option question="1. Where is your Favorite Lane?"></option>
+	<option question="1. Which Lane do you prefer?"></option>
 	<option A="Top"></option>
 	<option B="Mid"></option>
 	<option C="Jungle"></option>
@@ -8,10 +8,10 @@
 	<option E="Bottom(Support)"></option>
 	<option F="don't care"></option>
 	
-	<option question="2.  Which one do you prefer? (Champ’s popularity)"></option>
+	<option question="2.  Popular Champs VS Rare Champs?"></option>
 	<option A="Famous and Popular champs"></option>
 	<option B="Rare and Lower-Ban-Rate champs"></option>
-	<option C="don't care"></option>
+	<option C="Does not matter"></option>
 	<option D="N/A"></option>
 	<option E="N/A"></option>
 	<option F="N/A"></option>
@@ -19,23 +19,23 @@
 	<option question="3. Which Damaging Style do you prefer?"></option>
 	<option A="Long-range"></option>
 	<option B="Close-range"></option>
-	<option C="don't care"></option>
+	<option C="Does not matter"></option>
 	<option D="N/A"></option>
 	<option E="N/A"></option>
 	<option F="N/A"></option>
 	
-	<option question ="4. Appearance of Champion should be.."></option>
-	<option A="Human-look"></option>
-	<option B="Animal-look"></option>
-	<option C="Demon-look"></option>
-	<option D="Robot-look"></option>
-	<option E="don't care"></option>
+	<option question ="4. Would you like the appearance of your champion to be..."></option>
+	<option A="Human-like"></option>
+	<option B="Animal-like"></option>
+	<option C="Demon-like"></option>
+	<option D="Robot-like"></option>
+	<option E="Does not matter"></option>
 	<option F="N/A"></option>
 	
-	<option question="5. Do you care about the Price (IP) of Champion?"></option>
+	<option question="5. When purchasing champions, I ..."></option>
 	<option A="Prefer Expensive champs"></option>
 	<option B="Prefer Cheap champs"></option>
-	<option C="don't care"></option>
+	<option C="Does not matter"></option>
 	<option D="N/A"></option>
 	<option E="N/A"></option>
 	<option F="N/A"></option>
@@ -43,32 +43,32 @@
 	<option question="6. Which Dealing Type do you prefer?"></option>
 	<option A="Ability Power (Skill damage)"></option>
 	<option B="Attack Damage (Basic attack damage)"></option>
-	<option C="don't care"></option>
+	<option C="Does not matter"></option>
 	<option D="N/A"></option>
 	<option E="N/A"></option>
 	<option F="N/A"></option>
 	
-	<option question="7. What kinds of Active Skills do you think the most important?"></option>
+	<option question="7. What kind of Active Skills do you think is the most important?"></option>
 	<option A="Stunning / Terror / Slowdown"></option>
 	<option B="Healing / Barrier / Silence"></option>
 	<option C="Hide / Escape"></option>
 	<option D="Pull / Push / Daze"></option>
-	<option E="don't care"></option>
+	<option E="Does not matter"></option>
 	<option F="N/A"></option>
 	
-	<option question="8. What kind of Passive Skills do you think the most important?"></option>
+	<option question="8. What kind of Passive Skills do you think is the most important?"></option>
 	<option A="Long-lasting Damage (Flame, Poison, Bleeding, etc)"></option>
 	<option B="Non-mana Resource"></option>
 	<option C="Reducing Loss / Life Steal"></option>
-	<option D="don't care"></option>
+	<option D="Does not matter"></option>
 	<option E="N/A"></option>
 	<option F="N/A"></option>
 	
-	<option question="9. How level of difficulty of Champion do you prefer?"></option>
+	<option question="9. Which level of champion difficulty do you prefer?"></option>
 	<option A="Easy"></option>
 	<option B="Medium"></option>
 	<option C="Hard"></option>
-	<option D="don't care"></option>
+	<option D="Does not matter"></option>
 	<option E="N/A"></option>
 	<option F="N/A"></option>
 </questions>
