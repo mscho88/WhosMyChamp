@@ -1,74 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <questions>
-	<option question="1. Where is your Favorite Lane?"></option>
-	<option A="Top"></option>
-	<option B="Mid"></option>
-	<option C="Jungle"></option>
-	<option D="Bottom(Marksman)"></option>
-	<option E="Bottom(Support)"></option>
-	<option F="don't care"></option>
+	<option question="1. 어떤 라인을 선호하시나요?"></option>
+	<option A="탑"></option>
+	<option B="미드"></option>
+	<option C="정글"></option>
+	<option D="봇(원거리딜러)"></option>
+	<option E="봇(서포터)"></option>
+	<option F="상관없음"></option>
 	
-	<option question="2.  Which one do you prefer? (Champ’s popularity)"></option>
-	<option A="Famous and Popular champs"></option>
-	<option B="Rare and Lower-Ban-Rate champs"></option>
-	<option C="don't care"></option>
+	<option question="2. 인기많은 챔피언을 선호하시나요? 아니면 비주류 챔피언을 하고싶으신가요?"></option>
+	<option A="사람들이 많이하는 인기 챔프"></option>
+	<option B="좀 레어하고 Ban 당하지 않는 챔프"></option>
+	<option C="상관없음"></option>
 	<option D="N/A"></option>
 	<option E="N/A"></option>
 	<option F="N/A"></option>
 	
-	<option question="3. Which Damaging Style do you prefer?"></option>
-	<option A="Long-range"></option>
-	<option B="Close-range"></option>
-	<option C="don't care"></option>
+	<option question="3. 딜링 스타일은 어떤 것을 선호하시나요?"></option>
+	<option A="원거리딜러"></option>
+	<option B="근접딜러"></option>
+	<option C="상관없음"></option>
 	<option D="N/A"></option>
 	<option E="N/A"></option>
 	<option F="N/A"></option>
 	
-	<option question ="4. Appearance of Champion should be.."></option>
-	<option A="Human-look"></option>
-	<option B="Animal-look"></option>
-	<option C="Demon-look"></option>
-	<option D="Robot-look"></option>
-	<option E="don't care"></option>
+	<option question ="4. 챔피언의 룩은 어떤 형을 선호하시나요?"></option>
+	<option A="인간형"></option>
+	<option B="동물형"></option>
+	<option C="악마형"></option>
+	<option D="로봇형"></option>
+	<option E="상관없음"></option>
 	<option F="N/A"></option>
 	
-	<option question="5. Do you care about the Price (IP) of Champion?"></option>
-	<option A="Prefer Expensive champs"></option>
-	<option B="Prefer Cheap champs"></option>
-	<option C="don't care"></option>
+	<option question="5. 챔피언의 가격(IP)은 어떤것을 선호하시나요?"></option>
+	<option A="비싼 챔피언"></option>
+	<option B="싼 챔피언"></option>
+	<option C="상관없음"></option>
 	<option D="N/A"></option>
 	<option E="N/A"></option>
 	<option F="N/A"></option>
 	
-	<option question="6. Which Dealing Type do you prefer?"></option>
-	<option A="Ability Power (Skill damage)"></option>
-	<option B="Attack Damage (Basic attack damage)"></option>
-	<option C="don't care"></option>
+	<option question="6. 어떤 타입의 챔피언을 선호하시나요?"></option>
+	<option A="AP (Ability Power) - 스킬 데미지 위주"></option>
+	<option B="AD (Attack Damage) - 평타 위주"></option>
+	<option C="상관없음"></option>
 	<option D="N/A"></option>
 	<option E="N/A"></option>
 	<option F="N/A"></option>
 	
-	<option question="7. What kinds of Active Skills do you think the most important?"></option>
-	<option A="Stunning / Terror / Slowdown"></option>
-	<option B="Healing / Barrier / Silence"></option>
-	<option C="Hide / Escape"></option>
-	<option D="Pull / Push / Daze"></option>
-	<option E="don't care"></option>
-	<option F="N/A"></option>
-	
-	<option question="8. What kind of Passive Skills do you think the most important?"></option>
-	<option A="Long-lasting Damage (Flame, Poison, Bleeding, etc)"></option>
-	<option B="Non-mana Resource"></option>
-	<option C="Reducing Loss / Life Steal"></option>
-	<option D="don't care"></option>
+	<option question="7. 어떤 타입의 주 공격 스킬 스타일을 선호하시나요?"></option>
+	<option A="타겟팅 스킬"></option>
+	<option B="논 타겟팅 스킬"></option>
+	<option C="상관없음"></option>
+	<option D="N/A"></option>
 	<option E="N/A"></option>
 	<option F="N/A"></option>
 	
-	<option question="9. How level of difficulty of Champion do you prefer?"></option>
-	<option A="Easy"></option>
-	<option B="Medium"></option>
-	<option C="Hard"></option>
-	<option D="don't care"></option>
+	<option question="8. 챔피언의 난이도는 어느정도가 괜찮은가요?"></option>
+	<option A="쉬움"></option>
+	<option B="중간"></option>
+	<option C="어려움"></option>
+	<option D="상관없음"></option>
+	<option E="N/A"></option>
+	<option F="N/A"></option>
+	
+	<option question="9. 가장 중요하게 생각하는 특수능력은 무엇인가요?"></option>
+	<option A="스턴 / 공포 / 둔화"></option>
+	<option B="치료 / 보호막 / 침묵"></option>
+	<option C="은신 / 탈출"></option>
+	<option D="땡김 / 밀치기 / 현혹"></option>
+	<option E="상관없음"></option>
+	<option F="N/A"></option>
+	
+	<option question="10. 가장 중요하게 생각하는 패시브는 무엇인가요?"></option>
+	<option A="평타지속데미지 (화염, 독, 출혈 등)"></option>
+	<option B="소모자원의 제약없음 (마나를 사용하지 않는)"></option>
+	<option C="피해감소 / 피흡 / 부활"></option>
+	<option D="상관없음"></option>
 	<option E="N/A"></option>
 	<option F="N/A"></option>
 </questions>

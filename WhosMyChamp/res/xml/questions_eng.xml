@@ -6,7 +6,7 @@
 	<option C="Jungle"></option>
 	<option D="Bottom(Marksman)"></option>
 	<option E="Bottom(Support)"></option>
-	<option F="don't care"></option>
+	<option F="Does not matter"></option>
 	
 	<option question="2.  Popular Champs VS Rare Champs?"></option>
 	<option A="Famous and Popular champs"></option>
@@ -35,7 +35,7 @@
 	<option question="5. When purchasing champions, I ..."></option>
 	<option A="Prefer Expensive champs"></option>
 	<option B="Prefer Cheap champs"></option>
-	<option C="Does not matter"></option>
+	<option C="Do not care"></option>
 	<option D="N/A"></option>
 	<option E="N/A"></option>
 	<option F="N/A"></option>
@@ -48,7 +48,23 @@
 	<option E="N/A"></option>
 	<option F="N/A"></option>
 	
-	<option question="7. What kind of Active Skills do you think is the most important?"></option>
+	<option question="7. Which Style of main Attack Skill do you prefer?"></option>
+	<option A="Targeting Skill"></option>
+	<option B="Non-targeting Skill"></option>
+	<option C="Does not matter"></option>
+	<option D="N/A"></option>
+	<option E="N/A"></option>
+	<option F="N/A"></option>
+	
+	<option question="8. Which level of champion difficulty do you prefer?"></option>
+	<option A="Easy"></option>
+	<option B="Medium"></option>
+	<option C="Hard"></option>
+	<option D="Does not matter"></option>
+	<option E="N/A"></option>
+	<option F="N/A"></option>
+	
+	<option question="9. What kind of Active Skills do you think is the most important?"></option>
 	<option A="Stunning / Terror / Slowdown"></option>
 	<option B="Healing / Barrier / Silence"></option>
 	<option C="Hide / Escape"></option>
@@ -56,19 +72,13 @@
 	<option E="Does not matter"></option>
 	<option F="N/A"></option>
 	
-	<option question="8. What kind of Passive Skills do you think is the most important?"></option>
+	<option question="10. What kind of Passive Skills do you think is the most important?"></option>
 	<option A="Long-lasting Damage (Flame, Poison, Bleeding, etc)"></option>
 	<option B="Non-mana Resource"></option>
-	<option C="Reducing Loss / Life Steal"></option>
+	<option C="Reducing Loss / Life Steal / Revive"></option>
 	<option D="Does not matter"></option>
 	<option E="N/A"></option>
 	<option F="N/A"></option>
 	
-	<option question="9. Which level of champion difficulty do you prefer?"></option>
-	<option A="Easy"></option>
-	<option B="Medium"></option>
-	<option C="Hard"></option>
-	<option D="Does not matter"></option>
-	<option E="N/A"></option>
-	<option F="N/A"></option>
+
 </questions>
