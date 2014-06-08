@@ -1,0 +1,1440 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<champions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Champion>
+		<Name>Aatrox</Name>
+		<Lane>Top, Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Demon-look</Appearance>
+		<Price>6300</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Stunning</ActiveSkill>
+		<PassiveSkill>Non-mana Resource, Lifesteal</PassiveSkill>
+		<Difficulty>6</Difficulty>
+		<SkillStyle>Non-Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Ahri</Name>
+		<Lane>Mid, Jungle, Bot(Sup)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>6300</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Pull</ActiveSkill>
+		<PassiveSkill>Lifesteal</PassiveSkill>
+		<Difficulty>8</Difficulty>
+		<SkillStyle>Non-Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Akali</Name>
+		<Lane>Top, Mid, Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>3150</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Hide, Slowdown</ActiveSkill>
+		<PassiveSkill>Non-mana Resource, Lifesteal</PassiveSkill>
+		<Difficulty>7</Difficulty>
+		<SkillStyle>Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Alistar</Name>
+		<Lane>Top, Bot(Sup)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Demon-look</Appearance>
+		<Price>1350</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Healing, Stunning, Push</ActiveSkill>
+		<PassiveSkill>Reducing Loss</PassiveSkill>
+		<Difficulty>8</Difficulty>
+		<SkillStyle>Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Amumu</Name>
+		<Lane>Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Demon-look</Appearance>
+		<Price>1350</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Stunning</ActiveSkill>
+		<Difficulty>4</Difficulty>
+		<SkillStyle>Non-Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Anivia</Name>
+		<Lane>Mid, Jungle</Lane>
+		<Popularity>NO</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Animal-look</Appearance>
+		<Price>3150</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Stunning, Slowdown</ActiveSkill>
+		<PassiveSkill>Revive</PassiveSkill>
+		<Difficulty>8</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Annie</Name>
+		<Lane>Mid, Bot(Sup)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>450</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Stunning</ActiveSkill>
+		<PassiveSkill>Pet</PassiveSkill>
+		<Difficulty>3</Difficulty>
+		<SkillStyle>Non-Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Ashe</Name>
+		<Lane>Bot(Marksman), Bot(Sup)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>450</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Stunning, Slowdown</ActiveSkill>
+		<Difficulty>3</Difficulty>
+		<SkillStyle>Non-Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Blitzcrank</Name>
+		<Lane>Bot(Sup)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Robot-look</Appearance>
+		<Price>3150</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Silence, Stunning, Pull</ActiveSkill>
+		<PassiveSkill>Reducing Loss</PassiveSkill>
+		<Difficulty>7</Difficulty>
+		<SkillStyle>Non-Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Brand</Name>
+		<Lane>Top, Mid</Lane>
+		<Popularity>NO</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Demon-look</Appearance>
+		<Price>4800</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Stunning</ActiveSkill>
+		<PassiveSkill>Long-lasting Damage</PassiveSkill>
+		<Difficulty>7</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Braum</Name>
+		<Lane>Top, Mid, Bot(Sup)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>6300</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Stunning, Slowdown</ActiveSkill>
+		<PassiveSkill>Reducing Loss</PassiveSkill>
+		<Difficulty>7</Difficulty>
+		<SkillStyle>Non-Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Caitlyn</Name>
+		<Lane>Bot(Marksman)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>4800</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Escape, Stunning, Slowdown</ActiveSkill>
+		<PassiveSkill>Trap</PassiveSkill>
+		<Difficulty>3</Difficulty>
+		<SkillStyle>Non-Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Cassiopeia</Name>
+		<Lane>Mid, Bot(Sup)</Lane>
+		<Popularity>NO</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>4800</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Stunning, Slowdown</ActiveSkill>
+		<Difficulty>10</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Cho'Gath</Name>
+		<Lane>Top, Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Demon-look</Appearance>
+		<Price>1350</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Silence, Stunning, Slowdown</ActiveSkill>
+		<PassiveSkill>Lifesteal</PassiveSkill>
+		<Difficulty>8</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Corki</Name>
+		<Lane>Bot(Marksman)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>3150</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Escape</ActiveSkill>
+		<PassiveSkill>Long-lasting Damage</PassiveSkill>
+		<Difficulty>8</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Darius</Name>
+		<Lane>Top, Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>6300</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Pull, Slowdown</ActiveSkill>
+		<PassiveSkill>Long-lasting Damage</PassiveSkill>
+		<Difficulty>3</Difficulty>
+		<SkillStyle>Non-Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Diana</Name>
+		<Lane>Top, Mid, Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>6300</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Barrier, Stunning</ActiveSkill>
+		<Difficulty>3</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Dr. Mundo</Name>
+		<Lane>Top, Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Demon-look</Appearance>
+		<Price>1350</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Slowdown</ActiveSkill>
+		<PassiveSkill>Non-mana Resource, Lifesteal</PassiveSkill>
+		<Difficulty>3</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Draven</Name>
+		<Lane>Bot(Marksman)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>6300</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Push, Slowdown</ActiveSkill>
+		<Difficulty>10</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Elise</Name>
+		<Lane>Top, Jungle, Bot(Sup)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range, Close-range</DamagingStyle>
+		<Appearance>Human-look, Animal-look</Appearance>
+		<Price>6300</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Escape, Stunning</ActiveSkill>
+		<PassiveSkill>Pet</PassiveSkill>
+		<Difficulty>8</Difficulty>
+		<SkillStyle>Non-Targeting, Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Evelynn</Name>
+		<Lane>Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look, Demon-look</Appearance>
+		<Price>1350</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Hide, Slowdown</ActiveSkill>
+		<PassiveSkill>Reducing Loss</PassiveSkill>
+		<Difficulty>8</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Ezreal</Name>
+		<Lane>Top, Bot(Marksman)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>4800</Price>
+		<Type>AD, AP</Type>
+		<ActiveSkill>Escape</ActiveSkill>
+		<Difficulty>8</Difficulty>
+		<SkillStyle>Non-Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Fiddlesticks</Name>
+		<Lane>Mid, Jungle, Bot(Sup)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Demon-look</Appearance>
+		<Price>1350</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Silence, Terror</ActiveSkill>
+		<PassiveSkill>Lifesteal</PassiveSkill>
+		<Difficulty>5</Difficulty>
+		<SkillStyle>Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Fiora</Name>
+		<Lane>Top, Mid, Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>6300</Price>
+		<Type>AD</Type>
+		<PassiveSkill>Lifesteal</PassiveSkill>
+		<Difficulty>5</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Fizz</Name>
+		<Lane>Top, Mid</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Animal-look</Appearance>
+		<Price>4800</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Stunning</ActiveSkill>
+		<PassiveSkill>Reducing Loss</PassiveSkill>
+		<Difficulty>9</Difficulty>
+		<SkillStyle>Non-Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Galio</Name>
+		<Lane>Top, Mid, Bot(Sup)</Lane>
+		<Popularity>NO</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Demon-look</Appearance>
+		<Price>4800</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Barrier</ActiveSkill>
+		<PassiveSkill>Lifesteal</PassiveSkill>
+		<Difficulty>3</Difficulty>
+		<SkillStyle>Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Gangplank</Name>
+		<Lane>Top, Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>3150</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Healing, Escape, Slowdown</ActiveSkill>
+		<PassiveSkill>Long-lasting Damage</PassiveSkill>
+		<Difficulty>5</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Garen</Name>
+		<Lane>Top</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>450</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Silence</ActiveSkill>
+		<PassiveSkill>Non-mana Resource, Lifesteal, Reducing Loss</PassiveSkill>
+		<Difficulty>2</Difficulty>
+		<SkillStyle>Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Gragas</Name>
+		<Lane>Top, Mid</Lane>
+		<Popularity>NO</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>3150</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Push, Slowdown</ActiveSkill>
+		<PassiveSkill>Lifesteal, Reducing Loss</PassiveSkill>
+		<Difficulty>7</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Graves</Name>
+		<Lane>Bot(Marksman)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>4800</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Slowdown</ActiveSkill>
+		<PassiveSkill>Reducing Loss</PassiveSkill>
+		<Difficulty>3</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Hecarim</Name>
+		<Lane>Top, Jungle</Lane>
+		<Popularity>NO</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Demon-look</Appearance>
+		<Price>6300</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Terror, Push</ActiveSkill>
+		<PassiveSkill>Lifesteal</PassiveSkill>
+		<Difficulty>5</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Heimerdinger</Name>
+		<Lane>Top, Mid</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Animal-look</Appearance>
+		<Price>3150</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Stunning, Slowdown</ActiveSkill>
+		<PassiveSkill>Trap</PassiveSkill>
+		<Difficulty>3</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Irelia</Name>
+		<Lane>Top</Lane>
+		<Popularity>NO</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>4800</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Healing, Stunning, Slowdown</ActiveSkill>
+		<PassiveSkill>Lifesteal</PassiveSkill>
+		<Difficulty>5</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Janna</Name>
+		<Lane>Bot(Sup)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>1350</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Healing, Barrier, Stunning, Push</ActiveSkill>
+		<Difficulty>9</Difficulty>
+		<SkillStyle>Non-Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Jarvan IV</Name>
+		<Lane>Top, Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>4800</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Barrier, Stunning, Slowdown</ActiveSkill>
+		<Difficulty>5</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Jax</Name>
+		<Lane>Top, Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Demon-look</Appearance>
+		<Price>1350</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Escape, Stunning</ActiveSkill>
+		<PassiveSkill>Reducing Loss</PassiveSkill>
+		<Difficulty>6</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Jayce</Name>
+		<Lane>Top, Bot(Marksman)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range, Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>6300</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Push, Slowdown</ActiveSkill>
+		<Difficulty>8</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Jinx</Name>
+		<Lane>Bot(Marksman)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>6300</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Stunning, Slowdown</ActiveSkill>
+		<PassiveSkill>Trap</PassiveSkill>
+		<Difficulty>9</Difficulty>
+		<SkillStyle>Non-Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Karma</Name>
+		<Lane>Bot(Sup)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>3150</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Healing, Barrier, Stunning, Slowdown</ActiveSkill>
+		<PassiveSkill>Lifesteal</PassiveSkill>
+		<Difficulty>8</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Karthus</Name>
+		<Lane>Mid</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Demon-look</Appearance>
+		<Price>3150</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Slowdown</ActiveSkill>
+		<PassiveSkill>Revive</PassiveSkill>
+		<Difficulty>8</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Kassadin</Name>
+		<Lane>Mid</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Robot-look</Appearance>
+		<Price>3150</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Silence, Slowdown</ActiveSkill>
+		<Difficulty>8</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Katarina</Name>
+		<Lane>Top, Mid</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>3150</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Escape</ActiveSkill>
+		<PassiveSkill>Non-mana Resource, Reducing Loss</PassiveSkill>
+		<Difficulty>5</Difficulty>
+		<SkillStyle>Non-Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Kayle</Name>
+		<Lane>Top, Mid, Bot(Sup)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>450</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Healing, Slowdown</ActiveSkill>
+		<PassiveSkill>Reducing Loss</PassiveSkill>
+		<Difficulty>5</Difficulty>
+		<SkillStyle>Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Kennen</Name>
+		<Lane>Top, Mid</Lane>
+		<Popularity>NO</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Animal-look</Appearance>
+		<Price>4800</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Escape, Stunning</ActiveSkill>
+		<PassiveSkill>Non-mana Resource</PassiveSkill>
+		<Difficulty>5</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Kha'Zix</Name>
+		<Lane>Mid, Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Demon-look</Appearance>
+		<Price>6300</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Hide, Healing, Escape, Slowdown</ActiveSkill>
+		<PassiveSkill>Lifesteal</PassiveSkill>
+		<Difficulty>7</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Kog'Maw</Name>
+		<Lane>Mid, Bot(Marksman)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Demon-look</Appearance>
+		<Price>4800</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Slowdown</ActiveSkill>
+		<PassiveSkill>Revive</PassiveSkill>
+		<Difficulty>8</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>LeBlanc</Name>
+		<Lane>Mid, Bot(Sup)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>3150</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Escape, Silence, Stunning</ActiveSkill>
+		<PassiveSkill>Pet</PassiveSkill>
+		<Difficulty>9</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Lee Sin</Name>
+		<Lane>Top, Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>4800</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Barrier, Escape, Push, Slowdown</ActiveSkill>
+		<PassiveSkill>Non-mana Resource, Lifesteal</PassiveSkill>
+		<Difficulty>9</Difficulty>
+		<SkillStyle>Non-Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Leona</Name>
+		<Lane>Bot(Sup)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>4800</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Barrier, Stunning, Slowdown</ActiveSkill>
+		<PassiveSkill>Reducing Loss</PassiveSkill>
+		<Difficulty>4</Difficulty>
+		<SkillStyle>Non-Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Lissandra</Name>
+		<Lane>Mid</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>6300</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Escape, Stunning</ActiveSkill>
+		<PassiveSkill>Reducing Loss</PassiveSkill>
+		<Difficulty>8</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Lucian</Name>
+		<Lane>Bot(Marksman)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>6300</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Escape</ActiveSkill>
+		<Difficulty>8</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Lulu</Name>
+		<Lane>Mid, Bot(Sup)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look, Demon-look</Appearance>
+		<Price>6300</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Barrier, Stunning, Slowdown</ActiveSkill>
+		<PassiveSkill>Lifesteal, Pet</PassiveSkill>
+		<Difficulty>7</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Lux</Name>
+		<Lane>Mid, Bot(Sup)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>3150</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Barrier, Stunning, Slowdown</ActiveSkill>
+		<PassiveSkill>Reducing Loss</PassiveSkill>
+		<Difficulty>6</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Malphite</Name>
+		<Lane>Top, Mid, Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Demon-look</Appearance>
+		<Price>1350</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Stunning, Slowdown</ActiveSkill>
+		<PassiveSkill>Reducing Loss</PassiveSkill>
+		<Difficulty>2</Difficulty>
+		<SkillStyle>Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Malzahar</Name>
+		<Lane>Mid</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>4800</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Silence, Stunning</ActiveSkill>
+		<PassiveSkill>Pet</PassiveSkill>
+		<Difficulty>7</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Maokai</Name>
+		<Lane>Top, Jungle, Bot(Sup)</Lane>
+		<Popularity>NO</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Demon-look</Appearance>
+		<Price>4800</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Barrier, Stunning, Push</ActiveSkill>
+		<PassiveSkill>Lifesteal, Reducing Loss, Trap</PassiveSkill>
+		<Difficulty>3</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Master Yi</Name>
+		<Lane>Top, Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>450</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Healing</ActiveSkill>
+		<PassiveSkill>Lifesteal</PassiveSkill>
+		<Difficulty>2</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Miss Fortune</Name>
+		<Lane>Mid, Bot(Marksman)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>3150</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Slowdown</ActiveSkill>
+		<Difficulty>3</Difficulty>
+		<SkillStyle>Non-Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Mordekaiser</Name>
+		<Lane>Top, Mid</Lane>
+		<Popularity>NO</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Robot-look</Appearance>
+		<Price>3150</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Barrier</ActiveSkill>
+		<PassiveSkill>Non-mana Resource, Reducing Loss, Pet</PassiveSkill>
+		<Difficulty>3</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Morgana</Name>
+		<Lane>Mid, Bot(Sup)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>1350</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Barrier, Stunning, Slowdown</ActiveSkill>
+		<PassiveSkill>Lifesteal, Reducing Loss</PassiveSkill>
+		<Difficulty>6</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Nami</Name>
+		<Lane>Mid, Bot(Sup)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>6300</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Healing, Stunning, Push, Slowdown</ActiveSkill>
+		<PassiveSkill>Lifesteal</PassiveSkill>
+		<Difficulty>8</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Nasus</Name>
+		<Lane>Top</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Animal-look</Appearance>
+		<Price>1350</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Slowdown</ActiveSkill>
+		<PassiveSkill>Lifesteal</PassiveSkill>
+		<Difficulty>2</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Nautilus</Name>
+		<Lane>Top, Jungle</Lane>
+		<Popularity>NO</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Robot-look</Appearance>
+		<Price>6300</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Barrier, Stunning, Pull, Slowdown</ActiveSkill>
+		<PassiveSkill>Reducing Loss</PassiveSkill>
+		<Difficulty>7</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Nidalee</Name>
+		<Lane>Top, Mid, Bot(Sup)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range, Close-range</DamagingStyle>
+		<Appearance>Human-look, Animal-look</Appearance>
+		<Price>3150</Price>
+		<Type>AD, AP</Type>
+		<ActiveSkill>Healing</ActiveSkill>
+		<PassiveSkill>Trap</PassiveSkill>
+		<Difficulty>7</Difficulty>
+		<SkillStyle>Non-Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Nocturne</Name>
+		<Lane>Top, Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Demon-look</Appearance>
+		<Price>4800</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Terror</ActiveSkill>
+		<PassiveSkill>Long-lasting Damage, Lifesteal, Reducing Loss</PassiveSkill>
+		<Difficulty>6</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Nunu</Name>
+		<Lane>Top, Jungle, Bot(Sup)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look, Animal-look</Appearance>
+		<Price>450</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Healing, Slowdown</ActiveSkill>
+		<PassiveSkill>Lifesteal, Pet</PassiveSkill>
+		<Difficulty>6</Difficulty>
+		<SkillStyle>Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Olaf</Name>
+		<Lane>Top, Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>3150</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Slowdown</ActiveSkill>
+		<PassiveSkill>Lifesteal</PassiveSkill>
+		<Difficulty>4</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Orianna</Name>
+		<Lane>Mid, Bot(Sup)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Robot-look</Appearance>
+		<Price>4800</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Barrier, Stunning</ActiveSkill>
+		<PassiveSkill>Reducing Loss, Pet</PassiveSkill>
+		<Difficulty>10</Difficulty>
+		<SkillStyle>Non-Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Pantheon</Name>
+		<Lane>Top, Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>3150</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Stunning</ActiveSkill>
+		<PassiveSkill>Reducing Loss</PassiveSkill>
+		<Difficulty>5</Difficulty>
+		<SkillStyle>Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Poppy</Name>
+		<Lane>Top, Jungle</Lane>
+		<Popularity>NO</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>450</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Stunning</ActiveSkill>
+		<PassiveSkill>Reducing Loss</PassiveSkill>
+		<Difficulty>7</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Quinn</Name>
+		<Lane>Top, Bot(Marksman)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look, Animal-look</Appearance>
+		<Price>6300</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Slowdown</ActiveSkill>
+		<PassiveSkill>Pet</PassiveSkill>
+		<Difficulty>7</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Rammus</Name>
+		<Lane>Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Animal-look</Appearance>
+		<Price>3150</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Stunning, Slowdown</ActiveSkill>
+		<Difficulty>5</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Renekton</Name>
+		<Lane>Top</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Animal-look</Appearance>
+		<Price>4800</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Escape, Stunning</ActiveSkill>
+		<PassiveSkill>Non-mana Resource, Lifesteal</PassiveSkill>
+		<Difficulty>3</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Rengar</Name>
+		<Lane>Top, Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Animal-look</Appearance>
+		<Price>6300</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Healing, Escape, Slowdown</ActiveSkill>
+		<PassiveSkill>Non-mana Resource, Reducing Loss</PassiveSkill>
+		<Difficulty>5</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Riven</Name>
+		<Lane>Top, Mid, Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>4800</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Barrier, Escape, Stunning</ActiveSkill>
+		<PassiveSkill>Non-mana Resource, Reducing Loss</PassiveSkill>
+		<Difficulty>4</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Rumble</Name>
+		<Lane>Top</Lane>
+		<Popularity>NO</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Animal-look, Robot-look</Appearance>
+		<Price>4800</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Barrier, Slowdown</ActiveSkill>
+		<PassiveSkill>Non-mana Resource</PassiveSkill>
+		<Difficulty>8</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Ryze</Name>
+		<Lane>Top, Mid</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look, Demon-look</Appearance>
+		<Price>450</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Stunning</ActiveSkill>
+		<PassiveSkill>Lifesteal</PassiveSkill>
+		<Difficulty>3</Difficulty>
+		<SkillStyle>Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Sejuani</Name>
+		<Lane>Jungle, Bot(Sup)</Lane>
+		<Popularity>NO</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>6300</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Stunning, Slowdown</ActiveSkill>
+		<PassiveSkill>Reducing Loss, Pet</PassiveSkill>
+		<Difficulty>4</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Shaco</Name>
+		<Lane>Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>3150</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Hide, Escape, Terror, Slowdown</ActiveSkill>
+		<PassiveSkill>Pet, Trap</PassiveSkill>
+		<Difficulty>9</Difficulty>
+		<SkillStyle>Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Shen</Name>
+		<Lane>Top, Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>3150</Price>
+		<Type>AD, AP</Type>
+		<ActiveSkill>Barrier</ActiveSkill>
+		<PassiveSkill>Non-mana Resource, Lifesteal, Reducing Loss</PassiveSkill>
+		<Difficulty>3</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Shyvana</Name>
+		<Lane>Top, Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look, Animal-look</Appearance>
+		<Price>4800</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Push</ActiveSkill>
+		<PassiveSkill>Long-lasting Damage, Non-mana Resource, Reducing Loss</PassiveSkill>
+		<Difficulty>4</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Singed</Name>
+		<Lane>Top</Lane>
+		<Popularity>NO</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>1350</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Pull, Slowdown</ActiveSkill>
+		<PassiveSkill>Long-lasting Damage, Lifesteal, Reducing Loss</PassiveSkill>
+		<Difficulty>5</Difficulty>
+		<SkillStyle>Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Sion</Name>
+		<Lane>Top, Mid</Lane>
+		<Popularity>NO</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Demon-look</Appearance>
+		<Price>1350</Price>
+		<Type>AD, AP</Type>
+		<ActiveSkill>Barrier, Stunning</ActiveSkill>
+		<PassiveSkill>Lifesteal, Reducing Loss</PassiveSkill>
+		<Difficulty>3</Difficulty>
+		<SkillStyle>Targeting</SkillStyle>
+	</Champion>
+	<Champion>
+		<Name>Sivir</Name>
+		<Lane>Bot(Marksman)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>450</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Barrier, Escape</ActiveSkill>
+		<PassiveSkill>Reducing Loss</PassiveSkill>
+		<Difficulty>2</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Skarner</Name>
+		<Lane>Jungle</Lane>
+		<Popularity>NO</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Animal-look, Demon-look</Appearance>
+		<Price>4800</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Barrier, Stunning, Slowdown</ActiveSkill>
+		<PassiveSkill>Reducing Loss</PassiveSkill>
+		<Difficulty>5</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Sona</Name>
+		<Lane>Mid, Bot(Sup)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>3150</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Healing, Stunning, Slowdown</ActiveSkill>
+		<PassiveSkill>Reducing Loss</PassiveSkill>
+		<Difficulty>1</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Soraka</Name>
+		<Lane>Mid, Bot(Sup)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>450</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Healing, Silence</ActiveSkill>
+		<PassiveSkill>Lifesteal</PassiveSkill>
+		<Difficulty>3</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Swain</Name>
+		<Lane>Mid</Lane>
+		<Popularity>NO</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>4800</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Stunning, Slowdown</ActiveSkill>
+		<PassiveSkill>Pet</PassiveSkill>
+		<Difficulty>5</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Syndra</Name>
+		<Lane>Mid</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>6300</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Push, Slowdown</ActiveSkill>
+		<Difficulty>10</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Talon</Name>
+		<Lane>Mid</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>4800</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Hide, Silence, Slowdown</ActiveSkill>
+		<Difficulty>7</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Taric</Name>
+		<Lane>Bot(Sup)</Lane>
+		<Popularity>NO</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>1350</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Healing, Stunning</ActiveSkill>
+		<PassiveSkill>Lifesteal, Reducing Loss</PassiveSkill>
+		<Difficulty>3</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Teemo</Name>
+		<Lane>Top, Mid, Bot(Sup)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Animal-look</Appearance>
+		<Price>1350</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Hide, Slowdown</ActiveSkill>
+		<PassiveSkill>Long-lasting Damage</PassiveSkill>
+		<Difficulty>3</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Thresh</Name>
+		<Lane>Bot(Sup)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Demon-look</Appearance>
+		<Price>6300</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Barrier, Escape, Push, Pull, Slowdown</ActiveSkill>
+		<PassiveSkill>Reducing Loss, Trap</PassiveSkill>
+		<Difficulty>7</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Tristana</Name>
+		<Lane>Bot(Marksman)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>1350</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Escape, Push, Slowdown</ActiveSkill>
+		<Difficulty>3</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Trundle</Name>
+		<Lane>Top, Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Demon-look</Appearance>
+		<Price>4800</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Slowdown</ActiveSkill>
+		<PassiveSkill>Lifesteal, Reducing Loss</PassiveSkill>
+		<Difficulty>5</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Tryndamere</Name>
+		<Lane>Top, Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>1350</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Healing, Slowdown</ActiveSkill>
+		<PassiveSkill>Non-mana Resource, Lifesteal, Reducing Loss</PassiveSkill>
+		<Difficulty>6</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Twisted Fate</Name>
+		<Lane>Mid, Bot(Marksman)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>1350</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Stunning, Slowdown</ActiveSkill>
+		<Difficulty>9</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Twitch</Name>
+		<Lane>Jungle, Bot(Marksman)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Animal-look</Appearance>
+		<Price>3150</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Hide, Slowdown</ActiveSkill>
+		<PassiveSkill>Long-lasting Damage</PassiveSkill>
+		<Difficulty>8</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Udyr</Name>
+		<Lane>Top, Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look, Animal-look</Appearance>
+		<Price>1350</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Barrier, Stunning</ActiveSkill>
+		<PassiveSkill>Lifesteal, Reducing Loss</PassiveSkill>
+		<Difficulty>5</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Urgot</Name>
+		<Lane>Bot(Marksman)</Lane>
+		<Popularity>NO</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Robot-look, Demon-look</Appearance>
+		<Price>3150</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Barrier, Stunning, Slowdown</ActiveSkill>
+		<PassiveSkill>Reducing Loss</PassiveSkill>
+		<Difficulty>8</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Varus</Name>
+		<Lane>Bot(Marksman)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>6300</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Stunning, Slowdown</ActiveSkill>
+		<Difficulty>6</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Vayne</Name>
+		<Lane>Mid, Bot(Marksman)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>4800</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Escape, Stunning, Push</ActiveSkill>
+		<Difficulty>7</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Veigar</Name>
+		<Lane>Mid</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Demon-look</Appearance>
+		<Price>1350</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Stunning</ActiveSkill>
+		<Difficulty>6</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Vel'Koz</Name>
+		<Lane>Mid, Bot(Sup)</Lane>
+		<Popularity>NO</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Demon-look</Appearance>
+		<Price>6300</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Stunning, Slowdown</ActiveSkill>
+		<Difficulty>8</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Vi</Name>
+		<Lane>Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>6300</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Stunning</ActiveSkill>
+		<PassiveSkill>Reducing Loss</PassiveSkill>
+		<Difficulty>5</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Viktor</Name>
+		<Lane>Mid</Lane>
+		<Popularity>NO</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>6300</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Stunning</ActiveSkill>
+		<PassiveSkill>Reducing Loss</PassiveSkill>
+		<Difficulty>9</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Vladimir</Name>
+		<Lane>Top, Mid</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look, Demon-look</Appearance>
+		<Price>4800</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Escape, Slowdown</ActiveSkill>
+		<PassiveSkill>Non-mana Resource, Lifesteal</PassiveSkill>
+		<Difficulty>2</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Volibear</Name>
+		<Lane>Top, Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Animal-look</Appearance>
+		<Price>6300</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Terror, Pull, Slowdown</ActiveSkill>
+		<PassiveSkill>Lifesteal</PassiveSkill>
+		<Difficulty>2</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Warwick</Name>
+		<Lane>Top, Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Animal-look</Appearance>
+		<Price>450</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Stunning</ActiveSkill>
+		<PassiveSkill>Lifesteal</PassiveSkill>
+		<Difficulty>2</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Wukong</Name>
+		<Lane>Top, Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look, Animal-look</Appearance>
+		<Price>4800</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Hide, Stunning</ActiveSkill>
+		<PassiveSkill>Reducing Loss, Pet</PassiveSkill>
+		<Difficulty>3</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Xerath</Name>
+		<Lane>Mid</Lane>
+		<Popularity>NO</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Robot-look</Appearance>
+		<Price>4800</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Stunning</ActiveSkill>
+		<Difficulty>6</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Xin Zhao</Name>
+		<Lane>Jungle</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>1350</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Stunning, Slowdown</ActiveSkill>
+		<PassiveSkill>Lifesteal</PassiveSkill>
+		<Difficulty>3</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Yasuo</Name>
+		<Lane>Top, Mid</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>6300</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Barrier, Stunning</ActiveSkill>
+		<PassiveSkill>Reducing Loss</PassiveSkill>
+		<Difficulty>8</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Yorick</Name>
+		<Lane>Top</Lane>
+		<Popularity>NO</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Demon-look</Appearance>
+		<Price>4800</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Slowdown</ActiveSkill>
+		<PassiveSkill>Lifesteal, Reducing Loss, Pet</PassiveSkill>
+		<Difficulty>3</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Zac</Name>
+		<Lane>Top, Jungle</Lane>
+		<Popularity>NO</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Demon-look</Appearance>
+		<Price>6300</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Escape, Stunning, Slowdown</ActiveSkill>
+		<PassiveSkill>Non-mana Resource, Lifesteal, Revive</PassiveSkill>
+		<Difficulty>7</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Zed</Name>
+		<Lane>Mid</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Close-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>6300</Price>
+		<Type>AD</Type>
+		<ActiveSkill>Escape, Slowdown</ActiveSkill>
+		<PassiveSkill>Non-mana Resource, Pet</PassiveSkill>
+		<Difficulty>9</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Ziggs</Name>
+		<Lane>Mid</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Animal-look</Appearance>
+		<Price>6300</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Escape</ActiveSkill>
+		<Difficulty>6</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Zilean</Name>
+		<Lane>Mid, Bot(Sup)</Lane>
+		<Popularity>NO</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>1350</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Slowdown</ActiveSkill>
+		<PassiveSkill>Revive</PassiveSkill>
+		<Difficulty>3</Difficulty>
+	</Champion>
+	<Champion>
+		<Name>Zyra</Name>
+		<Lane>Mid, Bot(Sup)</Lane>
+		<Popularity>YES</Popularity>
+		<DamagingStyle>Long-range</DamagingStyle>
+		<Appearance>Human-look</Appearance>
+		<Price>6300</Price>
+		<Type>AP</Type>
+		<ActiveSkill>Stunning, Slowdown</ActiveSkill>
+		<PassiveSkill>Revive, Trap</PassiveSkill>
+		<Difficulty>7</Difficulty>
+	</Champion>
+</champions>

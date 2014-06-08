@@ -7,7 +7,7 @@ import android.os.Bundle;
 
 public class Result_List extends Activity {
 
-	public static ArrayList<Champion> answers = Question.answers; // read the answers array list
+	public static ArrayList<Champion> champList = Question.champList; // read the answers array list
 	
 	/** Called when the activity is first created. */
 	@Override

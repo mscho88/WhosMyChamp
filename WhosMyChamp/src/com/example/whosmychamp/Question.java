@@ -12,16 +12,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class Question extends Activity {
 
 	// The number of questions that will be asked
 	public final int numQuestions = 10;
-	public ArrayList<String> questions = new ArrayList<String>(); // Question list completed
-	public ArrayList<Champion> heroList = new ArrayList<Champion>(); // In progress
-	public static ArrayList<Champion> answers = new ArrayList<Champion>(); // In progress
 	public int currentQuestionNumber = 0;
+	
+	public ArrayList<String> questions = new ArrayList<String>(); // Question list completed
+	public static ArrayList<Champion> champList = new ArrayList<Champion>(); // In progress
+	public static ArrayList<Champion> history = new ArrayList<Champion>(); // In progress
+	
 	
 	/** Called when the activity is first created. */
 	@Override
@@ -39,8 +42,8 @@ public class Question extends Activity {
     	    	// Read Korean Questions
     	    	customList = getResources().getXml(R.xml.questions_kor);
     	    }
-    		while(customList.getEventType()!=XmlPullParser.END_DOCUMENT){
-    			if(customList.getEventType()==XmlPullParser.START_TAG){
+    		while(customList.getEventType() != XmlPullParser.END_DOCUMENT){
+    			if(customList.getEventType() == XmlPullParser.START_TAG){
     				if(customList.getName().equals("option")){
     					questions.add(customList.getAttributeValue(0));
     				}
@@ -49,17 +52,17 @@ public class Question extends Activity {
     		}
     		
     		// read hero xml data file
-    		/*heroData = getResources().getXml(R.xml.hero_list);
-    		while(heroData.getEventType() != XmlPullParser.END_DOCUMENT){
-    			if(heroData.getEventType() == XmlPullParser.START_TAG){
-    				if(heroList.getName().equals("oaeijfgoaeif")){
+    		/*XmlPullParser champData = getResources().getXml(R.xml.champion_data);
+    		while(champData.getEventType() != XmlPullParser.END_DOCUMENT){
+    			if(champData.getEventType() == XmlPullParser.START_TAG){
+    				if(champData.getName().equals("oaeijfgoaeif")){
     					// make hero object and add it in heroList
     					Champion aChampion = new Champion();
-    					heroList.add(aChampion);
+    					champList.add(aChampion);
     				}
     			}
-    		}
-    		*/
+    		}*/
+    		
     	}catch(XmlPullParserException e){
     		e.printStackTrace();
     	}catch(IOException e){
@@ -77,6 +80,7 @@ public class Question extends Activity {
 					currentQuestionNumber++;
 					//startActivity(new Intent(Question.this, Question.class));
 					nextQuestion();
+					filterChampion();
 				}else{
 					startActivity(new Intent(Question.this, Result_List.class));
 				}
@@ -84,27 +88,63 @@ public class Question extends Activity {
 		});
 	}
 	
-	public void nextQuestion(){
+	protected void filterChampion() {
+		/*for(int i = 0; i < champList.size(); i++){
+			
+		}*/
+	}
+
+	protected void nextQuestion(){
     	// print it on the screen
     	TextView question = (TextView)findViewById(R.id.questionView);
     	question.setText(questions.get(currentQuestionNumber * 7 + 0));
     	
-    	TextView option1 = (TextView)findViewById(R.id.option1);
+    	RadioButton option1 = (RadioButton)findViewById(R.id.option1);
+    	option1.setEnabled(true);
+    	option1.setChecked(false);
+    	if(questions.get(currentQuestionNumber * 7 + 1).equals("N/A")){
+    		option1.setEnabled(false);
+    	}
     	option1.setText(questions.get(currentQuestionNumber * 7 + 1));
     	
-    	TextView option2 = (TextView)findViewById(R.id.option2);
+    	RadioButton option2 = (RadioButton)findViewById(R.id.option2);
+    	option2.setEnabled(true);
+    	option2.setChecked(false);
+    	if(questions.get(currentQuestionNumber * 7 + 2).equals("N/A")){
+    		option2.setEnabled(false);
+    	}
     	option2.setText(questions.get(currentQuestionNumber * 7 + 2));
     	
-    	TextView option3 = (TextView)findViewById(R.id.option3);
+    	RadioButton option3 = (RadioButton)findViewById(R.id.option3);
+    	option3.setEnabled(true);
+    	option3.setChecked(false);
+    	if(questions.get(currentQuestionNumber * 7 + 3).equals("N/A")){
+    		option3.setEnabled(false);
+    	}
     	option3.setText(questions.get(currentQuestionNumber * 7 + 3));
     	
-    	TextView option4 = (TextView)findViewById(R.id.option4);
+    	RadioButton option4 = (RadioButton)findViewById(R.id.option4);
+    	option4.setEnabled(true);
+    	option4.setChecked(false);
+    	if(questions.get(currentQuestionNumber * 7 + 4).equals("N/A")){
+    		option4.setEnabled(false);
+    	}
     	option4.setText(questions.get(currentQuestionNumber * 7 + 4));
     	
-    	TextView option5 = (TextView)findViewById(R.id.option5);
+    	RadioButton option5 = (RadioButton)findViewById(R.id.option5);
+    	option5.setEnabled(true);
+    	option5.setChecked(false);
+    	if(questions.get(currentQuestionNumber * 7 + 5).equals("N/A")){
+    		option5.setEnabled(false);
+    	}
     	option5.setText(questions.get(currentQuestionNumber * 7 + 5));
     	
-    	TextView option6 = (TextView)findViewById(R.id.option6);
+    	RadioButton option6 = (RadioButton)findViewById(R.id.option6);
+    	option6.setEnabled(true);
+    	option6.setChecked(false);
+    	if(questions.get(currentQuestionNumber * 7 + 6).equals("N/A")){
+    		option6.setEnabled(false);
+    	}
     	option6.setText(questions.get(currentQuestionNumber * 7 + 6));
 	}
 }

@@ -12,6 +12,10 @@
         android:text="question"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+    <RadioGroup android:id="@+id/group"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content">
+
     <RadioButton
         android:id="@+id/option1"
         android:layout_width="wrap_content"
@@ -53,6 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Next" />
-
+	</RadioGroup>
+    
 </LinearLayout>
 
