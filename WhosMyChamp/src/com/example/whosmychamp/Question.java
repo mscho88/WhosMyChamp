@@ -8,10 +8,13 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -52,6 +55,7 @@ public class Question extends Activity {
     		}
     		
     		// read hero xml data file
+    		Champion aChampion = new Champion();
     		/*XmlPullParser champData = getResources().getXml(R.xml.champion_data);
     		while(champData.getEventType() != XmlPullParser.END_DOCUMENT){
     			if(champData.getEventType() == XmlPullParser.START_TAG){
@@ -62,6 +66,14 @@ public class Question extends Activity {
     				}
     			}
     		}*/
+    		LinearLayout scrollBar = (LinearLayout)findViewById(R.id.listContainer);
+    		for (int i = 0; i < champList.size(); i++){
+	    		Button imgbtn = new Button(this);
+	    		//int source = "R.drawable." + champList.get(i).getName();
+	    		////////////////////////////////////
+	    		imgbtn.setBackgroundResource(R.drawable.ahri);
+	    		scrollBar.addView(imgbtn);
+    		}
     		
     	}catch(XmlPullParserException e){
     		e.printStackTrace();
@@ -82,7 +94,8 @@ public class Question extends Activity {
 					nextQuestion();
 					filterChampion();
 				}else{
-					startActivity(new Intent(Question.this, Result_List.class));
+					//startActivity(new Intent(Question.this, Result_List.class));
+					//deactivate next button
 				}
 			}
 		});

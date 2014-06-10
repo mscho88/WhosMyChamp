@@ -12,52 +12,67 @@
         android:text="question"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <RadioGroup android:id="@+id/group"
-	android:layout_width="wrap_content"
-	android:layout_height="wrap_content">
-
-    <RadioButton
-        android:id="@+id/option1"
+    <RadioGroup
+        android:id="@+id/group"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="option1" />
+        android:layout_height="wrap_content" >
 
-    <RadioButton
-        android:id="@+id/option2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="option2" />
+        <RadioButton
+            android:id="@+id/option1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="option1" />
 
-    <RadioButton
-        android:id="@+id/option3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="option3" />
+        <RadioButton
+            android:id="@+id/option2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="option2" />
 
-    <RadioButton
-        android:id="@+id/option4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="option4" />
+        <RadioButton
+            android:id="@+id/option3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="option3" />
 
-    <RadioButton
-        android:id="@+id/option5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="option5" />
+        <RadioButton
+            android:id="@+id/option4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="option4" />
 
-    <RadioButton
-        android:id="@+id/option6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="option6" />
+        <RadioButton
+            android:id="@+id/option5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="option5" />
 
-    <Button
-        android:id="@+id/nextButton"
+        <RadioButton
+            android:id="@+id/option6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="option6" />
+
+        <Button
+            android:id="@+id/nextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next" />
+    </RadioGroup>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Next" />
-	</RadioGroup>
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:id="@+id/listContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >            
+        </LinearLayout>
+    </HorizontalScrollView>
+
     
-</LinearLayout>
 
+</LinearLayout>
