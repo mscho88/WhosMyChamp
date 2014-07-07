@@ -8,6 +8,7 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -25,7 +26,7 @@ public class Question extends Activity {
 	public int currentQuestionNumber = 0;
 	
 	public ArrayList<String> questions = new ArrayList<String>(); // Question list completed
-	public static ArrayList<Champion> champList = new ArrayList<Champion>(); // In progress
+	public ArrayList<Champion> champions = new ArrayList<Champion>(); // In progress
 	public static ArrayList<Champion> history = new ArrayList<Champion>(); // In progress
 	
 	
@@ -35,14 +36,14 @@ public class Question extends Activity {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.question);
 	    
-    	// Read the xml question data file
+    	// Load xml question data file
     	try{
     		XmlPullParser customList = null;
     	    if(MainActivity.isEnglish == true){
-    	    	// Read English Questions
+    	    	// Load English Questions
     	    	customList = getResources().getXml(R.xml.questions_eng);
     	    }else{
-    	    	// Read Korean Questions
+    	    	// Load Korean Questions
     	    	customList = getResources().getXml(R.xml.questions_kor);
     	    }
     		while(customList.getEventType() != XmlPullParser.END_DOCUMENT){
@@ -54,32 +55,97 @@ public class Question extends Activity {
     			customList.next();
     		}
     		
-    		// read hero xml data file
-    		Champion aChampion = new Champion();
-    		/*XmlPullParser champData = getResources().getXml(R.xml.champion_data);
-    		while(champData.getEventType() != XmlPullParser.END_DOCUMENT){
-    			if(champData.getEventType() == XmlPullParser.START_TAG){
-    				if(champData.getName().equals("oaeijfgoaeif")){
-    					// make hero object and add it in heroList
-    					Champion aChampion = new Champion();
-    					champList.add(aChampion);
+    		// Load champion xml data file
+       		int j = 0;
+       		String[] temp;
+       		ArrayList<String> read;
+       		Champion aChampion = null;
+    		XmlPullParser champList = getResources().getXml(R.xml.champion_data);
+    		while(champList.getEventType() != XmlPullParser.END_DOCUMENT){
+    			if(champList.getEventType() == XmlPullParser.START_TAG){
+    				if(champList.getName().equals("option")){
+    					switch (j){
+    						case 0:
+    							aChampion = new Champion();
+    							aChampion.setName(champList.getAttributeValue(0));
+    							j++;
+    							break;
+    						case 1:// need to save it in array
+    							temp = champList.getAttributeValue(0).split("$");
+    							read = new ArrayList<String>(temp.length);
+    							for(int k = 0; k < temp.length; k++){
+    								read.add(temp[k]);
+    							}
+    							aChampion.setLane(read);
+    							j++;
+    							break;
+    						case 2:// need to check yes or no
+    							aChampion.setPopularity(1);
+    							j++;
+    							break;
+    						case 3:
+    							aChampion.setDamage_style(champList.getAttributeValue(0));
+    							j++;
+    							break;
+    						case 4:
+    							aChampion.setAppearance(champList.getAttributeValue(0));
+    							j++;
+    							break;
+    						case 5:
+    							aChampion.setPrice(Integer.parseInt(champList.getAttributeValue(0)));
+    							j++;
+    							break;
+    						case 6:
+    							aChampion.setType(champList.getAttributeValue(0));
+    							j++;
+    							break;
+    						case 7:
+    							temp = champList.getAttributeValue(0).split("$");
+    							read = new ArrayList<String>(temp.length);
+    							for(int k = 0; k < temp.length; k++){
+    								read.add(temp[k]);
+    							}
+    							aChampion.setActiveSkill(read);
+    							j++;
+    							break;
+    						case 8:
+    							temp = champList.getAttributeValue(0).split("$");
+    							read = new ArrayList<String>(temp.length);
+    							for(int k = 0; k < temp.length; k++){
+    								read.add(temp[k]);
+    							}
+    							aChampion.setPassiveSkill(read);
+    							j++;
+    							break;
+    						case 9:
+    							aChampion.setDifficulty(Integer.parseInt(champList.getAttributeValue(0)));
+    							j++;
+    							break;
+    						case 10:
+    							aChampion.setSkillType(champList.getAttributeValue(0));
+    							champions.add(aChampion);
+    							j = 0;
+    							break;
+    						default :
+    							break;
+    					}
     				}
     			}
-    		}*/
-    		LinearLayout scrollBar = (LinearLayout)findViewById(R.id.listContainer);
-    		for (int i = 0; i < champList.size(); i++){
-	    		Button imgbtn = new Button(this);
-	    		//int source = "R.drawable." + champList.get(i).getName();
-	    		////////////////////////////////////
-	    		imgbtn.setBackgroundResource(R.drawable.ahri);
-	    		scrollBar.addView(imgbtn);
+    			champList.next();
     		}
-    		
     	}catch(XmlPullParserException e){
     		e.printStackTrace();
     	}catch(IOException e){
     		e.printStackTrace();
     	}
+    	
+    	LinearLayout scrollBar = (LinearLayout)findViewById(R.id.listContainer);
+		for (int i = 0; i < champions.size(); i++){
+    		Button imgbtn = new Button(this);
+    		int resID = getApplicationContext().getResources().getIdentifier(champions.get(i).getName().toLowerCase(), "drawable", "com.example.whosmychamp");
+    		imgbtn.setBackgroundResource(resID);
+    		scrollBar.addView(imgbtn);
+		}
     	
     	nextQuestion();
     	
@@ -91,8 +157,8 @@ public class Question extends Activity {
 					// on each next click you need to filter the hero list and save the filtered hero objects to somewhere else
 					currentQuestionNumber++;
 					//startActivity(new Intent(Question.this, Question.class));
-					nextQuestion();
 					filterChampion();
+					nextQuestion();
 				}else{
 					//startActivity(new Intent(Question.this, Result_List.class));
 					//deactivate next button
@@ -114,7 +180,7 @@ public class Question extends Activity {
     	
     	RadioButton option1 = (RadioButton)findViewById(R.id.option1);
     	option1.setEnabled(true);
-    	option1.setChecked(false);
+    	option1.setChecked(true);
     	if(questions.get(currentQuestionNumber * 7 + 1).equals("N/A")){
     		option1.setEnabled(false);
     	}

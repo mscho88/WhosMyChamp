@@ -48,22 +48,6 @@
 	<option E="N/A"></option>
 	<option F="N/A"></option>
 	
-	<option question="7. Which Style of main Attack Skill do you prefer?"></option>
-	<option A="Targeting Skill"></option>
-	<option B="Non-targeting Skill"></option>
-	<option C="Does not matter"></option>
-	<option D="N/A"></option>
-	<option E="N/A"></option>
-	<option F="N/A"></option>
-	
-	<option question="8. Which level of champion difficulty do you prefer?"></option>
-	<option A="Easy"></option>
-	<option B="Medium"></option>
-	<option C="Hard"></option>
-	<option D="Does not matter"></option>
-	<option E="N/A"></option>
-	<option F="N/A"></option>
-	
 	<option question="9. What kind of Active Skills do you think is the most important?"></option>
 	<option A="Stunning / Terror / Slowdown"></option>
 	<option B="Healing / Barrier / Silence"></option>
@@ -80,5 +64,19 @@
 	<option E="N/A"></option>
 	<option F="N/A"></option>
 	
-
+	<option question="8. Which level of champion difficulty do you prefer?"></option>
+	<option A="Easy"></option>
+	<option B="Medium"></option>
+	<option C="Hard"></option>
+	<option D="Does not matter"></option>
+	<option E="N/A"></option>
+	<option F="N/A"></option>
+	
+	<option question="7. Which Style of main Attack Skill do you prefer?"></option>
+	<option A="Targeting Skill"></option>
+	<option B="Non-targeting Skill"></option>
+	<option C="Does not matter"></option>
+	<option D="N/A"></option>
+	<option E="N/A"></option>
+	<option F="N/A"></option>
 </questions>
