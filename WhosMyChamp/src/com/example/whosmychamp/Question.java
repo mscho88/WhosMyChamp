@@ -62,7 +62,7 @@ public class Question extends Activity {
     	    	customList = getResources().getXml(R.xml.questions_eng);
     	    }else{
     	    	// Load Korean Questions
-    	    	customList = getResources().getXml(R.xml.questions_kor);
+    	    	//customList = getResources().getXml(R.xml.questions_kor);
     	    }
     		while(customList.getEventType() != XmlPullParser.END_DOCUMENT){
     			if(customList.getEventType() == XmlPullParser.START_TAG){
