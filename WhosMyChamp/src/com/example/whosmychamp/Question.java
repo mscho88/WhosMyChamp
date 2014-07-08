@@ -9,6 +9,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -27,7 +28,8 @@ public class Question extends Activity {
 	
 	public ArrayList<String> questions = new ArrayList<String>(); // Question list completed
 	public ArrayList<Champion> champions = new ArrayList<Champion>(); // In progress
-	public static ArrayList<Champion> history = new ArrayList<Champion>(); // In progress
+	public ArrayList<Champion> temporary = new ArrayList<Champion>(); // In progress
+	public ArrayList<Champion> history = new ArrayList<Champion>(); // In progress
 	
 	
 	/** Called when the activity is first created. */
@@ -35,6 +37,22 @@ public class Question extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.question);
+	    
+	    Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/lolfont.ttf");
+	    TextView myTextView = (TextView) findViewById(R.id.questionView);
+	    myTextView.setTypeface(typeFace);
+	    RadioButton rb = (RadioButton) findViewById(R.id.option1);
+	    rb.setTypeface(typeFace);
+	    rb = (RadioButton) findViewById(R.id.option2);
+	    rb.setTypeface(typeFace);
+	    rb = (RadioButton) findViewById(R.id.option3);
+	    rb.setTypeface(typeFace);
+	    rb = (RadioButton) findViewById(R.id.option4);
+	    rb.setTypeface(typeFace);
+	    rb = (RadioButton) findViewById(R.id.option5);
+	    rb.setTypeface(typeFace);
+	    rb = (RadioButton) findViewById(R.id.option6);
+	    rb.setTypeface(typeFace);
 	    
     	// Load xml question data file
     	try{
@@ -71,8 +89,8 @@ public class Question extends Activity {
     							j++;
     							break;
     						case 1:// need to save it in array
-    							temp = champList.getAttributeValue(0).split("$");
-    							read = new ArrayList<String>(temp.length);
+    							temp = ((String)champList.getAttributeValue(0)).split("-");
+    							read = new ArrayList<String>();
     							for(int k = 0; k < temp.length; k++){
     								read.add(temp[k]);
     							}
@@ -101,7 +119,7 @@ public class Question extends Activity {
     							break;
     						case 7:
     							temp = champList.getAttributeValue(0).split("$");
-    							read = new ArrayList<String>(temp.length);
+    							read = new ArrayList<String>();
     							for(int k = 0; k < temp.length; k++){
     								read.add(temp[k]);
     							}
@@ -110,7 +128,7 @@ public class Question extends Activity {
     							break;
     						case 8:
     							temp = champList.getAttributeValue(0).split("$");
-    							read = new ArrayList<String>(temp.length);
+    							read = new ArrayList<String>();
     							for(int k = 0; k < temp.length; k++){
     								read.add(temp[k]);
     							}
@@ -155,9 +173,10 @@ public class Question extends Activity {
 			public void onClick(View v){
 				if(currentQuestionNumber != numQuestions){
 					// on each next click you need to filter the hero list and save the filtered hero objects to somewhere else
-					currentQuestionNumber++;
+					
 					//startActivity(new Intent(Question.this, Question.class));
 					filterChampion();
+					currentQuestionNumber++;
 					nextQuestion();
 				}else{
 					//startActivity(new Intent(Question.this, Result_List.class));
@@ -167,13 +186,110 @@ public class Question extends Activity {
 		});
 	}
 	
-	protected void filterChampion() {
-		/*for(int i = 0; i < champList.size(); i++){
-			
-		}*/
+	private boolean isInclusion(int i, String option){
+		for(int k = 0; k < champions.get(i).getLane().size(); k++){
+			if(champions.get(i).getLane().get(k).equals(option)){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	private void filterChampion(){
+		//for(int i = 0; i < champions.size(); i++){
+		int i = 0;
+		while(i < champions.size()){
+			switch(currentQuestionNumber){
+			case 0:
+				//1. Which Lane do you prefer?
+				if(((RadioButton) findViewById(R.id.option1)).isChecked()){
+					if(isInclusion(i, "Top")){
+						temporary.add(champions.get(i));
+						champions.remove(i);
+					}else{
+						i++;
+					}
+				}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
+					if(isInclusion(i, "Mid")){
+						temporary.add(champions.get(i));
+						champions.remove(i);
+					}else{
+						i++;
+					}
+				}else if(((RadioButton) findViewById(R.id.option3)).isChecked()){
+					if(isInclusion(i, "Jungle")){
+						temporary.add(champions.get(i));
+						champions.remove(i);
+					}else{
+						i++;
+					}
+				}else if(((RadioButton) findViewById(R.id.option4)).isChecked()){
+					if(isInclusion(i, "Bot(Marksman)")){
+						temporary.add(champions.get(i));
+						champions.remove(i);
+					}else{
+						i++;
+					}
+				}else if(((RadioButton) findViewById(R.id.option5)).isChecked()){
+					if(isInclusion(i, "Bot(Sup)")){
+						temporary.add(champions.get(i));
+						champions.remove(i);
+					}else{
+						i++;
+					}
+				}else{
+					//pass
+				}
+				break;
+			case 1:
+				//2.  Popular Champs VS Rare Champs?
+				break;
+			case 2:
+				//3. Which Damaging Style do you prefer?
+				break;
+			case 3:
+				//4. Would you like the appearance of your champion to be...
+				break;
+			case 4:
+				//5. When purchasing champions, I ...
+				break;
+			case 5:
+				//6. Which Dealing Type do you prefer?
+				break;
+			case 6:
+				//9. What kind of Active Skills do you think is the most important?
+				break;
+			case 7:
+				//10. What kind of Passive Skills do you think is the most important?
+				break;
+			case 8:
+				//8. Which level of champion difficulty do you prefer?
+				break;
+			case 9:
+				//7. Which Style of main Attack Skill do you prefer?
+				break;
+			}
+		}
+		
+		// Renew the linear layout with filtered champion list
+		LinearLayout scrollBar = (LinearLayout)findViewById(R.id.listContainer);
+		scrollBar.removeAllViews();
+		for (i = 0; i < temporary.size(); i++){
+    		Button imgbtn = new Button(this);
+    		int resID = getApplicationContext().getResources().getIdentifier(temporary.get(i).getName().toLowerCase(), "drawable", "com.example.whosmychamp");
+    		imgbtn.setBackgroundResource(resID);
+    		scrollBar.addView(imgbtn);
+		}
+		
+		// Renew champions list with filtered elements
+		for(int j = 0; j < champions.size(); j++){
+			history.add(champions.get(j));
+		}
+		champions = temporary;
+		temporary = null;
 	}
 
-	protected void nextQuestion(){
+	private void nextQuestion(){
     	// print it on the screen
     	TextView question = (TextView)findViewById(R.id.questionView);
     	question.setText(questions.get(currentQuestionNumber * 7 + 0));
