@@ -38,7 +38,7 @@
 	
 	<option name="Alistar"></option>
 	<option lane="Top-Bot(Sup)"></option>
-	<option pop="Yes"></option>
+	<option pop="No"></option>
 	<option style="Close"></option>
 	<option appearance="Demon"></option>
 	<option price="1350"></option>

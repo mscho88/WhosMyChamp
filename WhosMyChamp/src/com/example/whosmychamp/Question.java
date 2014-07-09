@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
+import android.view.WindowManager.LayoutParams;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -17,6 +18,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -97,8 +99,8 @@ public class Question extends Activity {
     							aChampion.setLane(read);
     							j++;
     							break;
-    						case 2:// need to check yes or no
-    							aChampion.setPopularity(1);
+    						case 2:
+    							aChampion.setPopularity(champList.getAttributeValue(0).equals("Yes") ? 1 : 0);
     							j++;
     							break;
     						case 3:
@@ -157,11 +159,22 @@ public class Question extends Activity {
     		e.printStackTrace();
     	}
     	
+    	//champion list layout
     	LinearLayout scrollBar = (LinearLayout)findViewById(R.id.listContainer);
 		for (int i = 0; i < champions.size(); i++){
     		Button imgbtn = new Button(this);
-    		int resID = getApplicationContext().getResources().getIdentifier(champions.get(i).getName().toLowerCase(), "drawable", "com.example.whosmychamp");
-    		imgbtn.setBackgroundResource(resID);
+    		//int resID = getApplicationContext().getResources().getIdentifier(champions.get(i).getName().toLowerCase(), "drawable", "com.example.whosmychamp");
+    		//imgbtn.setBackgroundResource(resID);
+    		imgbtn.setText("asaa");
+    		imgbtn.setOnClickListener(new OnClickListener(){
+    			@Override
+    			public void onClick(View v){
+    				View popupView = getLayoutInflater().inflate(R.layout.result, null);
+    				PopupWindow mPopupWindow = new PopupWindow(popupView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+    				 mPopupWindow.setAnimationStyle(-1);
+    				 mPopupWindow.showAsDropDown(v, 10, 10);    		 
+    			}
+    		});
     		scrollBar.addView(imgbtn);
 		}
     	
@@ -176,6 +189,7 @@ public class Question extends Activity {
 					
 					//startActivity(new Intent(Question.this, Question.class));
 					filterChampion();
+					killPopups();
 					currentQuestionNumber++;
 					nextQuestion();
 				}else{
@@ -186,13 +200,137 @@ public class Question extends Activity {
 		});
 	}
 	
+	private void killPopups(){
+		while(findViewByID(R.id.))
+	}
+	
 	private boolean isInclusion(int i, String option){
+		//question1
 		for(int k = 0; k < champions.get(i).getLane().size(); k++){
 			if(champions.get(i).getLane().get(k).equals(option)){
 				return true;
 			}
 		}
 		return false;
+	}
+	
+	private int question1(int i){
+		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
+			if(isInclusion(i, "Top")){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
+			if(isInclusion(i, "Mid")){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else if(((RadioButton) findViewById(R.id.option3)).isChecked()){
+			if(isInclusion(i, "Jungle")){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else if(((RadioButton) findViewById(R.id.option4)).isChecked()){
+			if(isInclusion(i, "Bot(Marksman)")){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else if(((RadioButton) findViewById(R.id.option5)).isChecked()){
+			if(isInclusion(i, "Bot(Sup)")){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else{
+			//pass
+		}
+		return i;
+	}
+	
+	private int question2(int i){
+		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
+			if(champions.get(i).getPopularity() == 1){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
+			if(champions.get(i).getPopularity() == 0){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else{
+			//pass
+		}
+		return i;
+	}
+	
+	private int question3(int i){
+		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
+			if(champions.get(i).getDamage_style().equals("Long")){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
+			if(champions.get(i).getDamage_style().equals("Close")){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else{
+			//pass
+		}
+		return i;
+	}
+	
+	private int question4(int i){
+		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
+			if(champions.get(i).getAppearance().equals("Human")){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
+			if(champions.get(i).getAppearance().equals("Animal")){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else if(((RadioButton) findViewById(R.id.option3)).isChecked()){
+			if(champions.get(i).getAppearance().equals("Demon")){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else if(((RadioButton) findViewById(R.id.option4)).isChecked()){
+			if(champions.get(i).getAppearance().equals("Robot")){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else{
+			//pass
+		}
+		return i;
 	}
 	
 	private void filterChampion(){
@@ -202,53 +340,19 @@ public class Question extends Activity {
 			switch(currentQuestionNumber){
 			case 0:
 				//1. Which Lane do you prefer?
-				if(((RadioButton) findViewById(R.id.option1)).isChecked()){
-					if(isInclusion(i, "Top")){
-						temporary.add(champions.get(i));
-						champions.remove(i);
-					}else{
-						i++;
-					}
-				}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
-					if(isInclusion(i, "Mid")){
-						temporary.add(champions.get(i));
-						champions.remove(i);
-					}else{
-						i++;
-					}
-				}else if(((RadioButton) findViewById(R.id.option3)).isChecked()){
-					if(isInclusion(i, "Jungle")){
-						temporary.add(champions.get(i));
-						champions.remove(i);
-					}else{
-						i++;
-					}
-				}else if(((RadioButton) findViewById(R.id.option4)).isChecked()){
-					if(isInclusion(i, "Bot(Marksman)")){
-						temporary.add(champions.get(i));
-						champions.remove(i);
-					}else{
-						i++;
-					}
-				}else if(((RadioButton) findViewById(R.id.option5)).isChecked()){
-					if(isInclusion(i, "Bot(Sup)")){
-						temporary.add(champions.get(i));
-						champions.remove(i);
-					}else{
-						i++;
-					}
-				}else{
-					//pass
-				}
+				i = question1(i);
 				break;
 			case 1:
 				//2.  Popular Champs VS Rare Champs?
+				i = question2(i);
 				break;
 			case 2:
 				//3. Which Damaging Style do you prefer?
+				i = question3(i);
 				break;
 			case 3:
 				//4. Would you like the appearance of your champion to be...
+				i = question4(i);
 				break;
 			case 4:
 				//5. When purchasing champions, I ...
@@ -276,8 +380,18 @@ public class Question extends Activity {
 		scrollBar.removeAllViews();
 		for (i = 0; i < temporary.size(); i++){
     		Button imgbtn = new Button(this);
-    		int resID = getApplicationContext().getResources().getIdentifier(temporary.get(i).getName().toLowerCase(), "drawable", "com.example.whosmychamp");
-    		imgbtn.setBackgroundResource(resID);
+    		//int resID = getApplicationContext().getResources().getIdentifier(temporary.get(i).getName().toLowerCase(), "drawable", "com.example.whosmychamp");
+    		//imgbtn.setBackgroundResource(resID);
+    		imgbtn.setText("asaa");
+    		imgbtn.setOnClickListener(new OnClickListener(){
+    			@Override
+    			public void onClick(View v){
+    				View popupView = getLayoutInflater().inflate(R.layout.result, null);
+    				PopupWindow mPopupWindow = new PopupWindow(popupView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+    				mPopupWindow.setAnimationStyle(-1);
+    				mPopupWindow.showAsDropDown(v, 10, 10);    		 
+    			}
+    		});
     		scrollBar.addView(imgbtn);
 		}
 		
@@ -286,7 +400,7 @@ public class Question extends Activity {
 			history.add(champions.get(j));
 		}
 		champions = temporary;
-		temporary = null;
+		temporary = new ArrayList<Champion>();
 	}
 
 	private void nextQuestion(){
