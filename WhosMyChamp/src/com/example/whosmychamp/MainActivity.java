@@ -34,6 +34,7 @@ public class MainActivity extends Activity{
 			@Override
 			public void onClick(View v){
 				isEnglish = true;
+				v.setBackgroundResource(R.drawable.btn_eng2);
 				startActivity(new Intent(MainActivity.this, Question.class));
 			}
 		});

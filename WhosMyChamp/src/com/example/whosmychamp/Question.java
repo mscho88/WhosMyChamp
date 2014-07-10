@@ -10,6 +10,7 @@ import android.view.WindowManager.LayoutParams;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Point;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -163,16 +164,19 @@ public class Question extends Activity {
     	LinearLayout scrollBar = (LinearLayout)findViewById(R.id.listContainer);
 		for (int i = 0; i < champions.size(); i++){
     		Button imgbtn = new Button(this);
-    		//int resID = getApplicationContext().getResources().getIdentifier(champions.get(i).getName().toLowerCase(), "drawable", "com.example.whosmychamp");
-    		//imgbtn.setBackgroundResource(resID);
-    		imgbtn.setText("asaa");
+    		int resID = getApplicationContext().getResources().getIdentifier(champions.get(i).getName().toLowerCase(), "drawable", "com.example.whosmychamp");
+    		imgbtn.setBackgroundResource(resID);
     		imgbtn.setOnClickListener(new OnClickListener(){
     			@Override
     			public void onClick(View v){
     				View popupView = getLayoutInflater().inflate(R.layout.result, null);
-    				PopupWindow mPopupWindow = new PopupWindow(popupView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-    				 mPopupWindow.setAnimationStyle(-1);
-    				 mPopupWindow.showAsDropDown(v, 10, 10);    		 
+    				PopupWindow pop = new PopupWindow(popupView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+    				pop.setAnimationStyle(-1);
+    				pop.showAsDropDown(v, 10, 10);
+    				//Point size = new Point();
+    				//getWindowManager().getDefaultDisplay().getSize(size);
+    				//pop.setWidth(size.x - 50);
+    				//pop.setHeight(size.y - 50);
     			}
     		});
     		scrollBar.addView(imgbtn);
@@ -201,7 +205,7 @@ public class Question extends Activity {
 	}
 	
 	private void killPopups(){
-		while(findViewByID(R.id.))
+		//while(findViewByID(R.id.))
 	}
 	
 	private boolean isInclusion(int i, String option){
