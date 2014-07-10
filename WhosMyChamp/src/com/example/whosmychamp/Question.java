@@ -33,7 +33,7 @@ public class Question extends Activity {
 	public ArrayList<Champion> champions = new ArrayList<Champion>(); // In progress
 	public ArrayList<Champion> temporary = new ArrayList<Champion>(); // In progress
 	public ArrayList<Champion> history = new ArrayList<Champion>(); // In progress
-	
+	public PopupWindow curPopup = null;	
 	
 	/** Called when the activity is first created. */
 	@Override
@@ -169,14 +169,14 @@ public class Question extends Activity {
     		imgbtn.setOnClickListener(new OnClickListener(){
     			@Override
     			public void onClick(View v){
+    				if(curPopup != null){
+    					curPopup.dismiss();
+    				}
     				View popupView = getLayoutInflater().inflate(R.layout.result, null);
     				PopupWindow pop = new PopupWindow(popupView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
     				pop.setAnimationStyle(-1);
     				pop.showAsDropDown(v, 10, 10);
-    				//Point size = new Point();
-    				//getWindowManager().getDefaultDisplay().getSize(size);
-    				//pop.setWidth(size.x - 50);
-    				//pop.setHeight(size.y - 50);
+    				curPopup = pop;
     			}
     		});
     		scrollBar.addView(imgbtn);
@@ -193,7 +193,7 @@ public class Question extends Activity {
 					
 					//startActivity(new Intent(Question.this, Question.class));
 					filterChampion();
-					killPopups();
+					killPopup();
 					currentQuestionNumber++;
 					nextQuestion();
 				}else{
@@ -204,8 +204,9 @@ public class Question extends Activity {
 		});
 	}
 	
-	private void killPopups(){
-		//while(findViewByID(R.id.))
+	private void killPopup(){
+		curPopup.dismiss();
+		curPopup = null;
 	}
 	
 	private boolean isInclusion(int i, String option){
@@ -384,16 +385,19 @@ public class Question extends Activity {
 		scrollBar.removeAllViews();
 		for (i = 0; i < temporary.size(); i++){
     		Button imgbtn = new Button(this);
-    		//int resID = getApplicationContext().getResources().getIdentifier(temporary.get(i).getName().toLowerCase(), "drawable", "com.example.whosmychamp");
-    		//imgbtn.setBackgroundResource(resID);
-    		imgbtn.setText("asaa");
+    		int resID = getApplicationContext().getResources().getIdentifier(temporary.get(i).getName().toLowerCase(), "drawable", "com.example.whosmychamp");
+    		imgbtn.setBackgroundResource(resID);
     		imgbtn.setOnClickListener(new OnClickListener(){
     			@Override
     			public void onClick(View v){
+    				if(curPopup != null){
+    					curPopup.dismiss();
+    				}
     				View popupView = getLayoutInflater().inflate(R.layout.result, null);
-    				PopupWindow mPopupWindow = new PopupWindow(popupView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-    				mPopupWindow.setAnimationStyle(-1);
-    				mPopupWindow.showAsDropDown(v, 10, 10);    		 
+    				PopupWindow pop = new PopupWindow(popupView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+    				curPopup = pop;
+    				pop.setAnimationStyle(-1);
+    				pop.showAsDropDown(v, 10, 10);
     			}
     		});
     		scrollBar.addView(imgbtn);
