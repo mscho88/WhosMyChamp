@@ -12,10 +12,14 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Point;
 import android.graphics.Typeface;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.Display;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -60,14 +64,8 @@ public class Question extends Activity {
     	// Load xml question data file
     	try{
     		XmlPullParser customList = null;
-    	    if(MainActivity.isEnglish == true){
-    	    	// Load English Questions
-    	    	customList = getResources().getXml(R.xml.questions_eng);
-    	    }else{
-    	    	// Load Korean Questions
-    	    	//customList = getResources().getXml(R.xml.questions_kor);
-    	    }
-    		while(customList.getEventType() != XmlPullParser.END_DOCUMENT){
+    	    customList = getResources().getXml(R.xml.questions_eng);
+    	    while(customList.getEventType() != XmlPullParser.END_DOCUMENT){
     			if(customList.getEventType() == XmlPullParser.START_TAG){
     				if(customList.getName().equals("option")){
     					questions.add(customList.getAttributeValue(0));
@@ -172,14 +170,29 @@ public class Question extends Activity {
     				if(curPopup != null){
     					curPopup.dismiss();
     				}
+    				Point size = new Point();
+    				getWindowManager().getDefaultDisplay().getSize(size);
+    				
     				View popupView = getLayoutInflater().inflate(R.layout.result, null);
-    				PopupWindow pop = new PopupWindow(popupView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+    				PopupWindow pop = new PopupWindow(popupView, (int) (size.x * 0.8), (int) (size.y * 0.6));
     				pop.setAnimationStyle(-1);
-    				pop.showAsDropDown(v, 10, 10);
+    				pop.showAtLocation(v, 0, (int) (size.x * 0.1), (int) (size.y * 0.3));
+    				
+    				//pop.setTouchable(true);
+    				/*pop.setBackgroundDrawable(getResources().getDrawable(R.drawable.bg));
+    				pop.setFocusable(false);
+    				pop.setOutsideTouchable(true);
+    				*/
     				curPopup = pop;
+    				
+    				//pop.setTouchable(true);
+    				
     			}
     		});
     		scrollBar.addView(imgbtn);
+		}
+		if(curPopup != null){
+			
 		}
     	
     	nextQuestion();
@@ -398,6 +411,9 @@ public class Question extends Activity {
     				curPopup = pop;
     				pop.setAnimationStyle(-1);
     				pop.showAsDropDown(v, 10, 10);
+    				//pop.setFocusable(true);
+    				//pop.setOutsideTouchable(false);
+
     			}
     		});
     		scrollBar.addView(imgbtn);

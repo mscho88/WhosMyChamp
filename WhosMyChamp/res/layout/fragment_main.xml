@@ -16,15 +16,15 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="146dp"
-        android:background="@drawable/btn_eng1"/>
+        android:background="@drawable/btn_start"/>
 
     <Button
         android:id="@+id/button_kor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button1"
+        android:layout_alignTop="@+id/button_eng"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="62dp"
-        android:text="한국어" />
+        android:background="@drawable/btn_about" />
 
 </RelativeLayout>

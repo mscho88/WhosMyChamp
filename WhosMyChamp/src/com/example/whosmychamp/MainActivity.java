@@ -16,7 +16,7 @@ import android.os.Build;
 
 public class MainActivity extends Activity{
 
-	public static boolean isEnglish = true;
+	//public static boolean isEnglish = true;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +33,7 @@ public class MainActivity extends Activity{
 		button_eng.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v){
-				isEnglish = true;
-				v.setBackgroundResource(R.drawable.btn_eng2);
+				v.setBackgroundResource(R.drawable.btn_start1);
 				startActivity(new Intent(MainActivity.this, Question.class));
 			}
 		});
@@ -44,7 +43,6 @@ public class MainActivity extends Activity{
 		button_kor.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v){
-				isEnglish = false;
 				startActivity(new Intent(MainActivity.this, Question.class));
 			}
 		});
@@ -57,10 +55,6 @@ public class MainActivity extends Activity{
 		
 	}
 	
-	public boolean getisEnglish(){
-		return isEnglish;
-	}
-
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 

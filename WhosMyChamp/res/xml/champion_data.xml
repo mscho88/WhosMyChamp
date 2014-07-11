@@ -59,4 +59,53 @@
 	<option passive="Lifesteal"></option>
 	<option difficulty="4"></option>
 	<option skill="non-targeting"></option>
+	
+	<option name="Braum"></option>
+	<option lane="Mid-Jungle-Bot(Sup)"></option>
+	<option pop="Yes"></option>
+	<option style="Long"></option>
+	<option appearance="Human"></option>
+	<option price="6300"></option>
+	<option type="AP"></option>
+	<option active="Pull"></option>
+	<option passive="Lifesteal"></option>
+	<option difficulty="8"></option>
+	<option skill="non-targeting"></option>
+	
+	<option name="Draven"></option>
+	<option lane="Top-Mid-Jungle"></option>
+	<option pop="Yes"></option>
+	<option style="Close"></option>
+	<option appearance="Demon"></option>
+	<option price="3150"></option>
+	<option type="AP"></option>
+	<option active="Hide-Slowdown"></option>
+	<option passive="Non mana Resource-Lifesteal"></option>
+	<option difficulty="7"></option>
+	<option skill="non-t44argeting"></option>
+	
+	<option name="Ashe"></option>
+	<option lane="Top-Bot(Sup)"></option>
+	<option pop="No"></option>
+	<option style="Close"></option>
+	<option appearance="Demon"></option>
+	<option price="1350"></option>
+	<option type="AP"></option>
+	<option active="Healing-Stunning-Push"></option>
+	<option passive="Reducing Loss"></option>
+	<option difficulty="8"></option>
+	<option skill="non-targeting"></option>
+	
+	<option name="Fizz"></option>
+	<option lane="Jungle"></option>
+	<option pop="Yes"></option>
+	<option style="Close"></option>
+	<option appearance="Demon"></option>
+	<option price="1350"></option>
+	<option type="AP"></option>
+	<option active="Stunning"></option>
+	<option passive="Lifesteal"></option>
+	<option difficulty="4"></option>
+	<option skill="non-targeting"></option>
+	
 </questions>
