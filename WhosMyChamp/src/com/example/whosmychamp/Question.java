@@ -6,22 +6,14 @@ import java.util.ArrayList;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-import android.view.WindowManager.LayoutParams;
 import android.app.Activity;
-import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Point;
 import android.graphics.Typeface;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.Display;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnTouchListener;
+import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
@@ -90,7 +82,7 @@ public class Question extends Activity {
     							j++;
     							break;
     						case 1:// need to save it in array
-    							temp = ((String)champList.getAttributeValue(0)).split("-");
+    							temp = champList.getAttributeValue(0).toString().split("-");
     							read = new ArrayList<String>();
     							for(int k = 0; k < temp.length; k++){
     								read.add(temp[k]);
@@ -103,11 +95,21 @@ public class Question extends Activity {
     							j++;
     							break;
     						case 3:
-    							aChampion.setDamage_style(champList.getAttributeValue(0));
+    							temp = champList.getAttributeValue(0).toString().split("-");
+    							read = new ArrayList<String>();
+    							for(int k = 0; k < temp.length; k++){
+    								read.add(temp[k]);
+    							}
+    							aChampion.setDamage_style(read);
     							j++;
     							break;
     						case 4:
-    							aChampion.setAppearance(champList.getAttributeValue(0));
+    							temp = champList.getAttributeValue(0).toString().split("-");
+    							read = new ArrayList<String>();
+    							for(int k = 0; k < temp.length; k++){
+    								read.add(temp[k]);
+    							}
+    							aChampion.setAppearance(read);
     							j++;
     							break;
     						case 5:
@@ -115,11 +117,16 @@ public class Question extends Activity {
     							j++;
     							break;
     						case 6:
-    							aChampion.setType(champList.getAttributeValue(0));
+    							temp = champList.getAttributeValue(0).toString().split("-");
+    							read = new ArrayList<String>();
+    							for(int k = 0; k < temp.length; k++){
+    								read.add(temp[k]);
+    							}
+    							aChampion.setType(read);
     							j++;
     							break;
     						case 7:
-    							temp = champList.getAttributeValue(0).split("$");
+    							temp = champList.getAttributeValue(0).toString().split("-");
     							read = new ArrayList<String>();
     							for(int k = 0; k < temp.length; k++){
     								read.add(temp[k]);
@@ -128,7 +135,7 @@ public class Question extends Activity {
     							j++;
     							break;
     						case 8:
-    							temp = champList.getAttributeValue(0).split("$");
+    							temp = champList.getAttributeValue(0).split("-");
     							read = new ArrayList<String>();
     							for(int k = 0; k < temp.length; k++){
     								read.add(temp[k]);
@@ -141,7 +148,12 @@ public class Question extends Activity {
     							j++;
     							break;
     						case 10:
-    							aChampion.setSkillType(champList.getAttributeValue(0));
+    							temp = champList.getAttributeValue(0).toString().split("-");
+    							read = new ArrayList<String>();
+    							for(int k = 0; k < temp.length; k++){
+    								read.add(temp[k]);
+    							}
+    							aChampion.setStyle(read);
     							champions.add(aChampion);
     							j = 0;
     							break;
@@ -158,7 +170,7 @@ public class Question extends Activity {
     		e.printStackTrace();
     	}
     	
-    	//champion list layout
+    	// champion list layout
     	LinearLayout scrollBar = (LinearLayout)findViewById(R.id.listContainer);
 		for (int i = 0; i < champions.size(); i++){
     		Button imgbtn = new Button(this);
@@ -167,109 +179,130 @@ public class Question extends Activity {
     		imgbtn.setOnClickListener(new OnClickListener(){
     			@Override
     			public void onClick(View v){
-    				if(curPopup != null){
-    					curPopup.dismiss();
-    				}
+    				killPopup();
     				Point size = new Point();
     				getWindowManager().getDefaultDisplay().getSize(size);
-    				
+    				    				
     				View popupView = getLayoutInflater().inflate(R.layout.result, null);
-    				PopupWindow pop = new PopupWindow(popupView, (int) (size.x * 0.8), (int) (size.y * 0.6));
+    				PopupWindow pop = new PopupWindow(popupView, (int) (size.x * 0.8), ViewGroup.LayoutParams.WRAP_CONTENT);
     				pop.setAnimationStyle(-1);
     				pop.showAtLocation(v, 0, (int) (size.x * 0.1), (int) (size.y * 0.3));
     				
-    				//pop.setTouchable(true);
-    				/*pop.setBackgroundDrawable(getResources().getDrawable(R.drawable.bg));
-    				pop.setFocusable(false);
-    				pop.setOutsideTouchable(true);
-    				*/
     				curPopup = pop;
+    				/*
+    				v.getBackground().
+    				TextView txt = (TextView) findViewById(R.id.profile_pic);
+    				txt = (TextView) v.findViewById(R.id.profile_name);
+    				txt.setText("");
     				
-    				//pop.setTouchable(true);
+    				txt = (TextView) v.findViewById(R.id.profile_pic);
     				
+    				*/
+    				Button close = (Button) popupView.findViewById(R.id.button1);
+    				close.setOnClickListener(new OnClickListener(){
+    					@Override
+    					public void onClick(View arg0) {
+    						killPopup();
+    					}
+    				});
     			}
     		});
     		scrollBar.addView(imgbtn);
 		}
-		if(curPopup != null){
-			
-		}
     	
+		// Start with the first question
     	nextQuestion();
     	
+    	// Set the listener at the next button
     	Button nextButton = (Button)findViewById(R.id.nextButton);
     	nextButton.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v){
-				if(currentQuestionNumber != numQuestions){
-					// on each next click you need to filter the hero list and save the filtered hero objects to somewhere else
-					
-					//startActivity(new Intent(Question.this, Question.class));
+				if(currentQuestionNumber == numQuestions - 1){
+					finishQuestion();
+				}else{
 					filterChampion();
 					killPopup();
 					currentQuestionNumber++;
 					nextQuestion();
-				}else{
-					//startActivity(new Intent(Question.this, Result_List.class));
-					//deactivate next button
 				}
 			}
 		});
 	}
 	
 	private void killPopup(){
-		curPopup.dismiss();
-		curPopup = null;
+		if(curPopup != null){
+			curPopup.dismiss();
+			curPopup = null;
+		}
 	}
 	
-	private boolean isInclusion(int i, String option){
-		//question1
-		for(int k = 0; k < champions.get(i).getLane().size(); k++){
-			if(champions.get(i).getLane().get(k).equals(option)){
-				return true;
-			}
-		}
-		return false;
+	private void finishQuestion(){
+		//if(currentQuestionNumber == 9){
+			Button btn = (Button) findViewById(R.id.nextButton);
+			btn.setEnabled(false);
+			TextView txt = (TextView) findViewById(R.id.questionView);
+			txt.setText("All questions are completed. Now, you may choose a champion from above list. If no champion is left, then you can start again from the beginning.");
+			RadioButton opt = (RadioButton) findViewById(R.id.option1);
+			opt.setEnabled(false);
+			opt.setText("");
+			opt = (RadioButton) findViewById(R.id.option2);
+			opt.setEnabled(false);
+			opt.setText("");
+			opt = (RadioButton) findViewById(R.id.option3);
+			opt.setEnabled(false);
+			opt.setText("");
+			opt = (RadioButton) findViewById(R.id.option4);
+			opt.setEnabled(false);
+			opt.setText("");
+			opt = (RadioButton) findViewById(R.id.option5);
+			opt.setEnabled(false);
+			opt.setText("");
+			opt = (RadioButton) findViewById(R.id.option6);
+			opt.setEnabled(false);
+			opt.setText("");
+		//}
 	}
 	
 	private int question1(int i){
 		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
-			if(isInclusion(i, "Top")){
+			if(champions.get(i).getLane().contains("Top")){
 				temporary.add(champions.get(i));
 				champions.remove(i);
 			}else{
 				i++;
 			}
 		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
-			if(isInclusion(i, "Mid")){
+			if(champions.get(i).getLane().contains("Mid")){
 				temporary.add(champions.get(i));
 				champions.remove(i);
 			}else{
 				i++;
 			}
 		}else if(((RadioButton) findViewById(R.id.option3)).isChecked()){
-			if(isInclusion(i, "Jungle")){
+			if(champions.get(i).getLane().contains("Jungle")){
 				temporary.add(champions.get(i));
 				champions.remove(i);
 			}else{
 				i++;
 			}
 		}else if(((RadioButton) findViewById(R.id.option4)).isChecked()){
-			if(isInclusion(i, "Bot(Marksman)")){
+			if(champions.get(i).getLane().contains("Bot(Marksman)")){
 				temporary.add(champions.get(i));
 				champions.remove(i);
 			}else{
 				i++;
 			}
 		}else if(((RadioButton) findViewById(R.id.option5)).isChecked()){
-			if(isInclusion(i, "Bot(Sup)")){
+			if(champions.get(i).getLane().contains("Bot(Sup)")){
 				temporary.add(champions.get(i));
 				champions.remove(i);
 			}else{
 				i++;
 			}
 		}else{
-			//pass
+			temporary.add(champions.get(i));
+			champions.remove(i);
 		}
 		return i;
 	}
@@ -290,69 +323,248 @@ public class Question extends Activity {
 				i++;
 			}
 		}else{
-			//pass
+			temporary.add(champions.get(i));
+			champions.remove(i);
 		}
 		return i;
 	}
 	
 	private int question3(int i){
 		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
-			if(champions.get(i).getDamage_style().equals("Long")){
+			if(champions.get(i).getDamage_style().contains("Long")){
 				temporary.add(champions.get(i));
 				champions.remove(i);
 			}else{
 				i++;
 			}
 		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
-			if(champions.get(i).getDamage_style().equals("Close")){
+			if(champions.get(i).getDamage_style().contains("Close")){
 				temporary.add(champions.get(i));
 				champions.remove(i);
 			}else{
 				i++;
 			}
 		}else{
-			//pass
+			temporary.add(champions.get(i));
+			champions.remove(i);
 		}
 		return i;
 	}
 	
 	private int question4(int i){
 		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
-			if(champions.get(i).getAppearance().equals("Human")){
+			if(champions.get(i).getAppearance().contains("Human")){
 				temporary.add(champions.get(i));
 				champions.remove(i);
 			}else{
 				i++;
 			}
 		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
-			if(champions.get(i).getAppearance().equals("Animal")){
+			if(champions.get(i).getAppearance().contains("Animal")){
 				temporary.add(champions.get(i));
 				champions.remove(i);
 			}else{
 				i++;
 			}
 		}else if(((RadioButton) findViewById(R.id.option3)).isChecked()){
-			if(champions.get(i).getAppearance().equals("Demon")){
+			if(champions.get(i).getAppearance().contains("Demon")){
 				temporary.add(champions.get(i));
 				champions.remove(i);
 			}else{
 				i++;
 			}
 		}else if(((RadioButton) findViewById(R.id.option4)).isChecked()){
-			if(champions.get(i).getAppearance().equals("Robot")){
+			if(champions.get(i).getAppearance().contains("Robot")){
 				temporary.add(champions.get(i));
 				champions.remove(i);
 			}else{
 				i++;
 			}
 		}else{
-			//pass
+			temporary.add(champions.get(i));
+			champions.remove(i);
+		}
+		return i;
+	}
+	
+	private int question5(int i){
+		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
+			if(champions.get(i).getPrice() >= 1400){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
+			if(champions.get(i).getPrice() <= 1400){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else{
+			temporary.add(champions.get(i));
+			champions.remove(i);
+		}
+		return i;
+	}
+	
+	private int question6(int i){
+		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
+			if(champions.get(i).getType().contains("AP")){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
+			if(champions.get(i).getType().contains("AD")){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else{
+			temporary.add(champions.get(i));
+			champions.remove(i);
+		}
+		return i;
+	}
+	
+	private int question7(int i){
+		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
+			if(champions.get(i).getActiveSkill().contains("Stunning") ||
+					champions.get(i).getActiveSkill().contains("Terror") ||
+					champions.get(i).getActiveSkill().contains("Slowdown")){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
+			if(champions.get(i).getActiveSkill().contains("Healing") ||
+					champions.get(i).getActiveSkill().contains("Barrier") ||
+					champions.get(i).getActiveSkill().contains("Silence") ){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else if(((RadioButton) findViewById(R.id.option3)).isChecked()){
+			if(champions.get(i).getActiveSkill().contains("Hide") ||
+					champions.get(i).getActiveSkill().contains("Escape")){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else if(((RadioButton) findViewById(R.id.option4)).isChecked()){
+			if(champions.get(i).getActiveSkill().contains("Pull") ||
+					champions.get(i).getActiveSkill().contains("Push") ||
+					champions.get(i).getActiveSkill().contains("Daze")){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else{
+			temporary.add(champions.get(i));
+			champions.remove(i);
+		}
+		return i;
+	}
+	
+	private int question8(int i){
+		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
+			if(champions.get(i).getPassiveSkill().contains("Longlasting Damage")){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
+			if(champions.get(i).getPassiveSkill().contains("Nonmana Resource")){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else if(((RadioButton) findViewById(R.id.option3)).isChecked()){
+			if(champions.get(i).getPassiveSkill().contains("Reducing Loss") ||
+					champions.get(i).getPassiveSkill().contains("Lifesteal") ||
+					champions.get(i).getPassiveSkill().contains("Revive")){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else if(((RadioButton) findViewById(R.id.option4)).isChecked()){
+			if(champions.get(i).getPassiveSkill().contains("Pet") ||
+					champions.get(i).getPassiveSkill().contains("Trap")){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else{
+			temporary.add(champions.get(i));
+			champions.remove(i);
+		}
+		return i;
+	}
+	
+	private int question9(int i){
+		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
+			if(champions.get(i).getDifficulty() <= 3){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
+			if(champions.get(i).getDifficulty() <= 7){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else if(((RadioButton) findViewById(R.id.option3)).isChecked()){
+			if(champions.get(i).getDifficulty() <= 10){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else{
+			temporary.add(champions.get(i));
+			champions.remove(i);
+		}
+		return i;
+	}
+	
+	private int question10(int i){
+		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
+			if(champions.get(i).getStyle().contains("Split push")){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
+			if(champions.get(i).getStyle().contains("Team fight")){
+				temporary.add(champions.get(i));
+				champions.remove(i);
+			}else{
+				i++;
+			}
+		}else{
+			temporary.add(champions.get(i));
+			champions.remove(i);
 		}
 		return i;
 	}
 	
 	private void filterChampion(){
-		//for(int i = 0; i < champions.size(); i++){
 		int i = 0;
 		while(i < champions.size()){
 			switch(currentQuestionNumber){
@@ -374,21 +586,29 @@ public class Question extends Activity {
 				break;
 			case 4:
 				//5. When purchasing champions, I ...
+				i = question5(i);
 				break;
 			case 5:
 				//6. Which Dealing Type do you prefer?
+				i = question6(i);
 				break;
 			case 6:
 				//9. What kind of Active Skills do you think is the most important?
+				i = question7(i);
 				break;
 			case 7:
 				//10. What kind of Passive Skills do you think is the most important?
+				i = question8(i);
 				break;
 			case 8:
 				//8. Which level of champion difficulty do you prefer?
+				i = question9(i);
 				break;
 			case 9:
-				//7. Which Style of main Attack Skill do you prefer?
+				//Which Fight Style do you give more weight to?
+				i = question10(i);
+				break;
+			default:
 				break;
 			}
 		}
@@ -403,17 +623,23 @@ public class Question extends Activity {
     		imgbtn.setOnClickListener(new OnClickListener(){
     			@Override
     			public void onClick(View v){
-    				if(curPopup != null){
-    					curPopup.dismiss();
-    				}
+    				killPopup();
+    				Point size = new Point();
+    				getWindowManager().getDefaultDisplay().getSize(size);
+    				    				
     				View popupView = getLayoutInflater().inflate(R.layout.result, null);
-    				PopupWindow pop = new PopupWindow(popupView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-    				curPopup = pop;
+    				PopupWindow pop = new PopupWindow(popupView, (int) (size.x * 0.8), ViewGroup.LayoutParams.WRAP_CONTENT);
     				pop.setAnimationStyle(-1);
-    				pop.showAsDropDown(v, 10, 10);
-    				//pop.setFocusable(true);
-    				//pop.setOutsideTouchable(false);
-
+    				pop.showAtLocation(v, 0, (int) (size.x * 0.1), (int) (size.y * 0.3));
+    				curPopup = pop;
+    				
+    				Button close = (Button) popupView.findViewById(R.id.button1);
+    				close.setOnClickListener(new OnClickListener(){
+    					@Override
+    					public void onClick(View arg0) {
+    						killPopup();
+    					}
+    				});
     			}
     		});
     		scrollBar.addView(imgbtn);
@@ -427,57 +653,43 @@ public class Question extends Activity {
 		temporary = new ArrayList<Champion>();
 	}
 
+	private void nextQuestionHelper(RadioButton option, int i){
+		option.setEnabled(true);
+		if(i == 1)
+			option.setChecked(true);
+		else
+			option.setChecked(false);
+		
+    	if(questions.get(currentQuestionNumber * 7 + i).equals("N/A")){
+    		option.setEnabled(false);
+    		option.setText("");
+    	}else{
+    		option.setText(questions.get(currentQuestionNumber * 7 + i));
+    	}
+	}
+	
+	// Load the next question and set it up on the question and radio button.
 	private void nextQuestion(){
     	// print it on the screen
     	TextView question = (TextView)findViewById(R.id.questionView);
     	question.setText(questions.get(currentQuestionNumber * 7 + 0));
     	
     	RadioButton option1 = (RadioButton)findViewById(R.id.option1);
-    	option1.setEnabled(true);
-    	option1.setChecked(true);
-    	if(questions.get(currentQuestionNumber * 7 + 1).equals("N/A")){
-    		option1.setEnabled(false);
-    	}
-    	option1.setText(questions.get(currentQuestionNumber * 7 + 1));
+    	nextQuestionHelper(option1, 1);
     	
     	RadioButton option2 = (RadioButton)findViewById(R.id.option2);
-    	option2.setEnabled(true);
-    	option2.setChecked(false);
-    	if(questions.get(currentQuestionNumber * 7 + 2).equals("N/A")){
-    		option2.setEnabled(false);
-    	}
-    	option2.setText(questions.get(currentQuestionNumber * 7 + 2));
+    	nextQuestionHelper(option2, 2);
     	
     	RadioButton option3 = (RadioButton)findViewById(R.id.option3);
-    	option3.setEnabled(true);
-    	option3.setChecked(false);
-    	if(questions.get(currentQuestionNumber * 7 + 3).equals("N/A")){
-    		option3.setEnabled(false);
-    	}
-    	option3.setText(questions.get(currentQuestionNumber * 7 + 3));
-    	
+    	nextQuestionHelper(option3, 3);
+
     	RadioButton option4 = (RadioButton)findViewById(R.id.option4);
-    	option4.setEnabled(true);
-    	option4.setChecked(false);
-    	if(questions.get(currentQuestionNumber * 7 + 4).equals("N/A")){
-    		option4.setEnabled(false);
-    	}
-    	option4.setText(questions.get(currentQuestionNumber * 7 + 4));
+    	nextQuestionHelper(option4, 4);
     	
     	RadioButton option5 = (RadioButton)findViewById(R.id.option5);
-    	option5.setEnabled(true);
-    	option5.setChecked(false);
-    	if(questions.get(currentQuestionNumber * 7 + 5).equals("N/A")){
-    		option5.setEnabled(false);
-    	}
-    	option5.setText(questions.get(currentQuestionNumber * 7 + 5));
-    	
+    	nextQuestionHelper(option5, 5);
+
     	RadioButton option6 = (RadioButton)findViewById(R.id.option6);
-    	option6.setEnabled(true);
-    	option6.setChecked(false);
-    	if(questions.get(currentQuestionNumber * 7 + 6).equals("N/A")){
-    		option6.setEnabled(false);
-    	}
-    	option6.setText(questions.get(currentQuestionNumber * 7 + 6));
+    	nextQuestionHelper(option6, 6);
 	}
 }

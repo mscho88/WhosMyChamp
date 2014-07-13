@@ -12,16 +12,16 @@
         android:layout_height="match_parent">
 
 		<TextView
-		    android:id="@+id/TextView04"
+		    android:id="@+id/profile_pic"
 		    android:layout_weight="0.1"
 		    android:background="@drawable/ahri"
 		    android:gravity="center"/>
 	
 		<TextView
-			android:id="@+id/TextView05"
+			android:id="@+id/profile_name"
 			android:layout_weight="0.8"
 			android:gravity="center"
-			android:text="Ahri"/>
+			android:text="champion"/>
 	</TableRow>
 	
 	<TableRow
@@ -30,11 +30,20 @@
 		android:gravity="center_horizontal">
 	
 		<TextView
-			android:layout_width="match_parent" android:layout_height="wrap_content"
+		    android:id="@+id/profile_spec"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
 			android:textSize="18dp"
 			android:layout_span="3"
 			android:padding="18dip"
 			android:textColor="#000"
-			android:text="Row 2"/>
-	</TableRow>	
+			android:text="spec"/>
+	</TableRow>
+
+	<Button
+	    android:id="@+id/button1"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="Close" />
+	
 </TableLayout>

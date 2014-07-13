@@ -7,140 +7,106 @@ import android.view.View;
 public class Champion {
 
 	private String name;
-	//private String address;
-	private ArrayList<String> lane;
-	private int popularity;
-	private String damage_style;
-	private String appearance;
-	private int price;
-	private String type;
-	private ArrayList<String> activeSkill;
-	private ArrayList<String> passiveSkill;
-	private int difficulty;
-	private String skillType;
-	
+	private ArrayList<String> lane;//good
+	private int popularity;//good
+	private ArrayList<String> damage_style;//array
+	private ArrayList<String> appearance;//array
+	private int price;//good
+	private ArrayList<String> type;//array
+	private ArrayList<String> activeSkill;//good
+	private ArrayList<String> passiveSkill;//good
+	private int difficulty;//good
+	private ArrayList<String> style;//array
 	
 	public Champion() {
 		// TODO Auto-generated constructor stub
 	}
 
-
 	public String getName() {
 		return name;
 	}
-
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
-
-	/*public String getAddress() {
-		return address;
-	}
-
-
-	public void setAddress(String address) {
-		this.address = address;
-	}*/
-
-
 	public ArrayList<String> getLane() {
 		return lane;
 	}
-
 
 	public void setLane(ArrayList<String> lane) {
 		this.lane = lane;
 	}
 
-
 	public int getPopularity() {
 		return popularity;
 	}
-
 
 	public void setPopularity(int popularity) {
 		this.popularity = popularity;
 	}
 
-
-	public String getDamage_style() {
+	public ArrayList<String> getDamage_style() {
 		return damage_style;
 	}
 
-
-	public void setDamage_style(String damage_style) {
+	public void setDamage_style(ArrayList<String> damage_style) {
 		this.damage_style = damage_style;
 	}
 
-
-	public String getAppearance() {
+	public ArrayList<String> getAppearance() {
 		return appearance;
 	}
 
-
-	public void setAppearance(String appearance) {
+	public void setAppearance(ArrayList<String> appearance) {
 		this.appearance = appearance;
 	}
-
 
 	public int getPrice() {
 		return price;
 	}
 
-
 	public void setPrice(int price) {
 		this.price = price;
 	}
 
-
-	public String getType() {
+	public ArrayList<String> getType() {
 		return type;
 	}
 
-
-	public void setType(String type) {
+	public void setType(ArrayList<String> type) {
 		this.type = type;
 	}
-
 
 	public ArrayList<String> getActiveSkill() {
 		return activeSkill;
 	}
 
-
 	public void setActiveSkill(ArrayList<String> activeSkill) {
 		this.activeSkill = activeSkill;
 	}
-
 
 	public ArrayList<String> getPassiveSkill() {
 		return passiveSkill;
 	}
 
-
 	public void setPassiveSkill(ArrayList<String> passiveSkill) {
 		this.passiveSkill = passiveSkill;
 	}
-
 
 	public int getDifficulty() {
 		return difficulty;
 	}
 
-
 	public void setDifficulty(int difficulty) {
 		this.difficulty = difficulty;
 	}
 
-
-	public String getSkillType() {
-		return skillType;
+	public ArrayList<String> getStyle() {
+		return style;
 	}
 
-
-	public void setSkillType(String skillType) {
-		this.skillType = skillType;
+	public void setStyle(ArrayList<String> style) {
+		this.style = style;
 	}
 }

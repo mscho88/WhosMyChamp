@@ -48,7 +48,7 @@
 	<option E="N/A"></option>
 	<option F="N/A"></option>
 	
-	<option question="9. What kind of Active Skills do you think is the most important?"></option>
+	<option question="7. What kind of Active Skills do you think is the most important?"></option>
 	<option A="Stunning / Terror / Slowdown"></option>
 	<option B="Healing / Barrier / Silence"></option>
 	<option C="Hide / Escape"></option>
@@ -56,25 +56,25 @@
 	<option E="Does not matter"></option>
 	<option F="N/A"></option>
 	
-	<option question="10. What kind of Passive Skills do you think is the most important?"></option>
+	<option question="8. What kind of Passive Skills do you think is the most important?"></option>
 	<option A="Long-lasting Damage (Flame, Poison, Bleeding, etc)"></option>
 	<option B="Non-mana Resource"></option>
 	<option C="Reducing Loss / Life Steal / Revive"></option>
-	<option D="Does not matter"></option>
-	<option E="N/A"></option>
+	<option D="Pet / Trap"></option>
+	<option E="Does not matter"></option>
 	<option F="N/A"></option>
 	
-	<option question="8. Which level of champion difficulty do you prefer?"></option>
+	<option question="9. Which level of champion difficulty do you prefer?"></option>
 	<option A="Easy"></option>
-	<option B="Medium"></option>
+	<option B="Normal"></option>
 	<option C="Hard"></option>
 	<option D="Does not matter"></option>
 	<option E="N/A"></option>
 	<option F="N/A"></option>
 	
-	<option question="7. Which Style of main Attack Skill do you prefer?"></option>
-	<option A="Targeting Skill"></option>
-	<option B="Non-targeting Skill"></option>
+	<option question="10. Which Fight Style do you give more weight to?"></option>
+	<option A="Split Push"></option>
+	<option B="Team fight"></option>
 	<option C="Does not matter"></option>
 	<option D="N/A"></option>
 	<option E="N/A"></option>
