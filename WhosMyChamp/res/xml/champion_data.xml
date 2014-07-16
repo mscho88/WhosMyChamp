@@ -408,7 +408,7 @@
 	<option difficulty="9"></option>
 	<option style="Team fight"></option>
 
-	<option name="Jarvan IV"></option>
+	<option name="JarvanIV"></option>
 	<option lane="Top-Jungle"></option>
 	<option pop="Yes"></option>
 	<option style="Close"></option>
@@ -510,7 +510,7 @@
 	<option style="Close"></option>
 	<option appearance="Human"></option>
 	<option price="450"></option>
-	<option type="AP"></option>
+	<option type="AD-AP"></option>
 	<option active="Healing-Slowdown"></option>
 	<option passive="Reducing Loss"></option>
 	<option difficulty="5"></option>
@@ -528,7 +528,7 @@
 	<option difficulty="5"></option>
 	<option style="Team fight"></option>
 
-	<option name="Kha'Zix"></option>
+	<option name="KhaZix"></option>
 	<option lane="Mid-Jungle"></option>
 	<option pop="Yes"></option>
 	<option style="Close"></option>
@@ -540,7 +540,7 @@
 	<option difficulty="7"></option>
 	<option style="Split push"></option>
 
-	<option name="Kog'Maw"></option>
+	<option name="KogMaw"></option>
 	<option lane="Mid-Bot(Marksman)"></option>
 	<option pop="Yes"></option>
 	<option style="Long"></option>
@@ -564,7 +564,7 @@
 	<option difficulty="9"></option>
 	<option style="Split push"></option>
 
-	<option name="Lee Sin"></option>
+	<option name="LeeSin"></option>
 	<option lane="Top-Jungle"></option>
 	<option pop="Yes"></option>
 	<option style="Close"></option>
@@ -672,7 +672,7 @@
 	<option difficulty="3"></option>
 	<option style="Team fight"></option>
 
-	<option name="Master Yi"></option>
+	<option name="MasterYi"></option>
 	<option lane="Top-Jungle"></option>
 	<option pop="Yes"></option>
 	<option style="Close"></option>
@@ -684,7 +684,7 @@
 	<option difficulty="2"></option>
 	<option style="Split push"></option>
 
-	<option name="Miss Fortune"></option>
+	<option name="MissFortune"></option>
 	<option lane="Mid-Bot(Marksman)"></option>
 	<option pop="Yes"></option>
 	<option style="Long"></option>
@@ -1236,7 +1236,7 @@
 	<option difficulty="6"></option>
 	<option style="Team fight"></option>
 
-	<option name="Vel'Koz"></option>
+	<option name="VelKoz"></option>
 	<option lane="Mid-Bot(Sup)"></option>
 	<option pop="No"></option>
 	<option style="Long"></option>
@@ -1332,7 +1332,7 @@
 	<option difficulty="6"></option>
 	<option style="Team fight"></option>
 
-	<option name="Xin Zhao"></option>
+	<option name="XinZhao"></option>
 	<option lane="Jungle"></option>
 	<option pop="Yes"></option>
 	<option style="Close"></option>

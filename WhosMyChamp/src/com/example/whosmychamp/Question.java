@@ -7,6 +7,7 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Point;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -26,9 +27,9 @@ public class Question extends Activity {
 	public int currentQuestionNumber = 0;
 	
 	public ArrayList<String> questions = new ArrayList<String>(); // Question list completed
-	public ArrayList<Champion> champions = new ArrayList<Champion>(); // In progress
+	public static ArrayList<Champion> champions = new ArrayList<Champion>(); // In progress
 	public ArrayList<Champion> temporary = new ArrayList<Champion>(); // In progress
-	public ArrayList<Champion> history = new ArrayList<Champion>(); // In progress
+	public ArrayList<ArrayList> history = new ArrayList<ArrayList>(); // In progress
 	public PopupWindow curPopup = null;	
 	
 	/** Called when the activity is first created. */
@@ -183,20 +184,20 @@ public class Question extends Activity {
     				Point size = new Point();
     				getWindowManager().getDefaultDisplay().getSize(size);
     				    				
-    				View popupView = getLayoutInflater().inflate(R.layout.result, null);
+    				View popupView = getLayoutInflater().inflate(R.layout.profile, null);
     				PopupWindow pop = new PopupWindow(popupView, (int) (size.x * 0.8), ViewGroup.LayoutParams.WRAP_CONTENT);
     				pop.setAnimationStyle(-1);
     				pop.showAtLocation(v, 0, (int) (size.x * 0.1), (int) (size.y * 0.3));
     				
     				curPopup = pop;
-    				/*
-    				v.getBackground().
+    				/*Button btn = (Button) v;
+    				(findViewById(v.getId());
     				TextView txt = (TextView) findViewById(R.id.profile_pic);
+    				txt.setBackgroundResource(v.getId());
     				txt = (TextView) v.findViewById(R.id.profile_name);
     				txt.setText("");
     				
     				txt = (TextView) v.findViewById(R.id.profile_pic);
-    				
     				*/
     				Button close = (Button) popupView.findViewById(R.id.button1);
     				close.setOnClickListener(new OnClickListener(){
@@ -220,7 +221,20 @@ public class Question extends Activity {
 			public void onClick(View v){
 				if(currentQuestionNumber == numQuestions - 1){
 					finishQuestion();
+					currentQuestionNumber++;
+					// Renew champions list with filtered elements
+					history.add(champions);
+					champions = temporary;
+					temporary = new ArrayList<Champion>();
+					Button nextButton = (Button)findViewById(R.id.nextButton);
+					nextButton.setText("See result");
+					
+				}else if(currentQuestionNumber == numQuestions){
+					startActivity(new Intent(Question.this, Result.class));
 				}else{
+					Button backButton = (Button)findViewById(R.id.backButton);
+					backButton.setEnabled(true);
+					
 					filterChampion();
 					killPopup();
 					currentQuestionNumber++;
@@ -228,6 +242,32 @@ public class Question extends Activity {
 				}
 			}
 		});
+    	
+    	Button backButton = (Button) findViewById(R.id.backButton);
+    	//backButton.setEnabled(true);
+    	backButton.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View arg0) {
+				if(currentQuestionNumber > 0){
+					killPopup();
+					currentQuestionNumber--;
+					temporary = history.get(currentQuestionNumber);
+					history.remove(currentQuestionNumber);
+					nextQuestion();
+					showChampions();	
+					champions = temporary;
+					temporary = new ArrayList<Champion>();
+				}
+				if(currentQuestionNumber == 0){
+					Button backButton = (Button) findViewById(R.id.backButton);
+					backButton.setEnabled(false);
+				}
+				if(currentQuestionNumber == numQuestions){
+					Button nextButton = (Button) findViewById(R.id.nextButton);
+					nextButton.setText("Next");
+				}
+			}
+    	});
 	}
 	
 	private void killPopup(){
@@ -239,10 +279,8 @@ public class Question extends Activity {
 	
 	private void finishQuestion(){
 		//if(currentQuestionNumber == 9){
-			Button btn = (Button) findViewById(R.id.nextButton);
-			btn.setEnabled(false);
 			TextView txt = (TextView) findViewById(R.id.questionView);
-			txt.setText("All questions are completed. Now, you may choose a champion from above list. If no champion is left, then you can start again from the beginning.");
+			txt.setText("All questions are completed. See result to see more details.");
 			RadioButton opt = (RadioButton) findViewById(R.id.option1);
 			opt.setEnabled(false);
 			opt.setText("");
@@ -263,360 +301,12 @@ public class Question extends Activity {
 			opt.setText("");
 		//}
 	}
-	
-	private int question1(int i){
-		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
-			if(champions.get(i).getLane().contains("Top")){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
-			if(champions.get(i).getLane().contains("Mid")){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else if(((RadioButton) findViewById(R.id.option3)).isChecked()){
-			if(champions.get(i).getLane().contains("Jungle")){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else if(((RadioButton) findViewById(R.id.option4)).isChecked()){
-			if(champions.get(i).getLane().contains("Bot(Marksman)")){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else if(((RadioButton) findViewById(R.id.option5)).isChecked()){
-			if(champions.get(i).getLane().contains("Bot(Sup)")){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else{
-			temporary.add(champions.get(i));
-			champions.remove(i);
-		}
-		return i;
-	}
-	
-	private int question2(int i){
-		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
-			if(champions.get(i).getPopularity() == 1){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
-			if(champions.get(i).getPopularity() == 0){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else{
-			temporary.add(champions.get(i));
-			champions.remove(i);
-		}
-		return i;
-	}
-	
-	private int question3(int i){
-		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
-			if(champions.get(i).getDamage_style().contains("Long")){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
-			if(champions.get(i).getDamage_style().contains("Close")){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else{
-			temporary.add(champions.get(i));
-			champions.remove(i);
-		}
-		return i;
-	}
-	
-	private int question4(int i){
-		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
-			if(champions.get(i).getAppearance().contains("Human")){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
-			if(champions.get(i).getAppearance().contains("Animal")){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else if(((RadioButton) findViewById(R.id.option3)).isChecked()){
-			if(champions.get(i).getAppearance().contains("Demon")){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else if(((RadioButton) findViewById(R.id.option4)).isChecked()){
-			if(champions.get(i).getAppearance().contains("Robot")){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else{
-			temporary.add(champions.get(i));
-			champions.remove(i);
-		}
-		return i;
-	}
-	
-	private int question5(int i){
-		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
-			if(champions.get(i).getPrice() >= 1400){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
-			if(champions.get(i).getPrice() <= 1400){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else{
-			temporary.add(champions.get(i));
-			champions.remove(i);
-		}
-		return i;
-	}
-	
-	private int question6(int i){
-		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
-			if(champions.get(i).getType().contains("AP")){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
-			if(champions.get(i).getType().contains("AD")){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else{
-			temporary.add(champions.get(i));
-			champions.remove(i);
-		}
-		return i;
-	}
-	
-	private int question7(int i){
-		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
-			if(champions.get(i).getActiveSkill().contains("Stunning") ||
-					champions.get(i).getActiveSkill().contains("Terror") ||
-					champions.get(i).getActiveSkill().contains("Slowdown")){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
-			if(champions.get(i).getActiveSkill().contains("Healing") ||
-					champions.get(i).getActiveSkill().contains("Barrier") ||
-					champions.get(i).getActiveSkill().contains("Silence") ){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else if(((RadioButton) findViewById(R.id.option3)).isChecked()){
-			if(champions.get(i).getActiveSkill().contains("Hide") ||
-					champions.get(i).getActiveSkill().contains("Escape")){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else if(((RadioButton) findViewById(R.id.option4)).isChecked()){
-			if(champions.get(i).getActiveSkill().contains("Pull") ||
-					champions.get(i).getActiveSkill().contains("Push") ||
-					champions.get(i).getActiveSkill().contains("Daze")){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else{
-			temporary.add(champions.get(i));
-			champions.remove(i);
-		}
-		return i;
-	}
-	
-	private int question8(int i){
-		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
-			if(champions.get(i).getPassiveSkill().contains("Longlasting Damage")){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
-			if(champions.get(i).getPassiveSkill().contains("Nonmana Resource")){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else if(((RadioButton) findViewById(R.id.option3)).isChecked()){
-			if(champions.get(i).getPassiveSkill().contains("Reducing Loss") ||
-					champions.get(i).getPassiveSkill().contains("Lifesteal") ||
-					champions.get(i).getPassiveSkill().contains("Revive")){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else if(((RadioButton) findViewById(R.id.option4)).isChecked()){
-			if(champions.get(i).getPassiveSkill().contains("Pet") ||
-					champions.get(i).getPassiveSkill().contains("Trap")){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else{
-			temporary.add(champions.get(i));
-			champions.remove(i);
-		}
-		return i;
-	}
-	
-	private int question9(int i){
-		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
-			if(champions.get(i).getDifficulty() <= 3){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
-			if(champions.get(i).getDifficulty() <= 7){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else if(((RadioButton) findViewById(R.id.option3)).isChecked()){
-			if(champions.get(i).getDifficulty() <= 10){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else{
-			temporary.add(champions.get(i));
-			champions.remove(i);
-		}
-		return i;
-	}
-	
-	private int question10(int i){
-		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
-			if(champions.get(i).getStyle().contains("Split push")){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
-			if(champions.get(i).getStyle().contains("Team fight")){
-				temporary.add(champions.get(i));
-				champions.remove(i);
-			}else{
-				i++;
-			}
-		}else{
-			temporary.add(champions.get(i));
-			champions.remove(i);
-		}
-		return i;
-	}
-	
-	private void filterChampion(){
-		int i = 0;
-		while(i < champions.size()){
-			switch(currentQuestionNumber){
-			case 0:
-				//1. Which Lane do you prefer?
-				i = question1(i);
-				break;
-			case 1:
-				//2.  Popular Champs VS Rare Champs?
-				i = question2(i);
-				break;
-			case 2:
-				//3. Which Damaging Style do you prefer?
-				i = question3(i);
-				break;
-			case 3:
-				//4. Would you like the appearance of your champion to be...
-				i = question4(i);
-				break;
-			case 4:
-				//5. When purchasing champions, I ...
-				i = question5(i);
-				break;
-			case 5:
-				//6. Which Dealing Type do you prefer?
-				i = question6(i);
-				break;
-			case 6:
-				//9. What kind of Active Skills do you think is the most important?
-				i = question7(i);
-				break;
-			case 7:
-				//10. What kind of Passive Skills do you think is the most important?
-				i = question8(i);
-				break;
-			case 8:
-				//8. Which level of champion difficulty do you prefer?
-				i = question9(i);
-				break;
-			case 9:
-				//Which Fight Style do you give more weight to?
-				i = question10(i);
-				break;
-			default:
-				break;
-			}
-		}
-		
+
+	private void showChampions(){
 		// Renew the linear layout with filtered champion list
 		LinearLayout scrollBar = (LinearLayout)findViewById(R.id.listContainer);
 		scrollBar.removeAllViews();
-		for (i = 0; i < temporary.size(); i++){
+		for (int i = 0; i < temporary.size(); i++){
     		Button imgbtn = new Button(this);
     		int resID = getApplicationContext().getResources().getIdentifier(temporary.get(i).getName().toLowerCase(), "drawable", "com.example.whosmychamp");
     		imgbtn.setBackgroundResource(resID);
@@ -627,7 +317,7 @@ public class Question extends Activity {
     				Point size = new Point();
     				getWindowManager().getDefaultDisplay().getSize(size);
     				    				
-    				View popupView = getLayoutInflater().inflate(R.layout.result, null);
+    				View popupView = getLayoutInflater().inflate(R.layout.profile, null);
     				PopupWindow pop = new PopupWindow(popupView, (int) (size.x * 0.8), ViewGroup.LayoutParams.WRAP_CONTENT);
     				pop.setAnimationStyle(-1);
     				pop.showAtLocation(v, 0, (int) (size.x * 0.1), (int) (size.y * 0.3));
@@ -644,11 +334,261 @@ public class Question extends Activity {
     		});
     		scrollBar.addView(imgbtn);
 		}
+	}
+	
+	private void question1(int i){
+		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
+			if(champions.get(i).getLane().contains("Top")){
+				temporary.add(champions.get(i));
+			}
+		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
+			if(champions.get(i).getLane().contains("Mid")){
+				temporary.add(champions.get(i));
+			}
+		}else if(((RadioButton) findViewById(R.id.option3)).isChecked()){
+			if(champions.get(i).getLane().contains("Jungle")){
+				temporary.add(champions.get(i));
+			}
+		}else if(((RadioButton) findViewById(R.id.option4)).isChecked()){
+			if(champions.get(i).getLane().contains("Bot(Marksman)")){
+				temporary.add(champions.get(i));
+			}
+		}else if(((RadioButton) findViewById(R.id.option5)).isChecked()){
+			if(champions.get(i).getLane().contains("Bot(Sup)")){
+				temporary.add(champions.get(i));
+			}
+		}else{
+			temporary.add(champions.get(i));
+		}
+	}
+	
+	private void question2(int i){
+		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
+			if(champions.get(i).getPopularity() == 1){
+				temporary.add(champions.get(i));
+			}
+		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
+			if(champions.get(i).getPopularity() == 0){
+				temporary.add(champions.get(i));
+			}
+		}else{
+			temporary.add(champions.get(i));
+		}
+	}
+	
+	private void question3(int i){
+		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
+			if(champions.get(i).getDamage_style().contains("Long")){
+				temporary.add(champions.get(i));
+			}
+		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
+			if(champions.get(i).getDamage_style().contains("Close")){
+				temporary.add(champions.get(i));
+			}
+		}else{
+			temporary.add(champions.get(i));
+		}
+	}
+	
+	private void question4(int i){
+		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
+			if(champions.get(i).getAppearance().contains("Human")){
+				temporary.add(champions.get(i));
+			}
+		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
+			if(champions.get(i).getAppearance().contains("Animal")){
+				temporary.add(champions.get(i));
+			}
+		}else if(((RadioButton) findViewById(R.id.option3)).isChecked()){
+			if(champions.get(i).getAppearance().contains("Demon")){
+				temporary.add(champions.get(i));
+			}
+		}else if(((RadioButton) findViewById(R.id.option4)).isChecked()){
+			if(champions.get(i).getAppearance().contains("Robot")){
+				temporary.add(champions.get(i));
+			}
+		}else{
+			temporary.add(champions.get(i));
+		}
+	}
+	
+	private void question5(int i){
+		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
+			if(champions.get(i).getPrice() >= 1400){
+				temporary.add(champions.get(i));
+			}
+		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
+			if(champions.get(i).getPrice() <= 1400){
+				temporary.add(champions.get(i));
+			}
+		}else{
+			temporary.add(champions.get(i));
+		}
+	}
+	
+	private void question6(int i){
+		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
+			if(champions.get(i).getType().contains("AP")){
+				temporary.add(champions.get(i));
+			}
+		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
+			if(champions.get(i).getType().contains("AD")){
+				temporary.add(champions.get(i));
+			}
+		}else{
+			temporary.add(champions.get(i));
+		}
+	}
+	
+	private void question7(int i){
+		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
+			if(champions.get(i).getActiveSkill().contains("Stunning") ||
+					champions.get(i).getActiveSkill().contains("Terror") ||
+					champions.get(i).getActiveSkill().contains("Slowdown")){
+				temporary.add(champions.get(i));
+			}
+		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
+			if(champions.get(i).getActiveSkill().contains("Healing") ||
+					champions.get(i).getActiveSkill().contains("Barrier") ||
+					champions.get(i).getActiveSkill().contains("Silence") ){
+				temporary.add(champions.get(i));
+			}
+		}else if(((RadioButton) findViewById(R.id.option3)).isChecked()){
+			if(champions.get(i).getActiveSkill().contains("Hide") ||
+					champions.get(i).getActiveSkill().contains("Escape")){
+				temporary.add(champions.get(i));
+			}
+		}else if(((RadioButton) findViewById(R.id.option4)).isChecked()){
+			if(champions.get(i).getActiveSkill().contains("Pull") ||
+					champions.get(i).getActiveSkill().contains("Push") ||
+					champions.get(i).getActiveSkill().contains("Daze")){
+				temporary.add(champions.get(i));
+			}
+		}else{
+			temporary.add(champions.get(i));
+		}
+	}
+	
+	private void question8(int i){
+		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
+			if(champions.get(i).getPassiveSkill().contains("Longlasting Damage")){
+				temporary.add(champions.get(i));
+			}
+		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
+			if(champions.get(i).getPassiveSkill().contains("Nonmana Resource")){
+				temporary.add(champions.get(i));
+			}
+		}else if(((RadioButton) findViewById(R.id.option3)).isChecked()){
+			if(champions.get(i).getPassiveSkill().contains("Reducing Loss") ||
+					champions.get(i).getPassiveSkill().contains("Lifesteal") ||
+					champions.get(i).getPassiveSkill().contains("Revive")){
+				temporary.add(champions.get(i));
+			}
+		}else if(((RadioButton) findViewById(R.id.option4)).isChecked()){
+			if(champions.get(i).getPassiveSkill().contains("Pet") ||
+					champions.get(i).getPassiveSkill().contains("Trap")){
+				temporary.add(champions.get(i));
+			}
+		}else{
+			temporary.add(champions.get(i));
+		}
+	}
+	
+	private void question9(int i){
+		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
+			if(champions.get(i).getDifficulty() <= 3){
+				temporary.add(champions.get(i));
+			}
+		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
+			if(champions.get(i).getDifficulty() <= 7){
+				temporary.add(champions.get(i));
+			}
+		}else if(((RadioButton) findViewById(R.id.option3)).isChecked()){
+			if(champions.get(i).getDifficulty() <= 10){
+				temporary.add(champions.get(i));
+			}
+		}else{
+			temporary.add(champions.get(i));
+		}
+	}
+	
+	private void question10(int i){
+		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
+			if(champions.get(i).getStyle().contains("Split push")){
+				temporary.add(champions.get(i));
+			}
+		}else if(((RadioButton) findViewById(R.id.option2)).isChecked()){
+			if(champions.get(i).getStyle().contains("Team fight")){
+				temporary.add(champions.get(i));
+			}
+		}else{
+			temporary.add(champions.get(i));
+		}
+	}
+	
+	private void filterChampion(){
+		int i = 0;
+		while(i < champions.size()){
+			switch(currentQuestionNumber){
+			case 0:
+				//1. Which Lane do you prefer?
+				question1(i);
+				i++;
+				break;
+			case 1:
+				//2.  Popular Champs VS Rare Champs?
+				question2(i);
+				i++;
+				break;
+			case 2:
+				//3. Which Damaging Style do you prefer?
+				question3(i);
+				i++;
+				break;
+			case 3:
+				//4. Would you like the appearance of your champion to be...
+				question4(i);
+				i++;
+				break;
+			case 4:
+				//5. When purchasing champions, I ...
+				question5(i);
+				i++;
+				break;
+			case 5:
+				//6. Which Dealing Type do you prefer?
+				question6(i);
+				i++;
+				break;
+			case 6:
+				//9. What kind of Active Skills do you think is the most important?
+				question7(i);
+				i++;
+				break;
+			case 7:
+				//10. What kind of Passive Skills do you think is the most important?
+				question8(i);
+				i++;
+				break;
+			case 8:
+				//8. Which level of champion difficulty do you prefer?
+				question9(i);
+				i++;
+				break;
+			case 9:
+				//Which Fight Style do you give more weight to?
+				question10(i);
+				i++;
+				break;
+			default:
+				break;
+			}
+		}
+		
+		showChampions();
 		
 		// Renew champions list with filtered elements
-		for(int j = 0; j < champions.size(); j++){
-			history.add(champions.get(j));
-		}
+		history.add(champions);
 		champions = temporary;
 		temporary = new ArrayList<Champion>();
 	}
@@ -691,5 +631,6 @@ public class Question extends Activity {
 
     	RadioButton option6 = (RadioButton)findViewById(R.id.option6);
     	nextQuestionHelper(option6, 6);
+    	
 	}
 }
