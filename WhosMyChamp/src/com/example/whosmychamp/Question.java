@@ -79,7 +79,9 @@ public class Question extends Activity {
     					switch (j){
     						case 0:
     							aChampion = new Champion();
-    							aChampion.setName(champList.getAttributeValue(0));
+    							String name = champList.getAttributeValue(0);
+    							aChampion.setName(name);
+    							aChampion.setId(name);
     							j++;
     							break;
     						case 1:// need to save it in array
@@ -175,7 +177,7 @@ public class Question extends Activity {
     	LinearLayout scrollBar = (LinearLayout)findViewById(R.id.listContainer);
 		for (int i = 0; i < champions.size(); i++){
     		Button imgbtn = new Button(this);
-    		int resID = getApplicationContext().getResources().getIdentifier(champions.get(i).getName().toLowerCase(), "drawable", "com.example.whosmychamp");
+    		int resID = getApplicationContext().getResources().getIdentifier(champions.get(i).getId(), "drawable", "com.example.whosmychamp");
     		imgbtn.setBackgroundResource(resID);
     		imgbtn.setOnClickListener(new OnClickListener(){
     			@Override
@@ -230,6 +232,7 @@ public class Question extends Activity {
 					nextButton.setText("See result");
 					
 				}else if(currentQuestionNumber == numQuestions){
+					champions = history.get(currentQuestionNumber - 1);
 					startActivity(new Intent(Question.this, Result.class));
 				}else{
 					Button backButton = (Button)findViewById(R.id.backButton);
@@ -308,7 +311,7 @@ public class Question extends Activity {
 		scrollBar.removeAllViews();
 		for (int i = 0; i < temporary.size(); i++){
     		Button imgbtn = new Button(this);
-    		int resID = getApplicationContext().getResources().getIdentifier(temporary.get(i).getName().toLowerCase(), "drawable", "com.example.whosmychamp");
+    		int resID = getApplicationContext().getResources().getIdentifier(temporary.get(i).getId(), "drawable", "com.example.whosmychamp");
     		imgbtn.setBackgroundResource(resID);
     		imgbtn.setOnClickListener(new OnClickListener(){
     			@Override
