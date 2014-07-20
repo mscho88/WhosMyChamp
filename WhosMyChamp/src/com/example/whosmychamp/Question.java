@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
@@ -68,12 +69,13 @@ public class Question extends Activity {
     		}
     		
     		// Load champion xml data file
-       		int j = 0;
+       		int i = 0, j = 0;
        		String[] temp;
        		ArrayList<String> read;
        		Champion aChampion = null;
     		XmlPullParser champList = getResources().getXml(R.xml.champion_data);
     		while(champList.getEventType() != XmlPullParser.END_DOCUMENT){
+    			i++;
     			if(champList.getEventType() == XmlPullParser.START_TAG){
     				if(champList.getName().equals("option")){
     					switch (j){
@@ -81,7 +83,7 @@ public class Question extends Activity {
     							aChampion = new Champion();
     							String name = champList.getAttributeValue(0);
     							aChampion.setName(name);
-    							aChampion.setId(name);
+    							aChampion.setId(1000+i);
     							j++;
     							break;
     						case 1:// need to save it in array
@@ -177,37 +179,14 @@ public class Question extends Activity {
     	LinearLayout scrollBar = (LinearLayout)findViewById(R.id.listContainer);
 		for (int i = 0; i < champions.size(); i++){
     		Button imgbtn = new Button(this);
-    		int resID = getApplicationContext().getResources().getIdentifier(champions.get(i).getId(), "drawable", "com.example.whosmychamp");
+    		int resID = getApplicationContext().getResources().getIdentifier(champions.get(i).getProfilePic(), "drawable", "com.example.whosmychamp");
     		imgbtn.setBackgroundResource(resID);
+    		imgbtn.setId(champions.get(i).getId());
     		imgbtn.setOnClickListener(new OnClickListener(){
     			@Override
     			public void onClick(View v){
     				killPopup();
-    				Point size = new Point();
-    				getWindowManager().getDefaultDisplay().getSize(size);
-    				    				
-    				View popupView = getLayoutInflater().inflate(R.layout.profile, null);
-    				PopupWindow pop = new PopupWindow(popupView, (int) (size.x * 0.8), ViewGroup.LayoutParams.WRAP_CONTENT);
-    				pop.setAnimationStyle(-1);
-    				pop.showAtLocation(v, 0, (int) (size.x * 0.1), (int) (size.y * 0.3));
-    				
-    				curPopup = pop;
-    				/*Button btn = (Button) v;
-    				(findViewById(v.getId());
-    				TextView txt = (TextView) findViewById(R.id.profile_pic);
-    				txt.setBackgroundResource(v.getId());
-    				txt = (TextView) v.findViewById(R.id.profile_name);
-    				txt.setText("");
-    				
-    				txt = (TextView) v.findViewById(R.id.profile_pic);
-    				*/
-    				Button close = (Button) popupView.findViewById(R.id.button1);
-    				close.setOnClickListener(new OnClickListener(){
-    					@Override
-    					public void onClick(View arg0) {
-    						killPopup();
-    					}
-    				});
+    				profilePopup(v);
     			}
     		});
     		scrollBar.addView(imgbtn);
@@ -280,6 +259,46 @@ public class Question extends Activity {
 		}
 	}
 	
+	private void profilePopup(View v){
+		Point size = new Point();
+		getWindowManager().getDefaultDisplay().getSize(size);
+		    				
+		View popupView = getLayoutInflater().inflate(R.layout.profile, null);
+		PopupWindow pop = new PopupWindow(popupView, (int) (size.x * 0.8), ViewGroup.LayoutParams.WRAP_CONTENT);
+		pop.setAnimationStyle(-1);
+		pop.showAtLocation(v, 0, (int) (size.x * 0.1), (int) (size.y * 0.3));
+		curPopup = pop;
+		 
+		Champion chosen = null;
+		for(int i = 0; i < champions.size(); i++){
+			if(champions.get(i).getId() == v.getId()){
+				chosen = champions.get(i);
+				break;
+			}
+		}
+
+		Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/lolfont.ttf");
+		ImageView profile_pic = (ImageView)popupView.findViewById(R.id.profile_pic);
+		TextView profile_name = (TextView)popupView.findViewById(R.id.profile_name);
+		TextView content = (TextView)popupView.findViewById(R.id.content);
+		
+		int resID = getApplicationContext().getResources().getIdentifier(chosen.getProfilePic(), "drawable", "com.example.whosmychamp");
+		profile_pic.setBackgroundResource(resID);
+		profile_name.setText(chosen.getName());
+		content.setText("hahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahaha");
+		
+	    profile_name.setTypeface(typeFace);
+	    content.setTypeface(typeFace);
+		
+		Button close = (Button) popupView.findViewById(R.id.button1);
+		close.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View arg0) {
+				killPopup();
+			}
+		});
+	}
+	
 	private void finishQuestion(){
 		//if(currentQuestionNumber == 9){
 			TextView txt = (TextView) findViewById(R.id.questionView);
@@ -309,32 +328,22 @@ public class Question extends Activity {
 		// Renew the linear layout with filtered champion list
 		LinearLayout scrollBar = (LinearLayout)findViewById(R.id.listContainer);
 		scrollBar.removeAllViews();
-		for (int i = 0; i < temporary.size(); i++){
+		for (int i = 0; i < champions.size(); i++){
     		Button imgbtn = new Button(this);
-    		int resID = getApplicationContext().getResources().getIdentifier(temporary.get(i).getId(), "drawable", "com.example.whosmychamp");
+    		int resID = getApplicationContext().getResources().getIdentifier(champions.get(i).getProfilePic(), "drawable", "com.example.whosmychamp");
     		imgbtn.setBackgroundResource(resID);
+    		int a = champions.get(i).getId();
+    		int b = imgbtn.getId();
+    		imgbtn.setId(champions.get(i).getId());
     		imgbtn.setOnClickListener(new OnClickListener(){
     			@Override
     			public void onClick(View v){
     				killPopup();
-    				Point size = new Point();
-    				getWindowManager().getDefaultDisplay().getSize(size);
-    				    				
-    				View popupView = getLayoutInflater().inflate(R.layout.profile, null);
-    				PopupWindow pop = new PopupWindow(popupView, (int) (size.x * 0.8), ViewGroup.LayoutParams.WRAP_CONTENT);
-    				pop.setAnimationStyle(-1);
-    				pop.showAtLocation(v, 0, (int) (size.x * 0.1), (int) (size.y * 0.3));
-    				curPopup = pop;
-    				
-    				Button close = (Button) popupView.findViewById(R.id.button1);
-    				close.setOnClickListener(new OnClickListener(){
-    					@Override
-    					public void onClick(View arg0) {
-    						killPopup();
-    					}
-    				});
+    				profilePopup(v);
     			}
     		});
+    		a = champions.get(i).getId();
+    		b = imgbtn.getId();
     		scrollBar.addView(imgbtn);
 		}
 	}

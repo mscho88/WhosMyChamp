@@ -6,7 +6,7 @@ import android.view.View;
 
 public class Champion {
 
-	private String id;
+	private int id;
 	private String name;
 	private ArrayList<String> lane;//good
 	private int popularity;//good
@@ -23,17 +23,20 @@ public class Champion {
 		// TODO Auto-generated constructor stub
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
-		id = id.replaceAll(" ","");
-		id = id.replaceAll("['.]","");
-		id = id.toLowerCase();
+	public void setId(int id) {
 		this.id = id;
 	}
 	
+	public String getProfilePic(){
+		String address = name.replaceAll(" ","");
+		address = address.replaceAll("['.]","");
+		address = address.toLowerCase();
+		return address;
+	}
 	public String getName() {
 		return name;
 	}
