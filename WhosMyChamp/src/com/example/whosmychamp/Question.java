@@ -7,31 +7,36 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
 import android.app.Activity;
-import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class Question extends Activity {
 
 	// The number of questions that will be asked
-	public final int numQuestions = 10;
-	public int currentQuestionNumber = 0;
+	//public final int numQuestions = 10;
+	//public int currentQuestionNumber = 0;
 	
 	public ArrayList<String> questions = new ArrayList<String>(); // Question list completed
-	public static ArrayList<Champion> champions = new ArrayList<Champion>(); // In progress
-	public ArrayList<Champion> temporary = new ArrayList<Champion>(); // In progress
-	public ArrayList<ArrayList> history = new ArrayList<ArrayList>(); // In progress
-	public PopupWindow curPopup = null;	
+	public ArrayList<Champion> champions = new ArrayList<Champion>(); // In progress
+	//public ArrayList<Champion> temporary = new ArrayList<Champion>(); // In progress
+	public ArrayList<Champion> history = new ArrayList<Champion>(); // In progress
+	
+	public PopupWindow curPopup = null;
+	
+	Point screenSize;
+	Typeface typeFace;
 	
 	/** Called when the activity is first created. */
 	@Override
@@ -39,26 +44,15 @@ public class Question extends Activity {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.question);
 	    
-	    Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/lolfont.ttf");
-	    TextView myTextView = (TextView) findViewById(R.id.questionView);
-	    myTextView.setTypeface(typeFace);
-	    RadioButton rb = (RadioButton) findViewById(R.id.option1);
-	    rb.setTypeface(typeFace);
-	    rb = (RadioButton) findViewById(R.id.option2);
-	    rb.setTypeface(typeFace);
-	    rb = (RadioButton) findViewById(R.id.option3);
-	    rb.setTypeface(typeFace);
-	    rb = (RadioButton) findViewById(R.id.option4);
-	    rb.setTypeface(typeFace);
-	    rb = (RadioButton) findViewById(R.id.option5);
-	    rb.setTypeface(typeFace);
-	    rb = (RadioButton) findViewById(R.id.option6);
-	    rb.setTypeface(typeFace);
-	    
+	    // Read the font
+	    typeFace = Typeface.createFromAsset(getAssets(),"fonts/lolfont.ttf");
+	    screenSize = new Point();
+		getWindowManager().getDefaultDisplay().getSize(screenSize);
+	    	    
     	// Load xml question data file
     	try{
     		XmlPullParser customList = null;
-    	    customList = getResources().getXml(R.xml.questions_eng);
+    	    customList = getResources().getXml(R.xml.questions);
     	    while(customList.getEventType() != XmlPullParser.END_DOCUMENT){
     			if(customList.getEventType() == XmlPullParser.START_TAG){
     				if(customList.getName().equals("option")){
@@ -73,6 +67,7 @@ public class Question extends Activity {
        		String[] temp;
        		ArrayList<String> read;
        		Champion aChampion = null;
+       		
     		XmlPullParser champList = getResources().getXml(R.xml.champion_data);
     		while(champList.getEventType() != XmlPullParser.END_DOCUMENT){
     			i++;
@@ -175,6 +170,103 @@ public class Question extends Activity {
     		e.printStackTrace();
     	}
     	
+    	LayoutParams WWParam = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+    	LayoutParams FWParam = new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
+    	LayoutParams MWParam = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+    	LinearLayout.LayoutParams MW1Param = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, 1.0f);
+    	
+    	LinearLayout questionsLayout = (LinearLayout)findViewById(R.id.questionsLayout);
+    	LinearLayout aRow = null;
+    	boolean isQuestion = true;
+    	// 1. questions
+    	for(int i = 0; i < questions.size(); i++){
+    		if(questions.get(i).toString().equals("$$$$")){
+    			// initialize the entire row
+    			aRow = new LinearLayout(this);
+    			aRow.setLayoutParams(MWParam);
+    			aRow.setOrientation(0);
+    			aRow.setWeightSum(4);
+    			isQuestion = true;
+    		}else if(questions.get(i).toString().equals("$$$")){
+    			// enter
+    			questionsLayout.addView(aRow);
+    			aRow = new LinearLayout(this);
+    			aRow.setLayoutParams(MWParam);
+    			aRow.setOrientation(0);
+    			aRow.setWeightSum(4);
+    		}else if(questions.get(i).toString().equals("$$")){
+    			questionsLayout = null;
+    			aRow = null;
+    		}else{
+    			if(isQuestion){
+    				// Question
+    				TextView questionView = new TextView(this);
+    				questionView.setLayoutParams(WWParam);
+    				questionView.setText(questions.get(i));
+    				questionView.setTypeface(typeFace);
+    				questionsLayout.addView(questionView);
+	    	    	isQuestion = false;
+    			}else{
+    				// option
+    				LinearLayout checkContainer = new LinearLayout(this);
+	    	    	checkContainer.setLayoutParams(MW1Param);
+	    	    	CheckBox check = new CheckBox(this);
+	    		    check.setTypeface(typeFace);
+	    	    	check.setId(i);
+	    	    	check.setLayoutParams(FWParam);
+	    	    	check.setText(questions.get(i).toString());
+	    	    	check.setTextSize(10.0f);
+	    	    	check.setOnClickListener(new OnClickListener() {
+	    	    		@Override
+	    	    		public void onClick(View v) {
+	    	    			if (((CheckBox) v).isChecked()) {
+	    	    				checkBoxOnClickOn((CheckBox) v);
+	    	    			}else {
+	    	    				checkBoxOnClickOff((CheckBox) v);
+	    	    			}
+	    	    		}
+	    	    	});
+	    	    	checkContainer.addView(check);
+	    	    	aRow.addView(checkContainer);
+	    	    	//check.setTextColor(Color.parseColor("#000000"));
+    			}
+    		}
+    	}
+    	
+    	// 2. number of champions that will be in a row of scroll view.
+    	int num_list = screenSize.x / 73;
+    	int j = 1;
+    	LinearLayout championScrollView = (LinearLayout)findViewById(R.id.championsScrollView);
+    	aRow = new LinearLayout(this);
+        aRow.setOrientation(LinearLayout.HORIZONTAL);
+        aRow.setLayoutParams(WWParam);
+
+    	for(int i = 0; i < champions.size(); i++){
+    		if (j < num_list){
+	    		Button imgbtn = new Button(this);
+	    		int  resID = getApplicationContext().getResources().getIdentifier(champions.get(i).getProfilePic(), "drawable", "com.example.whosmychamp");
+	    		imgbtn.setBackgroundResource(resID);
+	    		imgbtn.setId(champions.get(i).getId());
+	    		imgbtn.setOnClickListener(new OnClickListener(){
+	    			@Override
+	    			public void onClick(View v){
+	    				killPopup();
+	    				profilePopup(v);
+	    			}
+	    		});
+	    		aRow.addView(imgbtn);
+	    		j++;
+    		}else if(j == num_list){
+    			championScrollView.addView(aRow);
+    			aRow = new LinearLayout(this);
+    			aRow.setOrientation(LinearLayout.HORIZONTAL);
+    	        aRow.setLayoutParams(WWParam);
+    			j = 1;
+    		}
+    	}
+    	
+    	aRow = null;
+    	/*
     	// champion list layout
     	LinearLayout scrollBar = (LinearLayout)findViewById(R.id.listContainer);
 		for (int i = 0; i < champions.size(); i++){
@@ -190,11 +282,11 @@ public class Question extends Activity {
     			}
     		});
     		scrollBar.addView(imgbtn);
-		}
+		}*/
     	
 		// Start with the first question
-    	nextQuestion();
-    	
+    	//nextQuestion();
+    	/*
     	// Set the listener at the next button
     	Button nextButton = (Button)findViewById(R.id.nextButton);
     	nextButton.setOnClickListener(new OnClickListener(){
@@ -249,7 +341,16 @@ public class Question extends Activity {
 					nextButton.setText("Next");
 				}
 			}
-    	});
+    	});*/
+	}
+	private void checkBoxOnClickOn(CheckBox v){
+		for(int i = 0; i < champions.size(); i++){
+			
+		}
+	}
+
+	private void checkBoxOnClickOff(CheckBox v){
+		
 	}
 	
 	private void killPopup(){
@@ -260,13 +361,10 @@ public class Question extends Activity {
 	}
 	
 	private void profilePopup(View v){
-		Point size = new Point();
-		getWindowManager().getDefaultDisplay().getSize(size);
-		    				
 		View popupView = getLayoutInflater().inflate(R.layout.profile, null);
-		PopupWindow pop = new PopupWindow(popupView, (int) (size.x * 0.8), ViewGroup.LayoutParams.WRAP_CONTENT);
+		PopupWindow pop = new PopupWindow(popupView, (int) (screenSize.x * 0.8), ViewGroup.LayoutParams.WRAP_CONTENT);
 		pop.setAnimationStyle(-1);
-		pop.showAtLocation(v, 0, (int) (size.x * 0.1), (int) (size.y * 0.3));
+		pop.showAtLocation(v, 0, (int) (screenSize.x * 0.1), (int) (screenSize.y * 0.3));
 		curPopup = pop;
 		 
 		Champion chosen = null;
@@ -298,7 +396,7 @@ public class Question extends Activity {
 			}
 		});
 	}
-	
+	 /*
 	private void finishQuestion(){
 		//if(currentQuestionNumber == 9){
 			TextView txt = (TextView) findViewById(R.id.questionView);
@@ -323,7 +421,7 @@ public class Question extends Activity {
 			opt.setText("");
 		//}
 	}
-
+*//*
 	private void showChampions(){
 		// Renew the linear layout with filtered champion list
 		LinearLayout scrollBar = (LinearLayout)findViewById(R.id.listContainer);
@@ -346,8 +444,8 @@ public class Question extends Activity {
     		b = imgbtn.getId();
     		scrollBar.addView(imgbtn);
 		}
-	}
-	
+	}*/
+	/*
 	private void question1(int i){
 		if(((RadioButton) findViewById(R.id.option1)).isChecked()){
 			if(champions.get(i).getLane().contains("Top")){
@@ -537,7 +635,8 @@ public class Question extends Activity {
 			temporary.add(champions.get(i));
 		}
 	}
-	
+	*/
+	/*
 	private void filterChampion(){
 		int i = 0;
 		while(i < champions.size()){
@@ -644,5 +743,5 @@ public class Question extends Activity {
     	RadioButton option6 = (RadioButton)findViewById(R.id.option6);
     	nextQuestionHelper(option6, 6);
     	
-	}
+	}*/
 }

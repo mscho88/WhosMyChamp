@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $$$$ is a splitter between the questions
+	 $$$ is a splitter between the options, it splits into 4 options in a row
+	 $$ is a end of the questions -->
+
+<questions>
+	<option start="$$$$"></option>
+    
+	<option question="Lane"></option>
+	<option A="Top"></option>
+	<option B="Mid"></option>
+	<option C="Jungle"></option>
+	<option D="Bottom"></option>
+	<option E="$$$"></option>
+	<option H="$$$$"></option>
+	
+	<option question="Role"></option>
+	<option A="Fighter"></option>
+	<option B="Tank"></option>
+	<option C="Assassin"></option>
+	<option D="Mage"></option>
+	<option E="$$$"></option>
+	<option F="Marksman"></option>
+	<option G="Support"></option>
+	<option E="$$$"></option>
+	<option H="$$$$"></option>
+	
+	<option question="Skill"></option>
+	<option A="1"></option>
+	<option B="2"></option>
+	<option C="3"></option>
+	<option D="4"></option>
+	<option E="$$$"></option>
+	<option F="4"></option>
+	<option G="4"></option>
+	<option H="4"></option>
+	<option I="4"></option>
+	<option J="$$$"></option>
+	<option K="4"></option>
+	<option L="4"></option>
+	<option M="4"></option>
+	<option N="4"></option>
+	<option O="$$$"></option>
+	<option P="4"></option>
+	<option Q="4"></option>
+	<option R="4"></option>
+	<option S="4"></option>
+	<option T="$$$"></option>
+	<option U="$$$$"></option>
+	
+	<option question ="Appearance"></option>
+	<option A="Human-like"></option>
+	<option B="Animal-like"></option>
+	<option C="Demon-like"></option>
+	<option D="Robot-like"></option>
+	<option E="$$$"></option>
+	<option H="$$$$"></option>
+	
+	<option question="Price"></option>
+	<option A="450"></option>
+	<option B="1350"></option>
+	<option C="3150"></option>
+	<option D="4800"></option>
+	<option E="$$$"></option>
+	<option H="6300"></option>
+	<option I="$$$"></option>
+	<option J="$$$$"></option>
+	
+	<option question="Dealing Style"></option>
+	<option A="Ability Power"></option>
+	<option B="Attack Damage"></option>
+	<option C="$$$"></option>
+	<option D="$$"></option>
+</questions>

@@ -20,9 +20,8 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 public class Result extends Activity {
-
-	private PopupWindow curpop;
-	/** Called when the activity is first created. */
+/*
+	private PopupWindow curpop; 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
@@ -105,5 +104,5 @@ public class Result extends Activity {
 				curpop.dismiss();
 			}
 		});
-	}
+	}*/
 }
