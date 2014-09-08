@@ -354,13 +354,13 @@ public class Question extends Activity {
         aRow.setOrientation(LinearLayout.HORIZONTAL);
         aRow.setLayoutParams(WWParam);
         
-        int num_list = screenSize.x / 73;
+        int num_list = 6;
     	int j = 1;
     	
     	championScrollView.removeAllViews();
     	
     	for(int i = 0; i < champions.size(); i++){
-    		if (j < num_list){
+    		if (j <= num_list){
 	    		Button imgbtn = new Button(this);
 	    		int  resID = getApplicationContext().getResources().getIdentifier(champions.get(i).getProfilePic(), "drawable", "com.example.whosmychamp");
 	    		imgbtn.setBackgroundResource(resID);
@@ -374,7 +374,8 @@ public class Question extends Activity {
 	    		});
 	    		aRow.addView(imgbtn);
 	    		j++;
-    		}else if(j == num_list){
+    		}
+    		if(j == num_list){
     			championScrollView.addView(aRow);
     			aRow = new LinearLayout(this);
     			aRow.setOrientation(LinearLayout.HORIZONTAL);
@@ -382,6 +383,7 @@ public class Question extends Activity {
     			j = 1;
     		}
     	}
+		championScrollView.addView(aRow);
 	}
 	
 	private void checkBoxOnClickOn(CheckBox v){
@@ -463,7 +465,7 @@ public class Question extends Activity {
 					v.getText().toString().equals("Jungle") ||
 					v.getText().toString().equals("Bottom")){
 				for(int j = 0; j < history.get(i).getLane().size(); j++){
-					if(!v.getText().toString().equals(history.get(i).getLane().get(j))){
+					if(!(v.getText().toString().equals(history.get(i).getLane().get(j)))){
 						if(v.getText().toString().equals("Top") ||
 								v.getText().toString().equals("Mid") ||
 								v.getText().toString().equals("Jungle") ||
