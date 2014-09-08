@@ -232,7 +232,8 @@ public class Question extends Activity {
     			}
     		}
     	}
-    	
+    	showChampions();
+/*
     	// 2. number of champions that will be in a row of scroll view.
     	int num_list = screenSize.x / 73;
     	int j = 1;
@@ -264,7 +265,7 @@ public class Question extends Activity {
     			j = 1;
     		}
     	}
-    	
+    	*/
     	aRow = null;
     	/*
     	// champion list layout
@@ -343,14 +344,268 @@ public class Question extends Activity {
 			}
     	});*/
 	}
+	
+	private void showChampions(){
+    	// 2. number of champions that will be in a row of scroll view.
+		
+    	LayoutParams WWParam = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+    	LinearLayout championScrollView = (LinearLayout)findViewById(R.id.championsScrollView);
+    	LinearLayout aRow = new LinearLayout(this);
+        aRow.setOrientation(LinearLayout.HORIZONTAL);
+        aRow.setLayoutParams(WWParam);
+        
+        int num_list = screenSize.x / 73;
+    	int j = 1;
+    	
+    	championScrollView.removeAllViews();
+    	
+    	for(int i = 0; i < champions.size(); i++){
+    		if (j < num_list){
+	    		Button imgbtn = new Button(this);
+	    		int  resID = getApplicationContext().getResources().getIdentifier(champions.get(i).getProfilePic(), "drawable", "com.example.whosmychamp");
+	    		imgbtn.setBackgroundResource(resID);
+	    		imgbtn.setId(champions.get(i).getId());
+	    		imgbtn.setOnClickListener(new OnClickListener(){
+	    			@Override
+	    			public void onClick(View v){
+	    				killPopup();
+	    				profilePopup(v);
+	    			}
+	    		});
+	    		aRow.addView(imgbtn);
+	    		j++;
+    		}else if(j == num_list){
+    			championScrollView.addView(aRow);
+    			aRow = new LinearLayout(this);
+    			aRow.setOrientation(LinearLayout.HORIZONTAL);
+    	        aRow.setLayoutParams(WWParam);
+    			j = 1;
+    		}
+    	}
+	}
+	
 	private void checkBoxOnClickOn(CheckBox v){
+		ArrayList<Champion> ans = new ArrayList<Champion>(); // In progress
 		for(int i = 0; i < champions.size(); i++){
-			
+			if(v.getText().toString().equals("Top") ||
+					v.getText().toString().equals("Mid") ||
+					v.getText().toString().equals("Jungle") ||
+					v.getText().toString().equals("Bottom")){
+				if(champions.get(i).getLane().contains(v.getText())){
+					ans.add(champions.get(i));
+				}else{
+					history.add(champions.get(i));
+				}
+			}else if(v.getText().toString().equals("Fighter") ||
+					v.getText().toString().equals("Tank") ||
+					v.getText().toString().equals("Assassin") ||
+					v.getText().toString().equals("Mage") ||
+					v.getText().toString().equals("Marksman") ||
+					v.getText().toString().equals("Support")){
+				if(champions.get(i).getLane().contains(v.getText())){
+					ans.add(champions.get(i));
+				}else{
+					history.add(champions.get(i));
+				}
+			}else if(v.getText().toString().equals("skill1") ||
+					v.getText().toString().equals("skill2") ||
+					v.getText().toString().equals("skill3") ||
+					v.getText().toString().equals("skill4") ||
+					v.getText().toString().equals("skill5") ||
+					v.getText().toString().equals("skill6")){
+				if(champions.get(i).getLane().contains(v.getText())){
+					ans.add(champions.get(i));
+				}else{
+					history.add(champions.get(i));
+				}
+			}else if(v.getText().toString().equals("Human-like") ||
+					v.getText().toString().equals("Animal-like") ||
+					v.getText().toString().equals("Demon-like") ||
+					v.getText().toString().equals("Robot-like")){
+				if(champions.get(i).getAppearance().contains(v.getText())){
+					ans.add(champions.get(i));
+				}else{
+					history.add(champions.get(i));
+				}
+			}else if(v.getText().toString().equals("450") ||
+					v.getText().toString().equals("1250") ||
+					v.getText().toString().equals("3150") ||
+					v.getText().toString().equals("4800") ||
+					v.getText().toString().equals("6300")){
+				if(champions.get(i).getPrice() == Integer.parseInt((String) v.getText())){
+					ans.add(champions.get(i));
+				}else{
+					history.add(champions.get(i));
+				}
+			}else if(v.getText().toString().equals("Ability Power") ||
+					v.getText().toString().equals("Attack Damage")){
+				if(champions.get(i).getDamage_style().contains(v.getText())){
+					ans.add(champions.get(i));
+				}else{
+					history.add(champions.get(i));
+				}
+			}
 		}
+		champions = null;
+		champions = new ArrayList<Champion>();
+		for(int i = 0; i < ans.size(); i++){
+			champions.add(ans.get(i));
+		}
+		ans = null;
+		showChampions();
 	}
 
 	private void checkBoxOnClickOff(CheckBox v){
+		ArrayList<Champion> ans = new ArrayList<Champion>(); // In progress
+		for(int i = 0; i < history.size(); i++){
+			if(v.getText().toString().equals("Top") ||
+					v.getText().toString().equals("Mid") ||
+					v.getText().toString().equals("Jungle") ||
+					v.getText().toString().equals("Bottom")){
+				for(int j = 0; j < history.get(i).getLane().size(); j++){
+					if(!v.getText().toString().equals(history.get(i).getLane().get(j))){
+						if(v.getText().toString().equals("Top") ||
+								v.getText().toString().equals("Mid") ||
+								v.getText().toString().equals("Jungle") ||
+								v.getText().toString().equals("Bottom")){
+							ans.add(history.get(i));
+							j = history.get(i).getLane().size();
+						}
+					}
+				}
+				/*
+				if(champions.get(i).getLane().contains(v.getText())){
+					ans.add(champions.get(i));
+				}else{
+					history.add(champions.get(i));
+				}*/
+				
+			}else if(v.getText().toString().equals("Fighter") ||
+					v.getText().toString().equals("Tank") ||
+					v.getText().toString().equals("Assassin") ||
+					v.getText().toString().equals("Mage") ||
+					v.getText().toString().equals("Marksman") ||
+					v.getText().toString().equals("Support")){
+				if(champions.get(i).getLane().contains(v.getText())){
+					ans.add(champions.get(i));
+				}else{
+					history.add(champions.get(i));
+				}
+			}else if(v.getText().toString().equals("skill1") ||
+					v.getText().toString().equals("skill2") ||
+					v.getText().toString().equals("skill3") ||
+					v.getText().toString().equals("skill4") ||
+					v.getText().toString().equals("skill5") ||
+					v.getText().toString().equals("skill6")){
+				if(champions.get(i).getLane().contains(v.getText())){
+					ans.add(champions.get(i));
+				}else{
+					history.add(champions.get(i));
+				}
+			}else if(v.getText().toString().equals("Human-like") ||
+					v.getText().toString().equals("Animal-like") ||
+					v.getText().toString().equals("Demon-like") ||
+					v.getText().toString().equals("Robot-like")){
+				if(champions.get(i).getAppearance().contains(v.getText())){
+					ans.add(champions.get(i));
+				}else{
+					history.add(champions.get(i));
+				}
+			}else if(v.getText().toString().equals("450") ||
+					v.getText().toString().equals("1250") ||
+					v.getText().toString().equals("3150") ||
+					v.getText().toString().equals("4800") ||
+					v.getText().toString().equals("6300")){
+				if(champions.get(i).getPrice() == Integer.parseInt((String) v.getText())){
+					ans.add(champions.get(i));
+				}else{
+					history.add(champions.get(i));
+				}
+			}else if(v.getText().toString().equals("Ability Power") ||
+					v.getText().toString().equals("Attack Damage")){
+				if(champions.get(i).getDamage_style().contains(v.getText())){
+					ans.add(champions.get(i));
+				}else{
+					history.add(champions.get(i));
+				}
+			}
+		}
 		
+		
+		/*
+		for(int i = 0; i < champions.size(); i++){
+			if(v.getText().toString().equals("Top") ||
+					v.getText().toString().equals("Mid") ||
+					v.getText().toString().equals("Jungle") ||
+					v.getText().toString().equals("Bottom")){
+				if(champions.get(i).getLane().contains(v.getText())){
+					ans.add(champions.get(i));
+				}else{
+					history.add(champions.get(i));
+				}
+				for(int j = 0; j < history.size(); j++){
+					for(int k = 0; k < history.get(i).getLane().size(); k++){
+						if()
+						ans.add(history.get(i));
+					}
+				}
+			}else if(v.getText().toString().equals("Fighter") ||
+					v.getText().toString().equals("Tank") ||
+					v.getText().toString().equals("Assassin") ||
+					v.getText().toString().equals("Mage") ||
+					v.getText().toString().equals("Marksman") ||
+					v.getText().toString().equals("Support")){
+				if(champions.get(i).getLane().contains(v.getText())){
+					ans.add(champions.get(i));
+				}else{
+					history.add(champions.get(i));
+				}
+			}else if(v.getText().toString().equals("skill1") ||
+					v.getText().toString().equals("skill2") ||
+					v.getText().toString().equals("skill3") ||
+					v.getText().toString().equals("skill4") ||
+					v.getText().toString().equals("skill5") ||
+					v.getText().toString().equals("skill6")){
+				if(champions.get(i).getLane().contains(v.getText())){
+					ans.add(champions.get(i));
+				}else{
+					history.add(champions.get(i));
+				}
+			}else if(v.getText().toString().equals("Human-like") ||
+					v.getText().toString().equals("Animal-like") ||
+					v.getText().toString().equals("Demon-like") ||
+					v.getText().toString().equals("Robot-like")){
+				if(champions.get(i).getAppearance().contains(v.getText())){
+					ans.add(champions.get(i));
+				}else{
+					history.add(champions.get(i));
+				}
+			}else if(v.getText().toString().equals("450") ||
+					v.getText().toString().equals("1250") ||
+					v.getText().toString().equals("3150") ||
+					v.getText().toString().equals("4800") ||
+					v.getText().toString().equals("6300")){
+				if(champions.get(i).getPrice() == Integer.parseInt((String) v.getText())){
+					ans.add(champions.get(i));
+				}else{
+					history.add(champions.get(i));
+				}
+			}else if(v.getText().toString().equals("Ability Power") ||
+					v.getText().toString().equals("Attack Damage")){
+				if(champions.get(i).getDamage_style().contains(v.getText())){
+					ans.add(champions.get(i));
+				}else{
+					history.add(champions.get(i));
+				}
+			}
+		}*/
+		//champions = null;
+		//champions = new ArrayList<Champion>();
+		for(int i = 0; i < ans.size(); i++){
+			champions.add(ans.get(i));
+		}
+		ans = null;
+		showChampions();
 	}
 	
 	private void killPopup(){
