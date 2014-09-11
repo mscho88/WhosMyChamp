@@ -30,59 +30,170 @@
 					<TextView
 	        		    android:layout_width="fill_parent"
 	        		    android:layout_height="wrap_content"
-	        		    android:text="Lane" />
+	        		    android:text="Lane"/>
 	        	</LinearLayout>
 	        	
 	        	<LinearLayout
 			    android:id="@+id/laneCheckBoxes"
 				android:layout_width="match_parent"
 				android:layout_height="fill_parent"
-				android:orientation="horizontal"
-				android:weightSum="4">
-					<LinearLayout
+				android:orientation="vertical">
+		        	<LinearLayout
 					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:layout_weight="1">
-		        		<CheckBox
-		        		    android:id="@+id/laneBox1"
-		        		    android:layout_width="fill_parent"
-		        		    android:layout_height="wrap_content"
-		        		    android:text="Top" />
-	        		</LinearLayout>
-	        		
-					<LinearLayout
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:layout_weight="1">
-		        		<CheckBox
-		        		    android:id="@+id/laneBox2"
-		        		    android:layout_width="fill_parent"
-		        		    android:layout_height="wrap_content"
-		        		    android:text="Top" />
-	        		</LinearLayout>
-	        		
-	        		<LinearLayout
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:layout_weight="1">
-		        		<CheckBox
-		        		    android:id="@+id/laneBox3"
-		        		    android:layout_width="fill_parent"
-		        		    android:layout_height="wrap_content"
-		        		    android:text="Top" />
-	        		</LinearLayout>
-	        		
-	        		<LinearLayout
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:layout_weight="1">
-		        		<CheckBox
-		        		    android:id="@+id/laneBox4"
-		        		    android:layout_width="fill_parent"
-		        		    android:layout_height="wrap_content"
-		        		    android:text="Top" />
-	        		</LinearLayout>
+					android:layout_height="fill_parent"
+					android:orientation="horizontal"
+					android:weightSum="4">
+						<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1">
+			        		<CheckBox
+			        		    android:id="@+id/laneBox1"
+			        		    android:layout_width="fill_parent"
+			        		    android:layout_height="wrap_content"
+			        		    android:text="Top"
+								android:textSize="10dp"/>
+		        		</LinearLayout>
+		        		
+						<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1">
+			        		<CheckBox
+			        		    android:id="@+id/laneBox2"
+			        		    android:layout_width="fill_parent"
+			        		    android:layout_height="wrap_content"
+			        		    android:text="Top"
+								android:textSize="10dp"/>
+		        		</LinearLayout>
+		        		
+		        		<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1">
+			        		<CheckBox
+			        		    android:id="@+id/laneBox3"
+			        		    android:layout_width="fill_parent"
+			        		    android:layout_height="wrap_content"
+			        		    android:text="Top"
+								android:textSize="10dp"/>
+		        		</LinearLayout>
+		        		
+		        		<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1">
+			        		<CheckBox
+			        		    android:id="@+id/laneBox4"
+			        		    android:layout_width="fill_parent"
+			        		    android:layout_height="wrap_content"
+			        		    android:text="Top"
+								android:textSize="10dp"/>
+		        		</LinearLayout>
+		        	</LinearLayout>
 	        	</LinearLayout>
+	        	<!-- Lane -->
+	        	
+	        	<!-- Role -->
+	            <LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content">
+					<TextView
+	        		    android:layout_width="fill_parent"
+	        		    android:layout_height="wrap_content"
+	        		    android:text="Role" />
+	        	</LinearLayout>
+	        	
+	        	<LinearLayout
+			    android:id="@+id/roleCheckBoxes"
+				android:layout_width="match_parent"
+				android:layout_height="fill_parent"
+				android:orientation="vertical">
+		        	<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="fill_parent"
+					android:orientation="horizontal"
+					android:weightSum="4">
+						<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1">
+			        		<CheckBox
+			        		    android:id="@+id/roleBox1"
+			        		    android:layout_width="fill_parent"
+			        		    android:layout_height="wrap_content"
+			        		    android:text="Fither"
+								android:textSize="10dp"/>
+		        		</LinearLayout>
+		        		
+						<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1">
+			        		<CheckBox
+			        		    android:id="@+id/roleBox2"
+			        		    android:layout_width="fill_parent"
+			        		    android:layout_height="wrap_content"
+			        		    android:text="Tank"
+								android:textSize="10dp"/>
+		        		</LinearLayout>
+		        		
+		        		<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1">
+			        		<CheckBox
+			        		    android:id="@+id/roleBox3"
+			        		    android:layout_width="fill_parent"
+			        		    android:layout_height="wrap_content"
+			        		    android:text="Assassin"
+								android:textSize="10dp"/>
+		        		</LinearLayout>
+		        		
+		        		<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1">
+			        		<CheckBox
+			        		    android:id="@+id/roleBox4"
+			        		    android:layout_width="fill_parent"
+			        		    android:layout_height="wrap_content"
+			        		    android:text="Mage"
+								android:textSize="10dp"/>
+		        		</LinearLayout>
+		        	</LinearLayout>
+		        	
+		        	<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="fill_parent"
+					android:orientation="horizontal"
+					android:weightSum="4">
+						<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1">
+			        		<CheckBox
+			        		    android:id="@+id/roleBox5"
+			        		    android:layout_width="fill_parent"
+			        		    android:layout_height="wrap_content"
+			        		    android:text="Marksman"
+								android:textSize="10dp"/>
+		        		</LinearLayout>
+						<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1">
+			        		<CheckBox
+			        		    android:id="@+id/roleBox6"
+			        		    android:layout_width="fill_parent"
+			        		    android:layout_height="wrap_content"
+			        		    android:text="Support"
+								android:textSize="10dp"/>
+		        		</LinearLayout>
+		        	</LinearLayout>
+	        	</LinearLayout>
+	        	<!-- Lane -->
+	        	
 	        </LinearLayout>
         
 		</ScrollView>       
