@@ -170,6 +170,135 @@ public class Question extends Activity {
     		e.printStackTrace();
     	}
     	
+    	OnClickListener checkListener = new OnClickListener() {
+    		@Override
+    		public void onClick(View v) {
+    			if (((CheckBox) v).isChecked()) {
+    				checkBoxOnClickOn((CheckBox) v);
+    			}else {
+    				checkBoxOnClickOff((CheckBox) v);
+    			}
+    		}
+    	};
+    	
+    	CheckBox cb = (CheckBox)findViewById(R.id.laneBox1);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.laneBox2);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.laneBox3);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.laneBox4);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	
+    	cb = (CheckBox)findViewById(R.id.roleBox1);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.roleBox2);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.roleBox3);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.roleBox4);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.roleBox5);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.roleBox6);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	
+    	cb = (CheckBox)findViewById(R.id.skillBox1);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.skillBox2);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.skillBox3);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.skillBox4);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.skillBox5);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.skillBox6);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.skillBox7);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.skillBox8);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.skillBox9);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.skillBox10);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.skillBox11);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.skillBox12);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.skillBox13);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.skillBox14);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.skillBox15);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.skillBox16);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	
+    	cb = (CheckBox)findViewById(R.id.appearanceBox1);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.appearanceBox2);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.appearanceBox3);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.appearanceBox4);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	
+    	cb = (CheckBox)findViewById(R.id.priceBox1);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.priceBox2);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.priceBox3);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.priceBox4);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.priceBox5);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	
+    	cb = (CheckBox)findViewById(R.id.apadBox1);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	cb = (CheckBox)findViewById(R.id.apadBox2);
+    	cb.setTypeface(typeFace);
+    	cb.setOnClickListener(checkListener);
+    	
+    	/*
     	LayoutParams WWParam = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
     	LayoutParams FWParam = new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
     	LayoutParams MWParam = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
@@ -230,10 +359,10 @@ public class Question extends Activity {
 	    	    	aRow.addView(checkContainer);
     			}
     		}
-    	}
+    	}*/
     	showChampions();
 
-    	aRow = null;
+    	//aRow = null;
 	}
 	
 	private void showChampions(){
@@ -350,73 +479,175 @@ public class Question extends Activity {
 
 	private void checkBoxOnClickOff(CheckBox v){
 		ArrayList<Champion> ans = new ArrayList<Champion>();
-		for(int i = 0; i < history.size(); i++){
-			if(v.getText().toString().equals("Top") ||
-					v.getText().toString().equals("Mid") ||
-					v.getText().toString().equals("Jungle") ||
-					v.getText().toString().equals("Bottom")){
-				
-				for(int j = 0; j < history.get(i).getLane().size(); j++){
-					if(!(v.getText().toString().equals(history.get(i).getLane().get(j)))){
-						if(v.getText().toString().equals("Top") ||
-								v.getText().toString().equals("Mid") ||
-								v.getText().toString().equals("Jungle") ||
-								v.getText().toString().equals("Bottom")){
+		ArrayList<Champion> hist = new ArrayList<Champion>();
+		
+		if(v.getText().toString().equals("Top") ||
+				v.getText().toString().equals("Mid") ||
+				v.getText().toString().equals("Bottom") ||
+				v.getText().toString().equals("Jungle")){
+			if(v.getText().toString().equals("Top")){
+				CheckBox cb2 = (CheckBox)findViewById(R.id.laneBox2);
+				CheckBox cb3 = (CheckBox)findViewById(R.id.laneBox3);
+				CheckBox cb4 = (CheckBox)findViewById(R.id.laneBox4);
+				if(cb2.isChecked()){
+					for(int i = 0; i < history.size(); i++){
+						if(history.get(i).getLane().contains(cb2.getText())){
 							ans.add(history.get(i));
-							j = history.get(i).getLane().size();
+						}else{
+							hist.add(history.get(i));
 						}
 					}
 				}
-				
-			}else if(v.getText().toString().equals("Fighter") ||
-					v.getText().toString().equals("Tank") ||
-					v.getText().toString().equals("Assassin") ||
-					v.getText().toString().equals("Mage") ||
-					v.getText().toString().equals("Marksman") ||
-					v.getText().toString().equals("Support")){
-				if(champions.get(i).getLane().contains(v.getText())){
-					ans.add(champions.get(i));
-				}else{
-					history.add(champions.get(i));
+				if(cb3.isChecked()){
+					for(int i = 0; i < ans.size(); i++){
+						if(ans.get(i).getLane().contains(cb3.getText())){
+							ans.add(ans.get(i));
+						}else{
+							hist.add(ans.get(i));
+						}
+					}
 				}
-			}else if(v.getText().toString().equals("skill1") ||
-					v.getText().toString().equals("skill2") ||
-					v.getText().toString().equals("skill3") ||
-					v.getText().toString().equals("skill4") ||
-					v.getText().toString().equals("skill5") ||
-					v.getText().toString().equals("skill6")){
-				if(champions.get(i).getLane().contains(v.getText())){
-					ans.add(champions.get(i));
-				}else{
-					history.add(champions.get(i));
+				if(cb4.isChecked()){
+					for(int i = 0; i < ans.size(); i++){
+						if(ans.get(i).getLane().contains(cb4.getText())){
+							ans.add(ans.get(i));
+						}else{
+							hist.add(ans.get(i));
+						}
+					}
 				}
-			}else if(v.getText().toString().equals("Human-like") ||
-					v.getText().toString().equals("Animal-like") ||
-					v.getText().toString().equals("Demon-like") ||
-					v.getText().toString().equals("Robot-like")){
-				if(champions.get(i).getAppearance().contains(v.getText())){
-					ans.add(champions.get(i));
-				}else{
-					history.add(champions.get(i));
+			}else if(v.getText().toString().equals("Mid")){
+				CheckBox cb1 = (CheckBox)findViewById(R.id.laneBox1);
+				CheckBox cb3 = (CheckBox)findViewById(R.id.laneBox3);
+				CheckBox cb4 = (CheckBox)findViewById(R.id.laneBox4);
+				if(cb1.isChecked()){
+					for(int i = 0; i < history.size(); i++){
+						if(history.get(i).getLane().contains(cb1.getText())){
+							ans.add(history.get(i));
+						}else{
+							hist.add(history.get(i));
+						}
+					}
 				}
-			}else if(v.getText().toString().equals("450") ||
-					v.getText().toString().equals("1250") ||
-					v.getText().toString().equals("3150") ||
-					v.getText().toString().equals("4800") ||
-					v.getText().toString().equals("6300")){
-				if(champions.get(i).getPrice() == Integer.parseInt((String) v.getText())){
-					ans.add(champions.get(i));
-				}else{
-					history.add(champions.get(i));
+				if(cb3.isChecked()){
+					for(int i = 0; i < ans.size(); i++){
+						if(ans.get(i).getLane().contains(cb3.getText())){
+							ans.add(ans.get(i));
+						}else{
+							hist.add(ans.get(i));
+						}
+					}
 				}
-			}else if(v.getText().toString().equals("Ability Power") ||
-					v.getText().toString().equals("Attack Damage")){
-				if(champions.get(i).getDamage_style().contains(v.getText())){
-					ans.add(champions.get(i));
-				}else{
-					history.add(champions.get(i));
+				if(cb4.isChecked()){
+					for(int i = 0; i < ans.size(); i++){
+						if(ans.get(i).getLane().contains(cb4.getText())){
+							ans.add(ans.get(i));
+						}else{
+							hist.add(ans.get(i));
+						}
+					}
+				}
+			}else if(v.getText().toString().equals("Bottom")){
+				CheckBox cb2 = (CheckBox)findViewById(R.id.laneBox2);
+				CheckBox cb1 = (CheckBox)findViewById(R.id.laneBox1);
+				CheckBox cb4 = (CheckBox)findViewById(R.id.laneBox4);
+				if(cb2.isChecked()){
+					for(int i = 0; i < history.size(); i++){
+						if(history.get(i).getLane().contains(cb2.getText())){
+							ans.add(history.get(i));
+						}else{
+							hist.add(history.get(i));
+						}
+					}
+				}
+				if(cb1.isChecked()){
+					for(int i = 0; i < ans.size(); i++){
+						if(ans.get(i).getLane().contains(cb1.getText())){
+							ans.add(ans.get(i));
+						}else{
+							hist.add(ans.get(i));
+						}
+					}
+				}
+				if(cb4.isChecked()){
+					for(int i = 0; i < ans.size(); i++){
+						if(ans.get(i).getLane().contains(cb4.getText())){
+							ans.add(ans.get(i));
+						}else{
+							hist.add(ans.get(i));
+						}
+					}
+				}
+			}else if(v.getText().toString().equals("Jungle")){
+				CheckBox cb2 = (CheckBox)findViewById(R.id.laneBox2);
+				CheckBox cb3 = (CheckBox)findViewById(R.id.laneBox3);
+				CheckBox cb1 = (CheckBox)findViewById(R.id.laneBox1);
+				if(cb2.isChecked()){
+					for(int i = 0; i < history.size(); i++){
+						if(history.get(i).getLane().contains(cb2.getText())){
+							ans.add(history.get(i));
+						}else{
+							hist.add(history.get(i));
+						}
+					}
+				}
+				if(cb3.isChecked()){
+					for(int i = 0; i < ans.size(); i++){
+						if(ans.get(i).getLane().contains(cb3.getText())){
+							ans.add(ans.get(i));
+						}else{
+							hist.add(ans.get(i));
+						}
+					}
+				}
+				if(cb1.isChecked()){
+					for(int i = 0; i < ans.size(); i++){
+						if(ans.get(i).getLane().contains(cb1.getText())){
+							ans.add(ans.get(i));
+						}else{
+							hist.add(ans.get(i));
+						}
+					}
 				}
 			}
+		}else if(v.getText().toString().equals("AP(Ability Power)") ||
+				v.getText().toString().equals("AD(Attack Damage)")){
+			
+		}else if(v.getText().toString().equals("Fighter") ||
+				v.getText().toString().equals("Tank") || 
+				v.getText().toString().equals("Assassin") ||
+				v.getText().toString().equals("Mage") ||
+				v.getText().toString().equals("Marksman") ||
+				v.getText().toString().equals("Support")){
+			
+		}else if(v.getText().toString().equals("Airborne") ||
+				v.getText().toString().equals("Blind") ||
+				v.getText().toString().equals("Escape") ||
+				v.getText().toString().equals("Terror") ||
+				v.getText().toString().equals("Heal") ||
+				v.getText().toString().equals("Fling") ||
+				v.getText().toString().equals("Knock Back") ||
+				v.getText().toString().equals("Observe") ||
+				v.getText().toString().equals("Shield") ||
+				v.getText().toString().equals("Silence") ||
+				v.getText().toString().equals("Slowdown") ||
+				v.getText().toString().equals("Restrict") ||
+				v.getText().toString().equals("Dominate") ||
+				v.getText().toString().equals("Stealth") ||
+				v.getText().toString().equals("Stun") ||
+				v.getText().toString().equals("Provoke")){
+			
+		}else if(v.getText().toString().equals("Human") ||
+				v.getText().toString().equals("Animal") ||
+				v.getText().toString().equals("Demon") ||
+				v.getText().toString().equals("Robot")){
+			
+		}else if(v.getText().toString().equals("450ip") ||
+				v.getText().toString().equals("1350ip") ||
+				v.getText().toString().equals("3150ip") ||
+				v.getText().toString().equals("4800ip") ||
+				v.getText().toString().equals("6300ip")){
+			
 		}
 		
 		//champions = null;
@@ -425,6 +656,11 @@ public class Question extends Activity {
 			champions.add(ans.get(i));
 		}
 		ans = null;
+		history = new ArrayList<Champion>();
+		for(int i = 0; i < hist.size(); i++){
+			history.add(hist.get(i));
+		}
+		hist = null;
 		showChampions();
 	}
 	
