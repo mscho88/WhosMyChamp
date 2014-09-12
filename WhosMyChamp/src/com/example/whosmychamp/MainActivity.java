@@ -29,9 +29,15 @@ public class MainActivity extends Activity{
 		button_eng.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v){
-				v.setBackgroundResource(R.drawable.btn_start1);
 				startActivity(new Intent(MainActivity.this, Question.class));
-				v.setBackgroundResource(R.drawable.btn_start);
+			}
+		});
+		
+		Button buttonAbout = (Button)findViewById(R.id.button_about);
+		buttonAbout.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v){
+				startActivity(new Intent(MainActivity.this, About.class));
 			}
 		});
 		

@@ -5,66 +5,67 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/bg" 
-    android:weightSum="2">
+    android:weightSum="10">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_weight="1"
+        android:layout_weight="4"
         android:layout_margin="10dp">    
-<ScrollView
-       android:layout_width="match_parent"
-        android:layout_height="fill_parent" >
+		<ScrollView
+			android:layout_width="match_parent"
+			android:layout_height="fill_parent" >
 
-<LinearLayout
-   android:id="@+id/questionsLayout"
-android:layout_width="match_parent"
-android:layout_height="fill_parent"
-android:orientation="vertical"
-android:layout_weight="1">
-<!-- Lane -->
-           <LinearLayout
-android:layout_width="match_parent"
-android:layout_height="wrap_content">
-<TextView
-       	   android:layout_width="fill_parent"
-       	   android:layout_height="wrap_content"
-       	   android:text="Lane"/>
-       	</LinearLayout>
+			<LinearLayout
+				android:id="@+id/questionsLayout"
+				android:layout_width="match_parent"
+				android:layout_height="fill_parent"
+				android:orientation="vertical"
+				android:layout_weight="1">
+				<!-- Lane -->
+          		<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content">
+					<TextView
+					    android:id="@+id/questionText1"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:text="Lane"/>
+       			</LinearLayout>
        	
-       	<LinearLayout
-   android:id="@+id/laneCheckBoxes"
-android:layout_width="match_parent"
-android:layout_height="fill_parent"
-android:orientation="vertical">
-       	<LinearLayout
-android:layout_width="match_parent"
-android:layout_height="fill_parent"
-android:orientation="horizontal"
-android:weightSum="4">
-<LinearLayout
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:layout_weight="1">
-       	<CheckBox
-       	   android:id="@+id/laneBox1"
-       	   android:layout_width="fill_parent"
-       	   android:layout_height="wrap_content"
-       	   android:text="Top"
-android:textSize="10dp"/>
-       	</LinearLayout>
+       			<LinearLayout
+					android:id="@+id/laneCheckBoxes"
+					android:layout_width="match_parent"
+					android:layout_height="fill_parent"
+					android:orientation="vertical">
+       				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="fill_parent"
+						android:orientation="horizontal"
+						android:weightSum="4">
+						<LinearLayout
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_weight="1">
+					       	<CheckBox
+					       		android:id="@+id/laneBox1"
+					       		android:layout_width="fill_parent"
+					       		android:layout_height="wrap_content"
+					       		android:text="Top"
+								android:textSize="10dp"/>
+       					</LinearLayout>
        	
-<LinearLayout
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:layout_weight="1">
-       	<CheckBox
-       	   android:id="@+id/laneBox2"
-       	   android:layout_width="fill_parent"
-       	   android:layout_height="wrap_content"
-       	   android:text="Mid"
-android:textSize="10dp"/>
-       	</LinearLayout>
+						<LinearLayout
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_weight="1">
+							<CheckBox
+				       	   		android:id="@+id/laneBox2"
+				       	   		android:layout_width="fill_parent"
+				       	   		android:layout_height="wrap_content"
+				       	   		android:text="Mid"
+								android:textSize="10dp"/>
+						</LinearLayout>
        	
        	<LinearLayout
 android:layout_width="match_parent"
@@ -98,9 +99,10 @@ android:textSize="10dp"/>
 android:layout_width="match_parent"
 android:layout_height="wrap_content">
 <TextView
+    	android:id="@+id/questionText2"
        	   android:layout_width="fill_parent"
        	   android:layout_height="wrap_content"
-       	   android:text="APAD"/>
+       	   android:text="Ability Power / Attack Damage"/>
        	</LinearLayout>
        	
        	<LinearLayout
@@ -116,12 +118,12 @@ android:weightSum="4">
 <LinearLayout
 android:layout_width="match_parent"
 android:layout_height="wrap_content"
-android:layout_weight="1">
+android:layout_weight="3">
        	<CheckBox
        	   android:id="@+id/apadBox1"
        	   android:layout_width="fill_parent"
        	   android:layout_height="wrap_content"
-       	   android:text="AP (Ability Power)"
+       	   android:text="AP"
 android:textSize="10dp"/>
        	</LinearLayout>
        	
@@ -133,18 +135,19 @@ android:layout_weight="1">
        	   android:id="@+id/apadBox2"
        	   android:layout_width="fill_parent"
        	   android:layout_height="wrap_content"
-       	   android:text="AD (Attack Damage)"
+       	   android:text="AD"
 android:textSize="10dp"/>
        	</LinearLayout>	
        	</LinearLayout>
        	</LinearLayout>
        	<!-- APAD -->
-       	
-       	<!-- Role -->
+	
+	<!-- Role -->
            <LinearLayout
 android:layout_width="match_parent"
 android:layout_height="wrap_content">
 <TextView
+    	android:id="@+id/questionText3"
        	   android:layout_width="fill_parent"
        	   android:layout_height="wrap_content"
        	   android:text="Role" />
@@ -217,7 +220,7 @@ android:weightSum="4">
 <LinearLayout
 android:layout_width="match_parent"
 android:layout_height="wrap_content"
-android:layout_weight="1">
+android:layout_weight="3">
        	<CheckBox
        	   android:id="@+id/roleBox5"
        	   android:layout_width="fill_parent"
@@ -239,12 +242,13 @@ android:textSize="10dp"/>
        	</LinearLayout>
        	</LinearLayout>
        	<!-- Role -->
-       	
-       	<!-- Skill -->
+	
+	<!-- Skill -->
            <LinearLayout
 android:layout_width="match_parent"
 android:layout_height="wrap_content">
 <TextView
+    android:id="@+id/questionText4"
        	   android:layout_width="fill_parent"
        	   android:layout_height="wrap_content"
        	   android:text="Skill"/>
@@ -268,7 +272,7 @@ android:layout_weight="1">
        	   android:id="@+id/skillBox1"
        	   android:layout_width="fill_parent"
        	   android:layout_height="wrap_content"
-       	   android:text="airborne"
+       	   android:text="Airborne"
 android:textSize="10dp"/>
        	</LinearLayout>
        	
@@ -280,7 +284,7 @@ android:layout_weight="1">
        	   android:id="@+id/skillBox2"
        	   android:layout_width="fill_parent"
        	   android:layout_height="wrap_content"
-       	   android:text="blind"
+       	   android:text="Blind"
 android:textSize="10dp"/>
        	</LinearLayout>
        	
@@ -292,7 +296,7 @@ android:layout_weight="1">
        	   android:id="@+id/skillBox3"
        	   android:layout_width="fill_parent"
        	   android:layout_height="wrap_content"
-       	   android:text="escape"
+       	   android:text="Escape"
 android:textSize="10dp"/>
        	</LinearLayout>
        	
@@ -304,7 +308,7 @@ android:layout_weight="1">
        	   android:id="@+id/skillBox4"
        	   android:layout_width="fill_parent"
        	   android:layout_height="wrap_content"
-       	   android:text="terror"
+       	   android:text="Terror"
 android:textSize="10dp"/>
        	</LinearLayout>
        	</LinearLayout>
@@ -322,7 +326,7 @@ android:layout_weight="1">
        	   android:id="@+id/skillBox5"
        	   android:layout_width="fill_parent"
        	   android:layout_height="wrap_content"
-       	   android:text="heal"
+       	   android:text="Heal"
 android:textSize="10dp"/>
        	</LinearLayout>
 <LinearLayout
@@ -333,7 +337,7 @@ android:layout_weight="1">
        	   android:id="@+id/skillBox6"
        	   android:layout_width="fill_parent"
        	   android:layout_height="wrap_content"
-       	   android:text="fling"
+       	   android:text="Fling"
 android:textSize="10dp"/>
        	</LinearLayout>
        	<LinearLayout
@@ -344,7 +348,7 @@ android:layout_weight="1">
        	   android:id="@+id/skillBox7"
        	   android:layout_width="fill_parent"
        	   android:layout_height="wrap_content"
-       	   android:text="knock back"
+       	   android:text="Knock Back"
 android:textSize="10dp"/>
        	</LinearLayout>
        	<LinearLayout
@@ -355,7 +359,7 @@ android:layout_weight="1">
        	   android:id="@+id/skillBox8"
        	   android:layout_width="fill_parent"
        	   android:layout_height="wrap_content"
-       	   android:text="observe"
+       	   android:text="Observe"
 android:textSize="10dp"/>
        	</LinearLayout>
        	</LinearLayout>
@@ -373,7 +377,7 @@ android:layout_weight="1">
        	   android:id="@+id/skillBox9"
        	   android:layout_width="fill_parent"
        	   android:layout_height="wrap_content"
-       	   android:text="shield"
+       	   android:text="Shield"
 android:textSize="10dp"/>
        	</LinearLayout>
 <LinearLayout
@@ -384,7 +388,7 @@ android:layout_weight="1">
        	   android:id="@+id/skillBox10"
        	   android:layout_width="fill_parent"
        	   android:layout_height="wrap_content"
-       	   android:text="silence"
+       	   android:text="Silence"
 android:textSize="10dp"/>
        	</LinearLayout>
        	<LinearLayout
@@ -395,7 +399,7 @@ android:layout_weight="1">
        	   android:id="@+id/skillBox11"
        	   android:layout_width="fill_parent"
        	   android:layout_height="wrap_content"
-       	   android:text="slowdown"
+       	   android:text="Slowdown"
 android:textSize="10dp"/>
        	</LinearLayout>
        	<LinearLayout
@@ -406,7 +410,7 @@ android:layout_weight="1">
        	   android:id="@+id/skillBox12"
        	   android:layout_width="fill_parent"
        	   android:layout_height="wrap_content"
-       	   android:text="restrict"
+       	   android:text="Restrict"
 android:textSize="10dp"/>
        	</LinearLayout>
        	</LinearLayout>
@@ -424,7 +428,7 @@ android:layout_weight="1">
        	   android:id="@+id/skillBox13"
        	   android:layout_width="fill_parent"
        	   android:layout_height="wrap_content"
-       	   android:text="dominate"
+       	   android:text="Dominate"
 android:textSize="10dp"/>
        	</LinearLayout>
 <LinearLayout
@@ -435,7 +439,7 @@ android:layout_weight="1">
        	   android:id="@+id/skillBox14"
        	   android:layout_width="fill_parent"
        	   android:layout_height="wrap_content"
-       	   android:text="stealth"
+       	   android:text="Stealth"
 android:textSize="10dp"/>
        	</LinearLayout>
        	<LinearLayout
@@ -446,7 +450,7 @@ android:layout_weight="1">
        	   android:id="@+id/skillBox15"
        	   android:layout_width="fill_parent"
        	   android:layout_height="wrap_content"
-       	   android:text="stun"
+       	   android:text="Stun"
 android:textSize="10dp"/>
        	</LinearLayout>
        	<LinearLayout
@@ -457,7 +461,7 @@ android:layout_weight="1">
        	   android:id="@+id/skillBox16"
        	   android:layout_width="fill_parent"
        	   android:layout_height="wrap_content"
-       	   android:text="provoke"
+       	   android:text="Provoke"
 android:textSize="10dp"/>
        	</LinearLayout>
        	</LinearLayout>
@@ -469,6 +473,7 @@ android:textSize="10dp"/>
 android:layout_width="match_parent"
 android:layout_height="wrap_content">
 <TextView
+    android:id="@+id/questionText5"
        	   android:layout_width="fill_parent"
        	   android:layout_height="wrap_content"
        	   android:text="Appearance"/>
@@ -539,9 +544,10 @@ android:textSize="10dp"/>
 android:layout_width="match_parent"
 android:layout_height="wrap_content">
 <TextView
+    android:id="@+id/questionText6"
        	   android:layout_width="fill_parent"
        	   android:layout_height="wrap_content"
-       	   android:text="Price"/>
+       	   android:text="Price(ip)"/>
        	</LinearLayout>
        	
        	<LinearLayout
@@ -562,7 +568,7 @@ android:layout_weight="1">
        	   android:id="@+id/priceBox1"
        	   android:layout_width="fill_parent"
        	   android:layout_height="wrap_content"
-       	   android:text="450ip"
+       	   android:text="450"
 android:textSize="10dp"/>
        	</LinearLayout>
        	
@@ -571,11 +577,11 @@ android:layout_width="match_parent"
 android:layout_height="wrap_content"
 android:layout_weight="1">
        	<CheckBox
-       	   android:id="@+id/priceBox2"
-       	   android:layout_width="fill_parent"
-       	   android:layout_height="wrap_content"
-       	   android:text="1350ip"
-android:textSize="10dp"/>
+			android:id="@+id/priceBox2"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="1350"
+			android:textSize="10dp"/>
        	</LinearLayout>
        	
        	<LinearLayout
@@ -586,7 +592,7 @@ android:layout_weight="1">
        	   android:id="@+id/priceBox3"
        	   android:layout_width="fill_parent"
        	   android:layout_height="wrap_content"
-       	   android:text="3150ip"
+       	   android:text="3150"
 android:textSize="10dp"/>
        	</LinearLayout>
        	
@@ -598,7 +604,7 @@ android:layout_weight="1">
        	   android:id="@+id/priceBox4"
        	   android:layout_width="fill_parent"
        	   android:layout_height="wrap_content"
-       	   android:text="4800ip"
+       	   android:text="4800"
 android:textSize="10dp"/>
        	</LinearLayout>
        	</LinearLayout>
@@ -616,7 +622,7 @@ android:layout_weight="1">
        	   android:id="@+id/priceBox5"
        	   android:layout_width="fill_parent"
        	   android:layout_height="wrap_content"
-       	   android:text="6300ip"
+       	   android:text="6300"
 android:textSize="10dp"/>
        	</LinearLayout>
        	</LinearLayout>
@@ -628,24 +634,24 @@ android:textSize="10dp"/>
 </ScrollView>       
 </LinearLayout>
 <!-- 
-    <Button
-        android:id="@+id/nextButton"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Next" />
+<Button
+    android:id="@+id/nextButton"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Next" />
 
-    <Button
-        android:id="@+id/backButton"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        android:enabled="false" />
- -->
+<Button
+    android:id="@+id/backButton"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Back"
+    android:enabled="false" />
+-->
 <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_weight="1"
+        android:layout_weight="6"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="70dp">
@@ -659,6 +665,8 @@ android:textSize="10dp"/>
    android:id="@+id/championsScrollView"
            android:layout_width="match_parent"
            android:layout_height="match_parent"
+           android:gravity="center"
+           
            android:orientation="vertical" >
            
        </LinearLayout>

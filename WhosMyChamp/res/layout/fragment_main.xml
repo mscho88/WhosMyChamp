@@ -16,15 +16,15 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="146dp"
-        android:background="@drawable/btn_start"/>
+        android:background="@drawable/start_btn"/>
 
     <Button
-        android:id="@+id/button_kor"
+        android:id="@+id/button_about"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/button_eng"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="62dp"
-        android:background="@drawable/btn_about" />
+        android:background="@drawable/about_btn" />
 
 </RelativeLayout>

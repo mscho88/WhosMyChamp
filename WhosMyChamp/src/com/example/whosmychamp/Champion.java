@@ -2,12 +2,13 @@ package com.example.whosmychamp;
 
 import java.util.ArrayList;
 
-import android.view.View;
-
 public class Champion {
 
 	private int id;
 	private String name;
+	private String nickname;
+	private ArrayList<String> role;
+	private ArrayList<String> skill;
 	private ArrayList<String> lane;//good
 	private int popularity;//good
 	private ArrayList<String> damage_style;//array
@@ -43,6 +44,30 @@ public class Champion {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
+	public ArrayList<String> getRole() {
+		return role;
+	}
+
+	public void setRole(ArrayList<String> role) {
+		this.role = role;
+	}
+
+	public ArrayList<String> getSkill() {
+		return skill;
+	}
+
+	public void setSkill(ArrayList<String> skill) {
+		this.skill = skill;
 	}
 
 	public ArrayList<String> getLane() {
