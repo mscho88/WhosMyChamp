@@ -30,13 +30,12 @@
 	    <TextView
 	        android:id="@+id/profile_nickname"
 	        android:layout_width="match_parent"
-	        		    android:gravity="center"
+			android:gravity="center"
 	        android:textColor="#ffffff"
 			
 	        android:layout_height="wrap_content"
 	        android:text="TextView"
-	        		    android:textSize="15dp"
-	         />
+	        android:textSize="15dp"/>
 		
 	</LinearLayout>	</LinearLayout>
 	
@@ -51,12 +50,12 @@
 	    android:id="@+id/button2"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
-	    android:text="See more detail ..." />
+	    android:background="@drawable/see_btn"/>
 
 	<Button
 	    android:id="@+id/button1"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
-	    android:text="Close" />
+	    android:background="@drawable/close_btn"/>
 	
 </LinearLayout>

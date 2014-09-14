@@ -2,7 +2,51 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
-    
+    android:orientation="vertical"
+    android:background="@drawable/bg1" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="#D1D31A"
+        android:gravity="center"
+        android:text="Who's My Champion" />
+
+    <TextView
+        android:id="@+id/aboutTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="#ffffff"
+        android:textSize="15dp"
+        android:text="
+Good news for the League of Legends players!\n\n
+
+Have you found the perfect champion for you yet? \n\n
+Are you satisfied with your current choice of champion?\n\n
+You do not need to waste your time on worrying which champion suits you best!\n
+No more frustration, no more anger!\n\n
+
+This application recommends you the optimal champion based on the selective database. Through the JM Entertainment’s Filtering System, you will be able to get the champion most in sync with you out of 120 champs.
+\n\n
+Feel free to contact us (jmentertainmentco@gmail.com) for any questions And please let us know if you find any bugs or errors, as well as giving us advice and suggestions. 
+" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/close_btn"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp"/>
 
 </LinearLayout>
