@@ -6,12 +6,19 @@ import java.util.ArrayList;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+
 import android.app.Activity;
+import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Point;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -34,22 +41,36 @@ public class Question extends Activity {
 	Point screenSize;
 	Typeface typeFace;
 	
+	private AdView adView;
+	//private AdRequest adRequest ;
+	//private AdView adView1;
+	
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.question);
 	    
-		//Button button_eng = (Button)findViewById(R.id.button_eng);
-		//int  resID = getApplicationContext().getResources().getIdentifier("btn_start", "drawable", "com.example.whosmychamp");
-		//button_eng.setBackgroundResource(resID);
-		
-
 	    // Read the font
 	    typeFace = Typeface.createFromAsset(getAssets(),"fonts/lolfont.ttf");
 	    screenSize = new Point();
 		getWindowManager().getDefaultDisplay().getSize(screenSize);
-	    	    
+		
+		adView = new AdView(this);
+		adView.setAdSize(AdSize.BANNER);
+		adView.setAdUnitId("ca-app-pub-3848140631863782/8505328953");
+		
+		LinearLayout layout = (LinearLayout) findViewById(R.id.banner2);
+		layout.addView(adView);
+		
+		AdRequest adRequest  = new AdRequest.Builder()
+	    .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+	    .addTestDevice("AC98C820A50B4AD8A2106EDE96FB87D4")
+	    .build();
+
+		// Start loading the ad in the background.
+		adView.loadAd(adRequest);
+		
     	// Load xml question data file
     	try{
     		XmlPullParser customList = null;
@@ -298,7 +319,7 @@ public class Question extends Activity {
     	
     	showChampions();
 	}
-	
+
 	private void showChampions(){
 		sortChampions();
 		LinearLayout.LayoutParams WWParam = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 4.0f);
@@ -656,6 +677,8 @@ public class Question extends Activity {
 	}
 	
 	private void profilePopup(View v){
+	    //setContentView(R.layout.profile);
+
 		View popupView = getLayoutInflater().inflate(R.layout.profile, null);
 		PopupWindow pop = new PopupWindow(popupView, (int) (screenSize.x * 0.8), ViewGroup.LayoutParams.WRAP_CONTENT);
 		pop.setAnimationStyle(-1);
@@ -687,6 +710,22 @@ public class Question extends Activity {
 	    profile_nickname.setTypeface(typeFace);
 	    //content.setTypeface(typeFace);
 		
+//AdView adView1 = new AdView(this.profilePopup(popupView))
+		//AdView adView1 = new AdView(this);
+		//adView1.setAdSize(AdSize.BANNER);
+		//adView1.setAdUnitId("ca-app-pub-3848140631863782/8505328953");
+		/*
+		LinearLayout layout1 = (LinearLayout)popupView.findViewById(R.id.banner3);
+		layout1.addView(adView);
+		
+		AdRequest adRequest = new AdRequest.Builder()
+	    .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+	    .addTestDevice("AC98C820A50B4AD8A2106EDE96FB87D4")
+	    .build();
+
+		// Start loading the ad in the background.
+		adView.loadAd(adRequest);
+*/
 		Button close = (Button) popupView.findViewById(R.id.button1);
 		close.setOnClickListener(new OnClickListener(){
 			@Override
@@ -705,4 +744,21 @@ public class Question extends Activity {
 			}
 		});
 	}
+	
+	
+	/*
+	public static class AdFragment extends Fragment {
+		@Override
+		public View onCreateView(LayoutInflater inflater, ViewGroup container,
+		                         Bundle savedInstanceState) {
+		    return inflater.inflate(R.layout.profile, container, false);
+		}
+		@Override
+		public void onActivityCreated(Bundle bundle) {
+		    super.onActivityCreated(bundle);
+		    AdView mAdView = (AdView) getView().findViewById(R.id.banner);
+		    AdRequest adRequest = new AdRequest.Builder().build();
+		    mAdView.loadAd(adRequest);
+		}
+	}*/
 }

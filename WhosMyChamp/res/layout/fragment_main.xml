@@ -26,5 +26,15 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="62dp"
         android:background="@drawable/about_btn" />
+    
+    <LinearLayout
+        android:id="@+id/banner1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+                android:layout_alignParentBottom="true"
+        >
+        
+    </LinearLayout>
 
 </RelativeLayout>

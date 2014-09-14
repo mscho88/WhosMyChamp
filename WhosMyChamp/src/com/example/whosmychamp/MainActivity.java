@@ -1,5 +1,9 @@
 package com.example.whosmychamp;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
@@ -11,9 +15,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 public class MainActivity extends Activity{
 
+	private AdView adView;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -24,6 +30,21 @@ public class MainActivity extends Activity{
 
 		setContentView(R.layout.fragment_main);
 
+		adView = new AdView(this);
+		adView.setAdSize(AdSize.BANNER);
+		adView.setAdUnitId("ca-app-pub-3848140631863782/8505328953");
+		
+		LinearLayout layout = (LinearLayout) findViewById(R.id.banner1);
+		layout.addView(adView);
+		
+		AdRequest adRequest = new AdRequest.Builder()
+	    .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+	    .addTestDevice("AC98C820A50B4AD8A2106EDE96FB87D4")
+	    .build();
+
+	// Start loading the ad in the background.
+	adView.loadAd(adRequest);
+	
 		// English version button event handler
 		Button button_eng = (Button)findViewById(R.id.button_eng);
 		button_eng.setOnClickListener(new OnClickListener(){
