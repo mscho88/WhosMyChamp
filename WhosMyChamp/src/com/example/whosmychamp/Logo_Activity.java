@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import jmentertainment.whosmychamp.R;
 
 public class Logo_Activity extends Activity {
 

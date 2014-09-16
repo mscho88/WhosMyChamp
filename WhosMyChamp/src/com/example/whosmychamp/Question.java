@@ -2,6 +2,7 @@ package com.example.whosmychamp;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import jmentertainment.whosmychamp.R;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
