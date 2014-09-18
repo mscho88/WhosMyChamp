@@ -65,12 +65,21 @@
 
 	<option name="Ashe"></option>
 	<option nickname="the Frost Archer"></option>
-	<option lane="Bottom-Bottom"></option>
+	<option lane="Bottom"></option>
 	<option type="AD"></option>
 	<option role="Marksman"></option>
 	<option skill="Observe-Slowdown-Stun"></option>
 	<option appearance="Human"></option>
 	<option price="450"></option>
+	
+	<option name="Azir"></option>
+	<option nickname="the Emperor of the Sands"></option>
+	<option lane="Bottom-Top-Mid-Jungle"></option>
+	<option type="AD-AP"></option>
+	<option role="Mage-Marksman"></option>
+	<option skill="Knock Back-Escape-Slowdown"></option>
+	<option appearance="Human-Demon"></option>
+	<option price="6300"></option>
 
 	<option name="Blitzcrank"></option>
 	<option nickname="the Great Steam Golem"></option>
